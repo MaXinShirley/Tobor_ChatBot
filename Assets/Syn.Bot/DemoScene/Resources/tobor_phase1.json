@@ -1,0 +1,1402 @@
+{
+  "GraphVersion": "1.5.0.0",
+  "UserNote": "",
+  "Nodes": [
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.OscovaBotNode, Syn.Bot",
+      "Dialogs": [
+        {
+          "DialogName": "normal_dialog",
+          "IntentAlias": null,
+          "Domain": null,
+          "Intents": [
+            {
+              "IntentName": "greet_intent",
+              "MinScore": 0.0,
+              "IntentContexts": [],
+              "Prompts": [],
+              "AutoEntity": null,
+              "Fallback": null,
+              "Trait": null,
+              "Event": null,
+              "Action": null,
+              "Expressions": [
+                {
+                  "Value": "Hello",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "Hi",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "Hi there",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "Hello",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "Hi",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "Hi there",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "Hello",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "Hi",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "Hi there",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "Hello",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "Hi",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "Hi there",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                }
+              ],
+              "Response": {
+                "Priority": "Normal",
+                "Hint": null,
+                "Type": null,
+                "Format": null,
+                "Text": null,
+                "ResponseMessages": [
+                  {
+                    "$type": "Syn.Bot.Oscova.WorkspaceNodes.TextMessageNode, Syn.Bot",
+                    "TextItems": [
+                      "Hi",
+                      "Hello",
+                      "Hi there",
+                      "Hey Yo!"
+                    ],
+                    "Id": "572dede0-a7f6-4fd9-80cd-6ceddcdad328",
+                    "IsFolded": false,
+                    "DisplayName": "Text Message",
+                    "Position": {
+                      "X": 5428.5004793668859,
+                      "Y": 3070.8254895580772
+                    }
+                  }
+                ],
+                "Children": [],
+                "Id": "77dab635-a9a9-43fe-bbba-a348749ff6ba",
+                "IsFolded": false,
+                "DisplayName": "Response",
+                "Position": {
+                  "X": 5635.48442991477,
+                  "Y": 3032.7556823293658
+                }
+              },
+              "Id": "023267a3-8393-4028-82a7-1ba87b98176a",
+              "IsFolded": false,
+              "DisplayName": "Intent (greet_intent)",
+              "Position": {
+                "X": 5927.3247381273695,
+                "Y": 2957.8687680740309
+              }
+            }
+          ],
+          "Events": [],
+          "Actions": [],
+          "Id": "942fc38c-0c89-47d2-b3b1-df10daf29877",
+          "IsFolded": false,
+          "DisplayName": "Dialog (normal_dialog)",
+          "Position": {
+            "X": 6149.0791240922836,
+            "Y": 2986.289820705611
+          }
+        },
+        {
+          "DialogName": "name_dialog",
+          "IntentAlias": null,
+          "Domain": null,
+          "Intents": [
+            {
+              "IntentName": "name_intent",
+              "MinScore": 0.85,
+              "IntentContexts": [],
+              "Prompts": [],
+              "AutoEntity": null,
+              "Fallback": null,
+              "Trait": null,
+              "Event": null,
+              "Action": null,
+              "Expressions": [
+                {
+                  "Value": "What`s your name",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "What is your name",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "Who are you",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "What`s your name",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "What is your name",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "Who are you",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "What`s your name",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "What is your name",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "Who are you",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "What`s your name",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "What is your name",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "Who are you",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                }
+              ],
+              "Response": {
+                "Priority": "Normal",
+                "Hint": null,
+                "Type": null,
+                "Format": null,
+                "Text": null,
+                "ResponseMessages": [
+                  {
+                    "$type": "Syn.Bot.Oscova.WorkspaceNodes.TextMessageNode, Syn.Bot",
+                    "TextItems": [
+                      "Tobor",
+                      "My name is Tobor"
+                    ],
+                    "Id": "72daaa9c-6f4d-4056-923b-8faf2e1506ef",
+                    "IsFolded": false,
+                    "DisplayName": "Text Message",
+                    "Position": {
+                      "X": 5367.8316012893374,
+                      "Y": 3662.9104445927246
+                    }
+                  }
+                ],
+                "Children": [],
+                "Id": "4f7fc37e-dd0a-4330-a2fa-36eee35cac58",
+                "IsFolded": false,
+                "DisplayName": "Response",
+                "Position": {
+                  "X": 5673.1649346226723,
+                  "Y": 3650.9104445927246
+                }
+              },
+              "Id": "c0229d64-0ce2-4d51-ae08-45869a166ad0",
+              "IsFolded": false,
+              "DisplayName": "Intent (name_intent)",
+              "Position": {
+                "X": 5932.5851026899009,
+                "Y": 3439.2948983742381
+              }
+            }
+          ],
+          "Events": [],
+          "Actions": [],
+          "Id": "691c1d03-7f54-4695-acdf-6749fe696a49",
+          "IsFolded": false,
+          "DisplayName": "Dialog (name_dialog)",
+          "Position": {
+            "X": 6145.1789402249133,
+            "Y": 3395.5357947327807
+          }
+        }
+      ],
+      "Entities": [],
+      "Traits": [],
+      "Scripts": [],
+      "Filters": [],
+      "BotSettings": null,
+      "UserSettings": null,
+      "SimlNodes": [],
+      "Id": "fb51627b-cf02-4c72-8210-829aa4fb4676",
+      "IsFolded": false,
+      "DisplayName": "Oscova Bot",
+      "Position": {
+        "X": 6378.5528083028094,
+        "Y": 2974.7108733371897
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.DialogNode, Syn.Bot",
+      "DialogName": "normal_dialog",
+      "IntentAlias": null,
+      "Domain": null,
+      "Intents": [
+        {
+          "IntentName": "greet_intent",
+          "MinScore": 0.0,
+          "IntentContexts": [],
+          "Prompts": [],
+          "AutoEntity": null,
+          "Fallback": null,
+          "Trait": null,
+          "Event": null,
+          "Action": null,
+          "Expressions": [
+            {
+              "Value": "Hello",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "Hi",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "Hi there",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "Hello",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "Hi",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "Hi there",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "Hello",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "Hi",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "Hi there",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "Hello",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "Hi",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "Hi there",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            }
+          ],
+          "Response": {
+            "Priority": "Normal",
+            "Hint": null,
+            "Type": null,
+            "Format": null,
+            "Text": null,
+            "ResponseMessages": [
+              {
+                "$type": "Syn.Bot.Oscova.WorkspaceNodes.TextMessageNode, Syn.Bot",
+                "TextItems": [
+                  "Hi",
+                  "Hello",
+                  "Hi there",
+                  "Hey Yo!"
+                ],
+                "Id": "572dede0-a7f6-4fd9-80cd-6ceddcdad328",
+                "IsFolded": false,
+                "DisplayName": "Text Message",
+                "Position": {
+                  "X": 5428.5004793668859,
+                  "Y": 3070.8254895580772
+                }
+              }
+            ],
+            "Children": [],
+            "Id": "77dab635-a9a9-43fe-bbba-a348749ff6ba",
+            "IsFolded": false,
+            "DisplayName": "Response",
+            "Position": {
+              "X": 5635.48442991477,
+              "Y": 3032.7556823293658
+            }
+          },
+          "Id": "023267a3-8393-4028-82a7-1ba87b98176a",
+          "IsFolded": false,
+          "DisplayName": "Intent (greet_intent)",
+          "Position": {
+            "X": 5927.3247381273695,
+            "Y": 2957.8687680740309
+          }
+        }
+      ],
+      "Events": [],
+      "Actions": [],
+      "Id": "942fc38c-0c89-47d2-b3b1-df10daf29877",
+      "IsFolded": false,
+      "DisplayName": "Dialog (normal_dialog)",
+      "Position": {
+        "X": 6149.0791240922836,
+        "Y": 2986.289820705611
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.IntentNode, Syn.Bot",
+      "IntentName": "greet_intent",
+      "MinScore": 0.0,
+      "IntentContexts": [],
+      "Prompts": [],
+      "AutoEntity": null,
+      "Fallback": null,
+      "Trait": null,
+      "Event": null,
+      "Action": null,
+      "Expressions": [
+        {
+          "Value": "Hello",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "Hi",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "Hi there",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "Hello",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "Hi",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "Hi there",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "Hello",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "Hi",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "Hi there",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "Hello",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "Hi",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "Hi there",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        }
+      ],
+      "Response": {
+        "Priority": "Normal",
+        "Hint": null,
+        "Type": null,
+        "Format": null,
+        "Text": null,
+        "ResponseMessages": [
+          {
+            "$type": "Syn.Bot.Oscova.WorkspaceNodes.TextMessageNode, Syn.Bot",
+            "TextItems": [
+              "Hi",
+              "Hello",
+              "Hi there",
+              "Hey Yo!"
+            ],
+            "Id": "572dede0-a7f6-4fd9-80cd-6ceddcdad328",
+            "IsFolded": false,
+            "DisplayName": "Text Message",
+            "Position": {
+              "X": 5428.5004793668859,
+              "Y": 3070.8254895580772
+            }
+          }
+        ],
+        "Children": [],
+        "Id": "77dab635-a9a9-43fe-bbba-a348749ff6ba",
+        "IsFolded": false,
+        "DisplayName": "Response",
+        "Position": {
+          "X": 5635.48442991477,
+          "Y": 3032.7556823293658
+        }
+      },
+      "Id": "023267a3-8393-4028-82a7-1ba87b98176a",
+      "IsFolded": false,
+      "DisplayName": "Intent (greet_intent)",
+      "Position": {
+        "X": 5927.3247381273695,
+        "Y": 2957.8687680740309
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ExpressionListNode, Syn.Bot",
+      "ExpressionList": [
+        "Hello",
+        "Hi",
+        "Hi there"
+      ],
+      "Id": "33f5d255-887d-4b76-bc15-e5439948390e",
+      "IsFolded": false,
+      "DisplayName": "Expression List",
+      "Position": {
+        "X": 5634.506986305747,
+        "Y": 2824.1090657880122
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ResponseNode, Syn.Bot",
+      "Priority": "Normal",
+      "Hint": null,
+      "Type": null,
+      "Format": null,
+      "Text": null,
+      "ResponseMessages": [
+        {
+          "$type": "Syn.Bot.Oscova.WorkspaceNodes.TextMessageNode, Syn.Bot",
+          "TextItems": [
+            "Hi",
+            "Hello",
+            "Hi there",
+            "Hey Yo!"
+          ],
+          "Id": "572dede0-a7f6-4fd9-80cd-6ceddcdad328",
+          "IsFolded": false,
+          "DisplayName": "Text Message",
+          "Position": {
+            "X": 5428.5004793668859,
+            "Y": 3070.8254895580772
+          }
+        }
+      ],
+      "Children": [],
+      "Id": "77dab635-a9a9-43fe-bbba-a348749ff6ba",
+      "IsFolded": false,
+      "DisplayName": "Response",
+      "Position": {
+        "X": 5635.48442991477,
+        "Y": 3032.7556823293658
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.TextMessageNode, Syn.Bot",
+      "TextItems": [
+        "Hi",
+        "Hello",
+        "Hi there",
+        "Hey Yo!"
+      ],
+      "Id": "572dede0-a7f6-4fd9-80cd-6ceddcdad328",
+      "IsFolded": false,
+      "DisplayName": "Text Message",
+      "Position": {
+        "X": 5428.5004793668859,
+        "Y": 3070.8254895580772
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.DialogNode, Syn.Bot",
+      "DialogName": "name_dialog",
+      "IntentAlias": null,
+      "Domain": null,
+      "Intents": [
+        {
+          "IntentName": "name_intent",
+          "MinScore": 0.85,
+          "IntentContexts": [],
+          "Prompts": [],
+          "AutoEntity": null,
+          "Fallback": null,
+          "Trait": null,
+          "Event": null,
+          "Action": null,
+          "Expressions": [
+            {
+              "Value": "What`s your name",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "What is your name",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "Who are you",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "What`s your name",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "What is your name",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "Who are you",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "What`s your name",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "What is your name",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "Who are you",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "What`s your name",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "What is your name",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "Who are you",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            }
+          ],
+          "Response": {
+            "Priority": "Normal",
+            "Hint": null,
+            "Type": null,
+            "Format": null,
+            "Text": null,
+            "ResponseMessages": [
+              {
+                "$type": "Syn.Bot.Oscova.WorkspaceNodes.TextMessageNode, Syn.Bot",
+                "TextItems": [
+                  "Tobor",
+                  "My name is Tobor"
+                ],
+                "Id": "72daaa9c-6f4d-4056-923b-8faf2e1506ef",
+                "IsFolded": false,
+                "DisplayName": "Text Message",
+                "Position": {
+                  "X": 5367.8316012893374,
+                  "Y": 3662.9104445927246
+                }
+              }
+            ],
+            "Children": [],
+            "Id": "4f7fc37e-dd0a-4330-a2fa-36eee35cac58",
+            "IsFolded": false,
+            "DisplayName": "Response",
+            "Position": {
+              "X": 5673.1649346226723,
+              "Y": 3650.9104445927246
+            }
+          },
+          "Id": "c0229d64-0ce2-4d51-ae08-45869a166ad0",
+          "IsFolded": false,
+          "DisplayName": "Intent (name_intent)",
+          "Position": {
+            "X": 5932.5851026899009,
+            "Y": 3439.2948983742381
+          }
+        }
+      ],
+      "Events": [],
+      "Actions": [],
+      "Id": "691c1d03-7f54-4695-acdf-6749fe696a49",
+      "IsFolded": false,
+      "DisplayName": "Dialog (name_dialog)",
+      "Position": {
+        "X": 6145.1789402249133,
+        "Y": 3395.5357947327807
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.IntentNode, Syn.Bot",
+      "IntentName": "name_intent",
+      "MinScore": 0.85,
+      "IntentContexts": [],
+      "Prompts": [],
+      "AutoEntity": null,
+      "Fallback": null,
+      "Trait": null,
+      "Event": null,
+      "Action": null,
+      "Expressions": [
+        {
+          "Value": "What`s your name",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "What is your name",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "Who are you",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "What`s your name",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "What is your name",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "Who are you",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "What`s your name",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "What is your name",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "Who are you",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "What`s your name",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "What is your name",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "Who are you",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        }
+      ],
+      "Response": {
+        "Priority": "Normal",
+        "Hint": null,
+        "Type": null,
+        "Format": null,
+        "Text": null,
+        "ResponseMessages": [
+          {
+            "$type": "Syn.Bot.Oscova.WorkspaceNodes.TextMessageNode, Syn.Bot",
+            "TextItems": [
+              "Tobor",
+              "My name is Tobor"
+            ],
+            "Id": "72daaa9c-6f4d-4056-923b-8faf2e1506ef",
+            "IsFolded": false,
+            "DisplayName": "Text Message",
+            "Position": {
+              "X": 5367.8316012893374,
+              "Y": 3662.9104445927246
+            }
+          }
+        ],
+        "Children": [],
+        "Id": "4f7fc37e-dd0a-4330-a2fa-36eee35cac58",
+        "IsFolded": false,
+        "DisplayName": "Response",
+        "Position": {
+          "X": 5673.1649346226723,
+          "Y": 3650.9104445927246
+        }
+      },
+      "Id": "c0229d64-0ce2-4d51-ae08-45869a166ad0",
+      "IsFolded": false,
+      "DisplayName": "Intent (name_intent)",
+      "Position": {
+        "X": 5932.5851026899009,
+        "Y": 3439.2948983742381
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ExpressionListNode, Syn.Bot",
+      "ExpressionList": [
+        "What`s your name",
+        "What is your name",
+        "Who are you"
+      ],
+      "Id": "51f890b2-fd87-4084-a7cf-80029cb85d68",
+      "IsFolded": false,
+      "DisplayName": "Expression List",
+      "Position": {
+        "X": 5658.1495284602079,
+        "Y": 3421.4965790465053
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ResponseNode, Syn.Bot",
+      "Priority": "Normal",
+      "Hint": null,
+      "Type": null,
+      "Format": null,
+      "Text": null,
+      "ResponseMessages": [
+        {
+          "$type": "Syn.Bot.Oscova.WorkspaceNodes.TextMessageNode, Syn.Bot",
+          "TextItems": [
+            "Tobor",
+            "My name is Tobor"
+          ],
+          "Id": "72daaa9c-6f4d-4056-923b-8faf2e1506ef",
+          "IsFolded": false,
+          "DisplayName": "Text Message",
+          "Position": {
+            "X": 5367.8316012893374,
+            "Y": 3662.9104445927246
+          }
+        }
+      ],
+      "Children": [],
+      "Id": "4f7fc37e-dd0a-4330-a2fa-36eee35cac58",
+      "IsFolded": false,
+      "DisplayName": "Response",
+      "Position": {
+        "X": 5673.1649346226723,
+        "Y": 3650.9104445927246
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.TextMessageNode, Syn.Bot",
+      "TextItems": [
+        "Tobor",
+        "My name is Tobor"
+      ],
+      "Id": "72daaa9c-6f4d-4056-923b-8faf2e1506ef",
+      "IsFolded": false,
+      "DisplayName": "Text Message",
+      "Position": {
+        "X": 5367.8316012893374,
+        "Y": 3662.9104445927246
+      }
+    },
+    {
+      "$type": "Syn.Workspace.Nodes.InputOutput.InputNumberNode, Syn.Workspace",
+      "OutputValue": 0.85,
+      "Id": "23516c06-d857-4559-ad34-dd2b2e7ec2fe",
+      "IsFolded": false,
+      "DisplayName": "Input Number",
+      "Position": {
+        "X": 5810.7311535826266,
+        "Y": 3293.7076711864274
+      }
+    }
+  ],
+  "Connections": [
+    {
+      "FromNodeId": "942fc38c-0c89-47d2-b3b1-df10daf29877",
+      "FromPortName": "Output",
+      "ToNodeId": "fb51627b-cf02-4c72-8210-829aa4fb4676",
+      "ToPortName": "Dialogs"
+    },
+    {
+      "FromNodeId": "691c1d03-7f54-4695-acdf-6749fe696a49",
+      "FromPortName": "Output",
+      "ToNodeId": "fb51627b-cf02-4c72-8210-829aa4fb4676",
+      "ToPortName": "Dialogs"
+    },
+    {
+      "FromNodeId": "023267a3-8393-4028-82a7-1ba87b98176a",
+      "FromPortName": "Output",
+      "ToNodeId": "942fc38c-0c89-47d2-b3b1-df10daf29877",
+      "ToPortName": "Intents"
+    },
+    {
+      "FromNodeId": "33f5d255-887d-4b76-bc15-e5439948390e",
+      "FromPortName": "Expressions",
+      "ToNodeId": "023267a3-8393-4028-82a7-1ba87b98176a",
+      "ToPortName": "Expressions"
+    },
+    {
+      "FromNodeId": "77dab635-a9a9-43fe-bbba-a348749ff6ba",
+      "FromPortName": "Output",
+      "ToNodeId": "023267a3-8393-4028-82a7-1ba87b98176a",
+      "ToPortName": "Response"
+    },
+    {
+      "FromNodeId": "572dede0-a7f6-4fd9-80cd-6ceddcdad328",
+      "FromPortName": "Output",
+      "ToNodeId": "77dab635-a9a9-43fe-bbba-a348749ff6ba",
+      "ToPortName": "ResponseMessages"
+    },
+    {
+      "FromNodeId": "c0229d64-0ce2-4d51-ae08-45869a166ad0",
+      "FromPortName": "Output",
+      "ToNodeId": "691c1d03-7f54-4695-acdf-6749fe696a49",
+      "ToPortName": "Intents"
+    },
+    {
+      "FromNodeId": "23516c06-d857-4559-ad34-dd2b2e7ec2fe",
+      "FromPortName": "OutputValue",
+      "ToNodeId": "c0229d64-0ce2-4d51-ae08-45869a166ad0",
+      "ToPortName": "MinScore"
+    },
+    {
+      "FromNodeId": "51f890b2-fd87-4084-a7cf-80029cb85d68",
+      "FromPortName": "Expressions",
+      "ToNodeId": "c0229d64-0ce2-4d51-ae08-45869a166ad0",
+      "ToPortName": "Expressions"
+    },
+    {
+      "FromNodeId": "4f7fc37e-dd0a-4330-a2fa-36eee35cac58",
+      "FromPortName": "Output",
+      "ToNodeId": "c0229d64-0ce2-4d51-ae08-45869a166ad0",
+      "ToPortName": "Response"
+    },
+    {
+      "FromNodeId": "72daaa9c-6f4d-4056-923b-8faf2e1506ef",
+      "FromPortName": "Output",
+      "ToNodeId": "4f7fc37e-dd0a-4330-a2fa-36eee35cac58",
+      "ToPortName": "ResponseMessages"
+    }
+  ]
+}

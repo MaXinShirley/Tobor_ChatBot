@@ -1,0 +1,4268 @@
+{
+  "GraphVersion": "1.5.0.0",
+  "UserNote": "This demo workspace shows how:\r\n\r\n1. Create dialogs intents\r\n2. Create entities\r\n3. Create fallbacks\r\n4. Add Expressions\r\n5. Add contexts\r\n6. How to work with Variables\r\n7. How to re-use and connect nodes to multiple parents.\r\n\r\nFinally it shows how you can test your bot within the workspace.",
+  "Nodes": [
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.OscovaPanelNode, Syn.Bot",
+      "OscovaBotNode": {
+        "Dialogs": [
+          {
+            "DialogName": "start_dialog",
+            "IntentAlias": null,
+            "Domain": null,
+            "Intents": [
+              {
+                "IntentName": "start_intent",
+                "MinScore": 0.0,
+                "IntentContexts": [],
+                "Prompts": [],
+                "AutoEntity": null,
+                "Fallback": null,
+                "Trait": null,
+                "Event": null,
+                "Action": null,
+                "Expressions": [
+                  {
+                    "Value": "@start",
+                    "ExpressionName": null,
+                    "Id": null,
+                    "IsFolded": false,
+                    "DisplayName": "Expression",
+                    "Position": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    }
+                  },
+                  {
+                    "Value": "hi there",
+                    "ExpressionName": null,
+                    "Id": null,
+                    "IsFolded": false,
+                    "DisplayName": "Expression",
+                    "Position": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    }
+                  },
+                  {
+                    "Value": "hello",
+                    "ExpressionName": null,
+                    "Id": null,
+                    "IsFolded": false,
+                    "DisplayName": "Expression",
+                    "Position": {
+                      "X": 0.0,
+                      "Y": 0.0
+                    }
+                  }
+                ],
+                "Response": {
+                  "Priority": "Normal",
+                  "Hint": "Small|Medium|Large|Extra Large",
+                  "Type": null,
+                  "Format": null,
+                  "Text": "Hi! lets build your pizze. To Begin I'll need you to specify the size of the pizza. (Small | Medium | Large)",
+                  "ResponseMessages": [],
+                  "Children": [],
+                  "Id": "043283de-3b91-4516-8def-ce9958e721c9",
+                  "IsFolded": false,
+                  "DisplayName": "Response",
+                  "Position": {
+                    "X": 3553.9846999405845,
+                    "Y": 1889.9236654470396
+                  }
+                },
+                "Id": "0ffc59e9-3470-44cf-b7f9-c66ae7f35046",
+                "IsFolded": false,
+                "DisplayName": "Intent (start_intent)",
+                "Position": {
+                  "X": 3976.7297979797959,
+                  "Y": 1599.6095959595948
+                }
+              },
+              {
+                "IntentName": "size_fallback",
+                "MinScore": 0.0,
+                "IntentContexts": [],
+                "Prompts": [],
+                "AutoEntity": null,
+                "Fallback": {
+                  "ContextName": "con-wait-size",
+                  "Id": "6e56bbe6-5ca5-4d3c-bceb-bd39c72d3531",
+                  "IsFolded": false,
+                  "DisplayName": "Fallback",
+                  "Position": {
+                    "X": 3597.5958607955527,
+                    "Y": 2227.5759440421944
+                  }
+                },
+                "Trait": null,
+                "Event": null,
+                "Action": null,
+                "Expressions": [],
+                "Response": {
+                  "Priority": "Normal",
+                  "Hint": "Small|Medium|Large|Extra Large",
+                  "Type": null,
+                  "Format": null,
+                  "Text": "That doesn't seem like a valid pizza size. Please select an option.",
+                  "ResponseMessages": [],
+                  "Children": [],
+                  "Id": "4b43a10a-d598-43b6-b0e0-1c442fa89322",
+                  "IsFolded": false,
+                  "DisplayName": "Response",
+                  "Position": {
+                    "X": 3543.8703705994735,
+                    "Y": 2364.1118917546132
+                  }
+                },
+                "Id": "02f642b8-f96d-4b96-8bb7-66a59f42800a",
+                "IsFolded": false,
+                "DisplayName": "Intent (size_fallback)",
+                "Position": {
+                  "X": 3936.4847496844409,
+                  "Y": 2292.0203884866387
+                }
+              }
+            ],
+            "Events": [],
+            "Actions": [],
+            "Id": "8a6cbf20-2e22-496d-9e7e-dfb48c5c0ead",
+            "IsFolded": false,
+            "DisplayName": "Dialog (start_dialog)",
+            "Position": {
+              "X": 4454.7597125097118,
+              "Y": 1841.7890831390823
+            }
+          },
+          {
+            "DialogName": "size_dialog",
+            "IntentAlias": null,
+            "Domain": null,
+            "Intents": [
+              {
+                "IntentName": "size_intent",
+                "MinScore": 0.0,
+                "IntentContexts": [
+                  {
+                    "ContextName": "con-wait-size",
+                    "Id": "9dd0ef99-550d-49c2-ba16-f65bf99b3a41",
+                    "IsFolded": false,
+                    "DisplayName": "Context",
+                    "Position": {
+                      "X": 3606.9223912482348,
+                      "Y": 2707.34655345402
+                    }
+                  }
+                ],
+                "Prompts": [],
+                "AutoEntity": null,
+                "Fallback": null,
+                "Trait": null,
+                "Event": null,
+                "Action": null,
+                "Expressions": [
+                  {
+                    "Value": "@pizza-size",
+                    "ExpressionName": null,
+                    "Id": "ce311ba0-1095-4fa7-87b1-bfab13878986",
+                    "IsFolded": false,
+                    "DisplayName": "Expression",
+                    "Position": {
+                      "X": 3606.2118068960826,
+                      "Y": 2866.9515519687684
+                    }
+                  }
+                ],
+                "Response": {
+                  "Priority": "Normal",
+                  "Hint": "Olives|Garlic|Onions",
+                  "Type": null,
+                  "Format": null,
+                  "Text": "So $sys.user.size it is. Now what would the toppings be? (Garlic | Onions | Olives)",
+                  "ResponseMessages": [],
+                  "Children": [],
+                  "Id": "f5f53e38-e1f0-4aa5-b319-118e2fbaea52",
+                  "IsFolded": false,
+                  "DisplayName": "Response",
+                  "Position": {
+                    "X": 3778.572918007193,
+                    "Y": 3054.0348853021014
+                  }
+                },
+                "Id": "c41d8455-6589-4038-ba32-f035a8753362",
+                "IsFolded": false,
+                "DisplayName": "Intent (size_intent)",
+                "Position": {
+                  "X": 4028.5729180071958,
+                  "Y": 2748.7015519687684
+                }
+              }
+            ],
+            "Events": [],
+            "Actions": [],
+            "Id": "29c94b76-6eaa-46ed-a8fd-8424345c1801",
+            "IsFolded": false,
+            "DisplayName": "Dialog (size_dialog)",
+            "Position": {
+              "X": 4285.5925825531749,
+              "Y": 2681.2445119327795
+            }
+          },
+          {
+            "DialogName": "toppings_dialog",
+            "IntentAlias": null,
+            "Domain": null,
+            "Intents": [
+              {
+                "IntentName": "toppings_intent",
+                "MinScore": 0.0,
+                "IntentContexts": [
+                  {
+                    "ContextName": "con-wait-top",
+                    "Id": "39046a4d-4186-4f12-a5dc-c7515c31a787",
+                    "IsFolded": false,
+                    "DisplayName": "Context",
+                    "Position": {
+                      "X": 2587.2295481436277,
+                      "Y": 3291.9047828063658
+                    }
+                  }
+                ],
+                "Prompts": [],
+                "AutoEntity": null,
+                "Fallback": null,
+                "Trait": null,
+                "Event": null,
+                "Action": null,
+                "Expressions": [
+                  {
+                    "Value": "@pizza-top",
+                    "ExpressionName": null,
+                    "Id": "374e0279-b1c8-452a-bad6-bf635aff8b96",
+                    "IsFolded": false,
+                    "DisplayName": "Expression",
+                    "Position": {
+                      "X": 2587.7720442612012,
+                      "Y": 3436.9415511561047
+                    }
+                  }
+                ],
+                "Response": {
+                  "Priority": "Normal",
+                  "Hint": "Yes|No",
+                  "Type": null,
+                  "Format": null,
+                  "Text": "Aha $pizza-top is a good choice. Would you like to add another topping?  (Yes | No)",
+                  "ResponseMessages": [],
+                  "Children": [],
+                  "Id": "7835e9ef-b9d8-4c48-9906-1ea009e8b3f4",
+                  "IsFolded": false,
+                  "DisplayName": "Response",
+                  "Position": {
+                    "X": 2383.2829794044887,
+                    "Y": 3682.734537581443
+                  }
+                },
+                "Id": "b96cf069-8e05-4b50-abe2-918f2773860f",
+                "IsFolded": false,
+                "DisplayName": "Intent (toppings_intent)",
+                "Position": {
+                  "X": 3001.8254630646215,
+                  "Y": 3380.7420790595725
+                }
+              },
+              {
+                "IntentName": "more_top_yes",
+                "MinScore": 0.0,
+                "IntentContexts": [
+                  {
+                    "ContextName": "con-more-top",
+                    "Id": "fc29bd13-580f-413d-becf-265420035952",
+                    "IsFolded": false,
+                    "DisplayName": "Context",
+                    "Position": {
+                      "X": 3127.0678560345659,
+                      "Y": 4152.9756648826651
+                    }
+                  }
+                ],
+                "Prompts": [],
+                "AutoEntity": null,
+                "Fallback": null,
+                "Trait": null,
+                "Event": null,
+                "Action": null,
+                "Expressions": [
+                  {
+                    "Value": "@sys.positive",
+                    "ExpressionName": null,
+                    "Id": "c6da4821-7f8a-4fed-a9e2-fd6d35389c66",
+                    "IsFolded": false,
+                    "DisplayName": "Expression",
+                    "Position": {
+                      "X": 3133.879170383907,
+                      "Y": 4279.4121464587161
+                    }
+                  }
+                ],
+                "Response": {
+                  "Priority": "Normal",
+                  "Hint": "Olives|Garlic|Onions",
+                  "Type": null,
+                  "Format": null,
+                  "Text": "Please select your second topping.  (Garlic | Olives | Onions)",
+                  "ResponseMessages": [],
+                  "Children": [],
+                  "Id": "673e41d7-a603-40f4-9bbd-ce06eb4d14e0",
+                  "IsFolded": false,
+                  "DisplayName": "Response",
+                  "Position": {
+                    "X": 3023.5545916258952,
+                    "Y": 4478.3932585698612
+                  }
+                },
+                "Id": "f445f6e0-02f9-4b92-ad90-473cd4fbb5c2",
+                "IsFolded": false,
+                "DisplayName": "Intent (more_top_yes)",
+                "Position": {
+                  "X": 3429.2555490604964,
+                  "Y": 4206.4976935076365
+                }
+              },
+              {
+                "IntentName": "plus_toppings",
+                "MinScore": 0.0,
+                "IntentContexts": [
+                  {
+                    "ContextName": "con-plus-top",
+                    "Id": "3bb0215f-6653-4b6b-98a5-401c089308dc",
+                    "IsFolded": false,
+                    "DisplayName": "Context",
+                    "Position": {
+                      "X": 3009.3575917900048,
+                      "Y": 4997.1844574929837
+                    }
+                  }
+                ],
+                "Prompts": [],
+                "AutoEntity": null,
+                "Fallback": null,
+                "Trait": null,
+                "Event": null,
+                "Action": null,
+                "Expressions": [
+                  {
+                    "Value": "@pizza-top",
+                    "ExpressionName": null,
+                    "Id": "1b915474-2d2f-427b-9646-d21a0de5078d",
+                    "IsFolded": false,
+                    "DisplayName": "Expression",
+                    "Position": {
+                      "X": 2902.4689667917255,
+                      "Y": 5129.3901949443843
+                    }
+                  }
+                ],
+                "Response": {
+                  "Priority": "Normal",
+                  "Hint": "Classic|Stuffed|Thin",
+                  "Type": null,
+                  "Format": null,
+                  "Text": "Moving forward, what is your crust preference? (Classic | Stuffed | Thin)",
+                  "ResponseMessages": [],
+                  "Children": [],
+                  "Id": "5e508225-1968-4e36-ad0b-833b1519829d",
+                  "IsFolded": false,
+                  "DisplayName": "Response",
+                  "Position": {
+                    "X": 2868.8870035547116,
+                    "Y": 5344.1648496498456
+                  }
+                },
+                "Id": "c5315c5d-91dc-4604-b78d-2950c48fb28f",
+                "IsFolded": false,
+                "DisplayName": "Intent (plus_toppings)",
+                "Position": {
+                  "X": 3380.9852304911742,
+                  "Y": 5101.7773482623461
+                }
+              },
+              {
+                "IntentName": "more_top_no",
+                "MinScore": 0.0,
+                "IntentContexts": [],
+                "Prompts": [],
+                "AutoEntity": null,
+                "Fallback": null,
+                "Trait": null,
+                "Event": null,
+                "Action": null,
+                "Expressions": [
+                  {
+                    "Value": "@sys.negative",
+                    "ExpressionName": null,
+                    "Id": "41a71ee3-979c-43e2-a17f-5926f5418334",
+                    "IsFolded": false,
+                    "DisplayName": "Expression",
+                    "Position": {
+                      "X": 3275.9631462448842,
+                      "Y": 6056.3740856666645
+                    }
+                  }
+                ],
+                "Response": {
+                  "Priority": "Normal",
+                  "Hint": "Classic|Stuffed|Thin",
+                  "Type": null,
+                  "Format": null,
+                  "Text": "Moving forward, what is your crust preference? (Classic | Stuffed | Thin)",
+                  "ResponseMessages": [],
+                  "Children": [],
+                  "Id": "61dff21c-e8ff-420f-9ab7-5da2ab11f0a1",
+                  "IsFolded": false,
+                  "DisplayName": "Response",
+                  "Position": {
+                    "X": 2699.6517682018302,
+                    "Y": 6050.7722667425542
+                  }
+                },
+                "Id": "848c4f47-5de9-4e4d-9f35-97b46067b6bf",
+                "IsFolded": false,
+                "DisplayName": "Intent (more_top_no)",
+                "Position": {
+                  "X": 3565.1605687241267,
+                  "Y": 6073.9846083105931
+                }
+              }
+            ],
+            "Events": [],
+            "Actions": [],
+            "Id": "05b000a2-e0e5-42f2-bba4-8913aacf4a48",
+            "IsFolded": false,
+            "DisplayName": "Dialog (toppings_dialog)",
+            "Position": {
+              "X": 4288.0918029339064,
+              "Y": 3542.9961240342082
+            }
+          },
+          {
+            "DialogName": "crust_dialog",
+            "IntentAlias": null,
+            "Domain": null,
+            "Intents": [
+              {
+                "IntentName": "crust_intent",
+                "MinScore": 0.0,
+                "IntentContexts": [
+                  {
+                    "ContextName": "con-wait-crust",
+                    "Id": "bb6d0609-dabc-4a62-9d0c-98944fd601a2",
+                    "IsFolded": false,
+                    "DisplayName": "Context",
+                    "Position": {
+                      "X": 2801.7825457361973,
+                      "Y": 6364.81719530814
+                    }
+                  }
+                ],
+                "Prompts": [],
+                "AutoEntity": null,
+                "Fallback": null,
+                "Trait": null,
+                "Event": null,
+                "Action": null,
+                "Expressions": [
+                  {
+                    "Value": "@pizza-crust",
+                    "ExpressionName": null,
+                    "Id": "289f6ba6-0953-4376-8007-95847fbe50ac",
+                    "IsFolded": false,
+                    "DisplayName": "Expression",
+                    "Position": {
+                      "X": 2791.5752464283873,
+                      "Y": 6508.4767161152986
+                    }
+                  }
+                ],
+                "Response": {
+                  "Priority": "Normal",
+                  "Hint": null,
+                  "Type": null,
+                  "Format": null,
+                  "Text": "Alright you're pizza will have $sys.user.crust crust. Please now specify your delivery address.",
+                  "ResponseMessages": [],
+                  "Children": [],
+                  "Id": "218ce37f-b53e-49d0-93c4-7cb517001e2a",
+                  "IsFolded": false,
+                  "DisplayName": "Response",
+                  "Position": {
+                    "X": 2796.7782243593538,
+                    "Y": 6676.838181526532
+                  }
+                },
+                "Id": "fb94795e-a040-4416-a502-d7da99d26533",
+                "IsFolded": false,
+                "DisplayName": "Intent (crust_intent)",
+                "Position": {
+                  "X": 3216.343231244155,
+                  "Y": 6518.0322115620966
+                }
+              },
+              {
+                "IntentName": "end_intent",
+                "MinScore": 0.0,
+                "IntentContexts": [
+                  {
+                    "ContextName": "con-wait-address",
+                    "Id": "d6bab686-37b0-4ad5-bde0-42ca8b6661b0",
+                    "IsFolded": false,
+                    "DisplayName": "Context",
+                    "Position": {
+                      "X": 3013.9073697698691,
+                      "Y": 7436.9756474507194
+                    }
+                  }
+                ],
+                "Prompts": [],
+                "AutoEntity": null,
+                "Fallback": null,
+                "Trait": null,
+                "Event": null,
+                "Action": null,
+                "Expressions": [
+                  {
+                    "Value": "@sys.text",
+                    "ExpressionName": null,
+                    "Id": "f50882c9-9c5a-4bdb-a2ce-ee19100d3d80",
+                    "IsFolded": false,
+                    "DisplayName": "Expression",
+                    "Position": {
+                      "X": 3020.7995044171516,
+                      "Y": 7596.4798221386482
+                    }
+                  }
+                ],
+                "Response": {
+                  "Priority": "Normal",
+                  "Hint": null,
+                  "Type": null,
+                  "Format": null,
+                  "Text": "Thank you! Your Pizza:\r\n\r\nSize: $sys.user.size\r\nToppings Primary: $sys.user.top1\r\nToppings Secondary: $sys.user.top2\r\nCrust: $sys.user.crust\r\n\r\nWill be delivered to :\r\n\r\nAddress: $sys.text",
+                  "ResponseMessages": [],
+                  "Children": [],
+                  "Id": "eece7cbe-3ee7-4972-94a6-28bdcc2612e8",
+                  "IsFolded": false,
+                  "DisplayName": "Response",
+                  "Position": {
+                    "X": 3023.1804567981044,
+                    "Y": 7777.82181348064
+                  }
+                },
+                "Id": "22c9b79c-0de3-479d-98fd-c415c2455ebb",
+                "IsFolded": false,
+                "DisplayName": "Intent (end_intent)",
+                "Position": {
+                  "X": 3289.7435668906255,
+                  "Y": 7540.2114238702516
+                }
+              }
+            ],
+            "Events": [],
+            "Actions": [],
+            "Id": "1ee676bf-46ba-4010-a79c-83cc5cd9c35e",
+            "IsFolded": false,
+            "DisplayName": "Dialog (crust_dialog)",
+            "Position": {
+              "X": 3972.4557240145409,
+              "Y": 6895.57242573389
+            }
+          }
+        ],
+        "Entities": [
+          {
+            "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryEntityCreatorNode, Syn.Bot",
+            "EntityType": "start",
+            "Entries": [
+              {
+                "EntryValue": "start",
+                "Synonyms": [
+                  "run"
+                ],
+                "Id": "3c74248e-cbe0-4308-8585-30da073381c2",
+                "IsFolded": false,
+                "DisplayName": "Entry",
+                "Position": {
+                  "X": 3771.3935574229663,
+                  "Y": 7709.6182539682586
+                }
+              }
+            ],
+            "Id": "817aa6ab-c0db-4c51-996f-9354a0330462",
+            "IsFolded": false,
+            "DisplayName": "Entry Recognizer",
+            "Position": {
+              "X": 4054.172735760968,
+              "Y": 7815.8376750700327
+            }
+          },
+          {
+            "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryEntityCreatorNode, Syn.Bot",
+            "EntityType": "pizza-size",
+            "Entries": [
+              {
+                "EntryValue": "small",
+                "Synonyms": [],
+                "Id": "55f807d1-47cb-40cc-bc8b-f197640018a5",
+                "IsFolded": false,
+                "DisplayName": "Entry",
+                "Position": {
+                  "X": 3525.6434137757674,
+                  "Y": 7930.5757229698384
+                }
+              },
+              {
+                "EntryValue": "medium",
+                "Synonyms": [
+                  "normal"
+                ],
+                "Id": "703b9cab-0164-4781-9531-baaeb0367447",
+                "IsFolded": false,
+                "DisplayName": "Entry",
+                "Position": {
+                  "X": 3533.4067615391155,
+                  "Y": 8126.3621587562811
+                }
+              },
+              {
+                "EntryValue": "large",
+                "Synonyms": [
+                  "big"
+                ],
+                "Id": "4c19f45d-254f-4c8c-a0f0-509c016528bc",
+                "IsFolded": false,
+                "DisplayName": "Entry",
+                "Position": {
+                  "X": 3538.6650587974123,
+                  "Y": 8356.5035728976945
+                }
+              },
+              {
+                "EntryValue": "extra large",
+                "Synonyms": [],
+                "Id": "ae649713-aeb9-4d96-9f16-e837483f6e76",
+                "IsFolded": false,
+                "DisplayName": "Entry",
+                "Position": {
+                  "X": 3542.4705082499217,
+                  "Y": 8579.6963409139935
+                }
+              }
+            ],
+            "Id": "3d33a9a7-5a6e-440d-8a83-12c1a502586a",
+            "IsFolded": false,
+            "DisplayName": "Entry Recognizer",
+            "Position": {
+              "X": 4053.479633111986,
+              "Y": 7973.1103550044736
+            }
+          },
+          {
+            "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryEntityCreatorNode, Syn.Bot",
+            "EntityType": "pizza-top",
+            "Entries": [
+              {
+                "EntryValue": "Garlic",
+                "Synonyms": [],
+                "Id": "c8a88935-f0ac-4888-9360-9c08240f31f5",
+                "IsFolded": false,
+                "DisplayName": "Entry",
+                "Position": {
+                  "X": 3546.9923891897574,
+                  "Y": 8805.13362748363
+                }
+              },
+              {
+                "EntryValue": "Olives",
+                "Synonyms": [
+                  "olive"
+                ],
+                "Id": "1b42975a-a6cf-47c6-9ee5-cbdf3f7eacce",
+                "IsFolded": false,
+                "DisplayName": "Entry",
+                "Position": {
+                  "X": 3549.111436808807,
+                  "Y": 9009.9193417693477
+                }
+              },
+              {
+                "EntryValue": "Onions",
+                "Synonyms": [
+                  "onion"
+                ],
+                "Id": "f5043747-f618-4aed-b64c-d5a792068c67",
+                "IsFolded": false,
+                "DisplayName": "Entry",
+                "Position": {
+                  "X": 3552.3467309264529,
+                  "Y": 9220.89973392621
+                }
+              }
+            ],
+            "Id": "ab41b78e-7b5e-4f4d-81ba-a550407ed28f",
+            "IsFolded": false,
+            "DisplayName": "Entry Recognizer",
+            "Position": {
+              "X": 4052.5597662571336,
+              "Y": 8179.73935508936
+            }
+          },
+          {
+            "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryEntityCreatorNode, Syn.Bot",
+            "EntityType": "pizza-crust",
+            "Entries": [
+              {
+                "EntryValue": "Stuffed",
+                "Synonyms": [
+                  "stuff",
+                  "thick"
+                ],
+                "Id": "e058fab7-046d-4eef-8936-80397e622603",
+                "IsFolded": false,
+                "DisplayName": "Entry",
+                "Position": {
+                  "X": 3566.0070501747587,
+                  "Y": 9454.5516295366269
+                }
+              },
+              {
+                "EntryValue": "Classic",
+                "Synonyms": [],
+                "Id": "9e4724c4-82c5-42af-b671-e5e41b8a368b",
+                "IsFolded": false,
+                "DisplayName": "Entry",
+                "Position": {
+                  "X": 3565.7570501747587,
+                  "Y": 9705.5516295366269
+                }
+              },
+              {
+                "EntryValue": "Thin",
+                "Synonyms": [
+                  "small"
+                ],
+                "Id": "a6663fdd-66ce-4de2-826f-111c4b9e3f09",
+                "IsFolded": false,
+                "DisplayName": "Entry",
+                "Position": {
+                  "X": 3572.4237168414252,
+                  "Y": 9904.3849628699572
+                }
+              }
+            ],
+            "Id": "17c6b45c-8dac-417b-8058-f26d7e730308",
+            "IsFolded": false,
+            "DisplayName": "Entry Recognizer",
+            "Position": {
+              "X": 4053.4742218919318,
+              "Y": 8407.4177911527913
+            }
+          }
+        ],
+        "Traits": [],
+        "Scripts": [],
+        "Filters": [],
+        "BotSettings": null,
+        "UserSettings": {
+          "Variables": [
+            {
+              "VariableName": "top2",
+              "VariableValue": "Not Specified",
+              "ValueCollection": [],
+              "Id": "230ec49c-9bfa-403c-8b7b-614816c15b69",
+              "IsFolded": false,
+              "DisplayName": "Settings Variable",
+              "Position": {
+                "X": 4555.4839942118178,
+                "Y": 3936.023139861989
+              }
+            }
+          ],
+          "Id": "cb20c2ee-ba4a-4cc1-b0b4-0368ea50c1b0",
+          "IsFolded": false,
+          "DisplayName": "User Settings",
+          "Position": {
+            "X": 4776.9720894499133,
+            "Y": 3852.4026916827174
+          }
+        },
+        "SimlNodes": [],
+        "Id": "20126592-396f-477b-b6d3-e195e320e875",
+        "IsFolded": false,
+        "DisplayName": "Oscova Bot",
+        "Position": {
+          "X": 5264.1666666666661,
+          "Y": 3404.9277777777779
+        }
+      },
+      "Id": "d112bfee-fa18-44c3-9d60-61d9e359bbab",
+      "IsFolded": false,
+      "DisplayName": "Oscova Test Panel",
+      "Position": {
+        "X": 5602.4444444444453,
+        "Y": 2939.7126262626266
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.OscovaBotNode, Syn.Bot",
+      "Dialogs": [
+        {
+          "DialogName": "start_dialog",
+          "IntentAlias": null,
+          "Domain": null,
+          "Intents": [
+            {
+              "IntentName": "start_intent",
+              "MinScore": 0.0,
+              "IntentContexts": [],
+              "Prompts": [],
+              "AutoEntity": null,
+              "Fallback": null,
+              "Trait": null,
+              "Event": null,
+              "Action": null,
+              "Expressions": [
+                {
+                  "Value": "@start",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "hi there",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                },
+                {
+                  "Value": "hello",
+                  "ExpressionName": null,
+                  "Id": null,
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 0.0,
+                    "Y": 0.0
+                  }
+                }
+              ],
+              "Response": {
+                "Priority": "Normal",
+                "Hint": "Small|Medium|Large|Extra Large",
+                "Type": null,
+                "Format": null,
+                "Text": "Hi! lets build your pizze. To Begin I'll need you to specify the size of the pizza. (Small | Medium | Large)",
+                "ResponseMessages": [],
+                "Children": [],
+                "Id": "043283de-3b91-4516-8def-ce9958e721c9",
+                "IsFolded": false,
+                "DisplayName": "Response",
+                "Position": {
+                  "X": 3553.9846999405845,
+                  "Y": 1889.9236654470396
+                }
+              },
+              "Id": "0ffc59e9-3470-44cf-b7f9-c66ae7f35046",
+              "IsFolded": false,
+              "DisplayName": "Intent (start_intent)",
+              "Position": {
+                "X": 3976.7297979797959,
+                "Y": 1599.6095959595948
+              }
+            },
+            {
+              "IntentName": "size_fallback",
+              "MinScore": 0.0,
+              "IntentContexts": [],
+              "Prompts": [],
+              "AutoEntity": null,
+              "Fallback": {
+                "ContextName": "con-wait-size",
+                "Id": "6e56bbe6-5ca5-4d3c-bceb-bd39c72d3531",
+                "IsFolded": false,
+                "DisplayName": "Fallback",
+                "Position": {
+                  "X": 3597.5958607955527,
+                  "Y": 2227.5759440421944
+                }
+              },
+              "Trait": null,
+              "Event": null,
+              "Action": null,
+              "Expressions": [],
+              "Response": {
+                "Priority": "Normal",
+                "Hint": "Small|Medium|Large|Extra Large",
+                "Type": null,
+                "Format": null,
+                "Text": "That doesn't seem like a valid pizza size. Please select an option.",
+                "ResponseMessages": [],
+                "Children": [],
+                "Id": "4b43a10a-d598-43b6-b0e0-1c442fa89322",
+                "IsFolded": false,
+                "DisplayName": "Response",
+                "Position": {
+                  "X": 3543.8703705994735,
+                  "Y": 2364.1118917546132
+                }
+              },
+              "Id": "02f642b8-f96d-4b96-8bb7-66a59f42800a",
+              "IsFolded": false,
+              "DisplayName": "Intent (size_fallback)",
+              "Position": {
+                "X": 3936.4847496844409,
+                "Y": 2292.0203884866387
+              }
+            }
+          ],
+          "Events": [],
+          "Actions": [],
+          "Id": "8a6cbf20-2e22-496d-9e7e-dfb48c5c0ead",
+          "IsFolded": false,
+          "DisplayName": "Dialog (start_dialog)",
+          "Position": {
+            "X": 4454.7597125097118,
+            "Y": 1841.7890831390823
+          }
+        },
+        {
+          "DialogName": "size_dialog",
+          "IntentAlias": null,
+          "Domain": null,
+          "Intents": [
+            {
+              "IntentName": "size_intent",
+              "MinScore": 0.0,
+              "IntentContexts": [
+                {
+                  "ContextName": "con-wait-size",
+                  "Id": "9dd0ef99-550d-49c2-ba16-f65bf99b3a41",
+                  "IsFolded": false,
+                  "DisplayName": "Context",
+                  "Position": {
+                    "X": 3606.9223912482348,
+                    "Y": 2707.34655345402
+                  }
+                }
+              ],
+              "Prompts": [],
+              "AutoEntity": null,
+              "Fallback": null,
+              "Trait": null,
+              "Event": null,
+              "Action": null,
+              "Expressions": [
+                {
+                  "Value": "@pizza-size",
+                  "ExpressionName": null,
+                  "Id": "ce311ba0-1095-4fa7-87b1-bfab13878986",
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 3606.2118068960826,
+                    "Y": 2866.9515519687684
+                  }
+                }
+              ],
+              "Response": {
+                "Priority": "Normal",
+                "Hint": "Olives|Garlic|Onions",
+                "Type": null,
+                "Format": null,
+                "Text": "So $sys.user.size it is. Now what would the toppings be? (Garlic | Onions | Olives)",
+                "ResponseMessages": [],
+                "Children": [],
+                "Id": "f5f53e38-e1f0-4aa5-b319-118e2fbaea52",
+                "IsFolded": false,
+                "DisplayName": "Response",
+                "Position": {
+                  "X": 3778.572918007193,
+                  "Y": 3054.0348853021014
+                }
+              },
+              "Id": "c41d8455-6589-4038-ba32-f035a8753362",
+              "IsFolded": false,
+              "DisplayName": "Intent (size_intent)",
+              "Position": {
+                "X": 4028.5729180071958,
+                "Y": 2748.7015519687684
+              }
+            }
+          ],
+          "Events": [],
+          "Actions": [],
+          "Id": "29c94b76-6eaa-46ed-a8fd-8424345c1801",
+          "IsFolded": false,
+          "DisplayName": "Dialog (size_dialog)",
+          "Position": {
+            "X": 4285.5925825531749,
+            "Y": 2681.2445119327795
+          }
+        },
+        {
+          "DialogName": "toppings_dialog",
+          "IntentAlias": null,
+          "Domain": null,
+          "Intents": [
+            {
+              "IntentName": "toppings_intent",
+              "MinScore": 0.0,
+              "IntentContexts": [
+                {
+                  "ContextName": "con-wait-top",
+                  "Id": "39046a4d-4186-4f12-a5dc-c7515c31a787",
+                  "IsFolded": false,
+                  "DisplayName": "Context",
+                  "Position": {
+                    "X": 2587.2295481436277,
+                    "Y": 3291.9047828063658
+                  }
+                }
+              ],
+              "Prompts": [],
+              "AutoEntity": null,
+              "Fallback": null,
+              "Trait": null,
+              "Event": null,
+              "Action": null,
+              "Expressions": [
+                {
+                  "Value": "@pizza-top",
+                  "ExpressionName": null,
+                  "Id": "374e0279-b1c8-452a-bad6-bf635aff8b96",
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 2587.7720442612012,
+                    "Y": 3436.9415511561047
+                  }
+                }
+              ],
+              "Response": {
+                "Priority": "Normal",
+                "Hint": "Yes|No",
+                "Type": null,
+                "Format": null,
+                "Text": "Aha $pizza-top is a good choice. Would you like to add another topping?  (Yes | No)",
+                "ResponseMessages": [],
+                "Children": [],
+                "Id": "7835e9ef-b9d8-4c48-9906-1ea009e8b3f4",
+                "IsFolded": false,
+                "DisplayName": "Response",
+                "Position": {
+                  "X": 2383.2829794044887,
+                  "Y": 3682.734537581443
+                }
+              },
+              "Id": "b96cf069-8e05-4b50-abe2-918f2773860f",
+              "IsFolded": false,
+              "DisplayName": "Intent (toppings_intent)",
+              "Position": {
+                "X": 3001.8254630646215,
+                "Y": 3380.7420790595725
+              }
+            },
+            {
+              "IntentName": "more_top_yes",
+              "MinScore": 0.0,
+              "IntentContexts": [
+                {
+                  "ContextName": "con-more-top",
+                  "Id": "fc29bd13-580f-413d-becf-265420035952",
+                  "IsFolded": false,
+                  "DisplayName": "Context",
+                  "Position": {
+                    "X": 3127.0678560345659,
+                    "Y": 4152.9756648826651
+                  }
+                }
+              ],
+              "Prompts": [],
+              "AutoEntity": null,
+              "Fallback": null,
+              "Trait": null,
+              "Event": null,
+              "Action": null,
+              "Expressions": [
+                {
+                  "Value": "@sys.positive",
+                  "ExpressionName": null,
+                  "Id": "c6da4821-7f8a-4fed-a9e2-fd6d35389c66",
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 3133.879170383907,
+                    "Y": 4279.4121464587161
+                  }
+                }
+              ],
+              "Response": {
+                "Priority": "Normal",
+                "Hint": "Olives|Garlic|Onions",
+                "Type": null,
+                "Format": null,
+                "Text": "Please select your second topping.  (Garlic | Olives | Onions)",
+                "ResponseMessages": [],
+                "Children": [],
+                "Id": "673e41d7-a603-40f4-9bbd-ce06eb4d14e0",
+                "IsFolded": false,
+                "DisplayName": "Response",
+                "Position": {
+                  "X": 3023.5545916258952,
+                  "Y": 4478.3932585698612
+                }
+              },
+              "Id": "f445f6e0-02f9-4b92-ad90-473cd4fbb5c2",
+              "IsFolded": false,
+              "DisplayName": "Intent (more_top_yes)",
+              "Position": {
+                "X": 3429.2555490604964,
+                "Y": 4206.4976935076365
+              }
+            },
+            {
+              "IntentName": "plus_toppings",
+              "MinScore": 0.0,
+              "IntentContexts": [
+                {
+                  "ContextName": "con-plus-top",
+                  "Id": "3bb0215f-6653-4b6b-98a5-401c089308dc",
+                  "IsFolded": false,
+                  "DisplayName": "Context",
+                  "Position": {
+                    "X": 3009.3575917900048,
+                    "Y": 4997.1844574929837
+                  }
+                }
+              ],
+              "Prompts": [],
+              "AutoEntity": null,
+              "Fallback": null,
+              "Trait": null,
+              "Event": null,
+              "Action": null,
+              "Expressions": [
+                {
+                  "Value": "@pizza-top",
+                  "ExpressionName": null,
+                  "Id": "1b915474-2d2f-427b-9646-d21a0de5078d",
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 2902.4689667917255,
+                    "Y": 5129.3901949443843
+                  }
+                }
+              ],
+              "Response": {
+                "Priority": "Normal",
+                "Hint": "Classic|Stuffed|Thin",
+                "Type": null,
+                "Format": null,
+                "Text": "Moving forward, what is your crust preference? (Classic | Stuffed | Thin)",
+                "ResponseMessages": [],
+                "Children": [],
+                "Id": "5e508225-1968-4e36-ad0b-833b1519829d",
+                "IsFolded": false,
+                "DisplayName": "Response",
+                "Position": {
+                  "X": 2868.8870035547116,
+                  "Y": 5344.1648496498456
+                }
+              },
+              "Id": "c5315c5d-91dc-4604-b78d-2950c48fb28f",
+              "IsFolded": false,
+              "DisplayName": "Intent (plus_toppings)",
+              "Position": {
+                "X": 3380.9852304911742,
+                "Y": 5101.7773482623461
+              }
+            },
+            {
+              "IntentName": "more_top_no",
+              "MinScore": 0.0,
+              "IntentContexts": [],
+              "Prompts": [],
+              "AutoEntity": null,
+              "Fallback": null,
+              "Trait": null,
+              "Event": null,
+              "Action": null,
+              "Expressions": [
+                {
+                  "Value": "@sys.negative",
+                  "ExpressionName": null,
+                  "Id": "41a71ee3-979c-43e2-a17f-5926f5418334",
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 3275.9631462448842,
+                    "Y": 6056.3740856666645
+                  }
+                }
+              ],
+              "Response": {
+                "Priority": "Normal",
+                "Hint": "Classic|Stuffed|Thin",
+                "Type": null,
+                "Format": null,
+                "Text": "Moving forward, what is your crust preference? (Classic | Stuffed | Thin)",
+                "ResponseMessages": [],
+                "Children": [],
+                "Id": "61dff21c-e8ff-420f-9ab7-5da2ab11f0a1",
+                "IsFolded": false,
+                "DisplayName": "Response",
+                "Position": {
+                  "X": 2699.6517682018302,
+                  "Y": 6050.7722667425542
+                }
+              },
+              "Id": "848c4f47-5de9-4e4d-9f35-97b46067b6bf",
+              "IsFolded": false,
+              "DisplayName": "Intent (more_top_no)",
+              "Position": {
+                "X": 3565.1605687241267,
+                "Y": 6073.9846083105931
+              }
+            }
+          ],
+          "Events": [],
+          "Actions": [],
+          "Id": "05b000a2-e0e5-42f2-bba4-8913aacf4a48",
+          "IsFolded": false,
+          "DisplayName": "Dialog (toppings_dialog)",
+          "Position": {
+            "X": 4288.0918029339064,
+            "Y": 3542.9961240342082
+          }
+        },
+        {
+          "DialogName": "crust_dialog",
+          "IntentAlias": null,
+          "Domain": null,
+          "Intents": [
+            {
+              "IntentName": "crust_intent",
+              "MinScore": 0.0,
+              "IntentContexts": [
+                {
+                  "ContextName": "con-wait-crust",
+                  "Id": "bb6d0609-dabc-4a62-9d0c-98944fd601a2",
+                  "IsFolded": false,
+                  "DisplayName": "Context",
+                  "Position": {
+                    "X": 2801.7825457361973,
+                    "Y": 6364.81719530814
+                  }
+                }
+              ],
+              "Prompts": [],
+              "AutoEntity": null,
+              "Fallback": null,
+              "Trait": null,
+              "Event": null,
+              "Action": null,
+              "Expressions": [
+                {
+                  "Value": "@pizza-crust",
+                  "ExpressionName": null,
+                  "Id": "289f6ba6-0953-4376-8007-95847fbe50ac",
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 2791.5752464283873,
+                    "Y": 6508.4767161152986
+                  }
+                }
+              ],
+              "Response": {
+                "Priority": "Normal",
+                "Hint": null,
+                "Type": null,
+                "Format": null,
+                "Text": "Alright you're pizza will have $sys.user.crust crust. Please now specify your delivery address.",
+                "ResponseMessages": [],
+                "Children": [],
+                "Id": "218ce37f-b53e-49d0-93c4-7cb517001e2a",
+                "IsFolded": false,
+                "DisplayName": "Response",
+                "Position": {
+                  "X": 2796.7782243593538,
+                  "Y": 6676.838181526532
+                }
+              },
+              "Id": "fb94795e-a040-4416-a502-d7da99d26533",
+              "IsFolded": false,
+              "DisplayName": "Intent (crust_intent)",
+              "Position": {
+                "X": 3216.343231244155,
+                "Y": 6518.0322115620966
+              }
+            },
+            {
+              "IntentName": "end_intent",
+              "MinScore": 0.0,
+              "IntentContexts": [
+                {
+                  "ContextName": "con-wait-address",
+                  "Id": "d6bab686-37b0-4ad5-bde0-42ca8b6661b0",
+                  "IsFolded": false,
+                  "DisplayName": "Context",
+                  "Position": {
+                    "X": 3013.9073697698691,
+                    "Y": 7436.9756474507194
+                  }
+                }
+              ],
+              "Prompts": [],
+              "AutoEntity": null,
+              "Fallback": null,
+              "Trait": null,
+              "Event": null,
+              "Action": null,
+              "Expressions": [
+                {
+                  "Value": "@sys.text",
+                  "ExpressionName": null,
+                  "Id": "f50882c9-9c5a-4bdb-a2ce-ee19100d3d80",
+                  "IsFolded": false,
+                  "DisplayName": "Expression",
+                  "Position": {
+                    "X": 3020.7995044171516,
+                    "Y": 7596.4798221386482
+                  }
+                }
+              ],
+              "Response": {
+                "Priority": "Normal",
+                "Hint": null,
+                "Type": null,
+                "Format": null,
+                "Text": "Thank you! Your Pizza:\r\n\r\nSize: $sys.user.size\r\nToppings Primary: $sys.user.top1\r\nToppings Secondary: $sys.user.top2\r\nCrust: $sys.user.crust\r\n\r\nWill be delivered to :\r\n\r\nAddress: $sys.text",
+                "ResponseMessages": [],
+                "Children": [],
+                "Id": "eece7cbe-3ee7-4972-94a6-28bdcc2612e8",
+                "IsFolded": false,
+                "DisplayName": "Response",
+                "Position": {
+                  "X": 3023.1804567981044,
+                  "Y": 7777.82181348064
+                }
+              },
+              "Id": "22c9b79c-0de3-479d-98fd-c415c2455ebb",
+              "IsFolded": false,
+              "DisplayName": "Intent (end_intent)",
+              "Position": {
+                "X": 3289.7435668906255,
+                "Y": 7540.2114238702516
+              }
+            }
+          ],
+          "Events": [],
+          "Actions": [],
+          "Id": "1ee676bf-46ba-4010-a79c-83cc5cd9c35e",
+          "IsFolded": false,
+          "DisplayName": "Dialog (crust_dialog)",
+          "Position": {
+            "X": 3972.4557240145409,
+            "Y": 6895.57242573389
+          }
+        }
+      ],
+      "Entities": [
+        {
+          "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryEntityCreatorNode, Syn.Bot",
+          "EntityType": "start",
+          "Entries": [
+            {
+              "EntryValue": "start",
+              "Synonyms": [
+                "run"
+              ],
+              "Id": "3c74248e-cbe0-4308-8585-30da073381c2",
+              "IsFolded": false,
+              "DisplayName": "Entry",
+              "Position": {
+                "X": 3771.3935574229663,
+                "Y": 7709.6182539682586
+              }
+            }
+          ],
+          "Id": "817aa6ab-c0db-4c51-996f-9354a0330462",
+          "IsFolded": false,
+          "DisplayName": "Entry Recognizer",
+          "Position": {
+            "X": 4054.172735760968,
+            "Y": 7815.8376750700327
+          }
+        },
+        {
+          "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryEntityCreatorNode, Syn.Bot",
+          "EntityType": "pizza-size",
+          "Entries": [
+            {
+              "EntryValue": "small",
+              "Synonyms": [],
+              "Id": "55f807d1-47cb-40cc-bc8b-f197640018a5",
+              "IsFolded": false,
+              "DisplayName": "Entry",
+              "Position": {
+                "X": 3525.6434137757674,
+                "Y": 7930.5757229698384
+              }
+            },
+            {
+              "EntryValue": "medium",
+              "Synonyms": [
+                "normal"
+              ],
+              "Id": "703b9cab-0164-4781-9531-baaeb0367447",
+              "IsFolded": false,
+              "DisplayName": "Entry",
+              "Position": {
+                "X": 3533.4067615391155,
+                "Y": 8126.3621587562811
+              }
+            },
+            {
+              "EntryValue": "large",
+              "Synonyms": [
+                "big"
+              ],
+              "Id": "4c19f45d-254f-4c8c-a0f0-509c016528bc",
+              "IsFolded": false,
+              "DisplayName": "Entry",
+              "Position": {
+                "X": 3538.6650587974123,
+                "Y": 8356.5035728976945
+              }
+            },
+            {
+              "EntryValue": "extra large",
+              "Synonyms": [],
+              "Id": "ae649713-aeb9-4d96-9f16-e837483f6e76",
+              "IsFolded": false,
+              "DisplayName": "Entry",
+              "Position": {
+                "X": 3542.4705082499217,
+                "Y": 8579.6963409139935
+              }
+            }
+          ],
+          "Id": "3d33a9a7-5a6e-440d-8a83-12c1a502586a",
+          "IsFolded": false,
+          "DisplayName": "Entry Recognizer",
+          "Position": {
+            "X": 4053.479633111986,
+            "Y": 7973.1103550044736
+          }
+        },
+        {
+          "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryEntityCreatorNode, Syn.Bot",
+          "EntityType": "pizza-top",
+          "Entries": [
+            {
+              "EntryValue": "Garlic",
+              "Synonyms": [],
+              "Id": "c8a88935-f0ac-4888-9360-9c08240f31f5",
+              "IsFolded": false,
+              "DisplayName": "Entry",
+              "Position": {
+                "X": 3546.9923891897574,
+                "Y": 8805.13362748363
+              }
+            },
+            {
+              "EntryValue": "Olives",
+              "Synonyms": [
+                "olive"
+              ],
+              "Id": "1b42975a-a6cf-47c6-9ee5-cbdf3f7eacce",
+              "IsFolded": false,
+              "DisplayName": "Entry",
+              "Position": {
+                "X": 3549.111436808807,
+                "Y": 9009.9193417693477
+              }
+            },
+            {
+              "EntryValue": "Onions",
+              "Synonyms": [
+                "onion"
+              ],
+              "Id": "f5043747-f618-4aed-b64c-d5a792068c67",
+              "IsFolded": false,
+              "DisplayName": "Entry",
+              "Position": {
+                "X": 3552.3467309264529,
+                "Y": 9220.89973392621
+              }
+            }
+          ],
+          "Id": "ab41b78e-7b5e-4f4d-81ba-a550407ed28f",
+          "IsFolded": false,
+          "DisplayName": "Entry Recognizer",
+          "Position": {
+            "X": 4052.5597662571336,
+            "Y": 8179.73935508936
+          }
+        },
+        {
+          "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryEntityCreatorNode, Syn.Bot",
+          "EntityType": "pizza-crust",
+          "Entries": [
+            {
+              "EntryValue": "Stuffed",
+              "Synonyms": [
+                "stuff",
+                "thick"
+              ],
+              "Id": "e058fab7-046d-4eef-8936-80397e622603",
+              "IsFolded": false,
+              "DisplayName": "Entry",
+              "Position": {
+                "X": 3566.0070501747587,
+                "Y": 9454.5516295366269
+              }
+            },
+            {
+              "EntryValue": "Classic",
+              "Synonyms": [],
+              "Id": "9e4724c4-82c5-42af-b671-e5e41b8a368b",
+              "IsFolded": false,
+              "DisplayName": "Entry",
+              "Position": {
+                "X": 3565.7570501747587,
+                "Y": 9705.5516295366269
+              }
+            },
+            {
+              "EntryValue": "Thin",
+              "Synonyms": [
+                "small"
+              ],
+              "Id": "a6663fdd-66ce-4de2-826f-111c4b9e3f09",
+              "IsFolded": false,
+              "DisplayName": "Entry",
+              "Position": {
+                "X": 3572.4237168414252,
+                "Y": 9904.3849628699572
+              }
+            }
+          ],
+          "Id": "17c6b45c-8dac-417b-8058-f26d7e730308",
+          "IsFolded": false,
+          "DisplayName": "Entry Recognizer",
+          "Position": {
+            "X": 4053.4742218919318,
+            "Y": 8407.4177911527913
+          }
+        }
+      ],
+      "Traits": [],
+      "Scripts": [],
+      "Filters": [],
+      "BotSettings": null,
+      "UserSettings": {
+        "Variables": [
+          {
+            "VariableName": "top2",
+            "VariableValue": "Not Specified",
+            "ValueCollection": [],
+            "Id": "230ec49c-9bfa-403c-8b7b-614816c15b69",
+            "IsFolded": false,
+            "DisplayName": "Settings Variable",
+            "Position": {
+              "X": 4555.4839942118178,
+              "Y": 3936.023139861989
+            }
+          }
+        ],
+        "Id": "cb20c2ee-ba4a-4cc1-b0b4-0368ea50c1b0",
+        "IsFolded": false,
+        "DisplayName": "User Settings",
+        "Position": {
+          "X": 4776.9720894499133,
+          "Y": 3852.4026916827174
+        }
+      },
+      "SimlNodes": [],
+      "Id": "20126592-396f-477b-b6d3-e195e320e875",
+      "IsFolded": false,
+      "DisplayName": "Oscova Bot",
+      "Position": {
+        "X": 5264.1666666666661,
+        "Y": 3404.9277777777779
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.IntentNode, Syn.Bot",
+      "IntentName": "start_intent",
+      "MinScore": 0.0,
+      "IntentContexts": [],
+      "Prompts": [],
+      "AutoEntity": null,
+      "Fallback": null,
+      "Trait": null,
+      "Event": null,
+      "Action": null,
+      "Expressions": [
+        {
+          "Value": "@start",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "hi there",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        },
+        {
+          "Value": "hello",
+          "ExpressionName": null,
+          "Id": null,
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 0.0,
+            "Y": 0.0
+          }
+        }
+      ],
+      "Response": {
+        "Priority": "Normal",
+        "Hint": "Small|Medium|Large|Extra Large",
+        "Type": null,
+        "Format": null,
+        "Text": "Hi! lets build your pizze. To Begin I'll need you to specify the size of the pizza. (Small | Medium | Large)",
+        "ResponseMessages": [],
+        "Children": [],
+        "Id": "043283de-3b91-4516-8def-ce9958e721c9",
+        "IsFolded": false,
+        "DisplayName": "Response",
+        "Position": {
+          "X": 3553.9846999405845,
+          "Y": 1889.9236654470396
+        }
+      },
+      "Id": "0ffc59e9-3470-44cf-b7f9-c66ae7f35046",
+      "IsFolded": false,
+      "DisplayName": "Intent (start_intent)",
+      "Position": {
+        "X": 3976.7297979797959,
+        "Y": 1599.6095959595948
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.DialogNode, Syn.Bot",
+      "DialogName": "start_dialog",
+      "IntentAlias": null,
+      "Domain": null,
+      "Intents": [
+        {
+          "IntentName": "start_intent",
+          "MinScore": 0.0,
+          "IntentContexts": [],
+          "Prompts": [],
+          "AutoEntity": null,
+          "Fallback": null,
+          "Trait": null,
+          "Event": null,
+          "Action": null,
+          "Expressions": [
+            {
+              "Value": "@start",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "hi there",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            },
+            {
+              "Value": "hello",
+              "ExpressionName": null,
+              "Id": null,
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0
+              }
+            }
+          ],
+          "Response": {
+            "Priority": "Normal",
+            "Hint": "Small|Medium|Large|Extra Large",
+            "Type": null,
+            "Format": null,
+            "Text": "Hi! lets build your pizze. To Begin I'll need you to specify the size of the pizza. (Small | Medium | Large)",
+            "ResponseMessages": [],
+            "Children": [],
+            "Id": "043283de-3b91-4516-8def-ce9958e721c9",
+            "IsFolded": false,
+            "DisplayName": "Response",
+            "Position": {
+              "X": 3553.9846999405845,
+              "Y": 1889.9236654470396
+            }
+          },
+          "Id": "0ffc59e9-3470-44cf-b7f9-c66ae7f35046",
+          "IsFolded": false,
+          "DisplayName": "Intent (start_intent)",
+          "Position": {
+            "X": 3976.7297979797959,
+            "Y": 1599.6095959595948
+          }
+        },
+        {
+          "IntentName": "size_fallback",
+          "MinScore": 0.0,
+          "IntentContexts": [],
+          "Prompts": [],
+          "AutoEntity": null,
+          "Fallback": {
+            "ContextName": "con-wait-size",
+            "Id": "6e56bbe6-5ca5-4d3c-bceb-bd39c72d3531",
+            "IsFolded": false,
+            "DisplayName": "Fallback",
+            "Position": {
+              "X": 3597.5958607955527,
+              "Y": 2227.5759440421944
+            }
+          },
+          "Trait": null,
+          "Event": null,
+          "Action": null,
+          "Expressions": [],
+          "Response": {
+            "Priority": "Normal",
+            "Hint": "Small|Medium|Large|Extra Large",
+            "Type": null,
+            "Format": null,
+            "Text": "That doesn't seem like a valid pizza size. Please select an option.",
+            "ResponseMessages": [],
+            "Children": [],
+            "Id": "4b43a10a-d598-43b6-b0e0-1c442fa89322",
+            "IsFolded": false,
+            "DisplayName": "Response",
+            "Position": {
+              "X": 3543.8703705994735,
+              "Y": 2364.1118917546132
+            }
+          },
+          "Id": "02f642b8-f96d-4b96-8bb7-66a59f42800a",
+          "IsFolded": false,
+          "DisplayName": "Intent (size_fallback)",
+          "Position": {
+            "X": 3936.4847496844409,
+            "Y": 2292.0203884866387
+          }
+        }
+      ],
+      "Events": [],
+      "Actions": [],
+      "Id": "8a6cbf20-2e22-496d-9e7e-dfb48c5c0ead",
+      "IsFolded": false,
+      "DisplayName": "Dialog (start_dialog)",
+      "Position": {
+        "X": 4454.7597125097118,
+        "Y": 1841.7890831390823
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ResponseNode, Syn.Bot",
+      "Priority": "Normal",
+      "Hint": "Small|Medium|Large|Extra Large",
+      "Type": null,
+      "Format": null,
+      "Text": "Hi! lets build your pizze. To Begin I'll need you to specify the size of the pizza. (Small | Medium | Large)",
+      "ResponseMessages": [],
+      "Children": [],
+      "Id": "043283de-3b91-4516-8def-ce9958e721c9",
+      "IsFolded": false,
+      "DisplayName": "Response",
+      "Position": {
+        "X": 3553.9846999405845,
+        "Y": 1889.9236654470396
+      }
+    },
+    {
+      "$type": "Syn.Workspace.Nodes.InputOutput.InputTextNode, Syn.Workspace",
+      "OutputValue": "Hi! lets build your pizze. To Begin I'll need you to specify the size of the pizza. (Small | Medium | Large)",
+      "Id": "9f458cae-2fd7-4e15-a87c-ca22478dde43",
+      "IsFolded": false,
+      "DisplayName": "Input Text",
+      "Position": {
+        "X": 2798.5137147853879,
+        "Y": 2022.2381053930583
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryEntityCreatorNode, Syn.Bot",
+      "EntityType": "start",
+      "Entries": [
+        {
+          "EntryValue": "start",
+          "Synonyms": [
+            "run"
+          ],
+          "Id": "3c74248e-cbe0-4308-8585-30da073381c2",
+          "IsFolded": false,
+          "DisplayName": "Entry",
+          "Position": {
+            "X": 3771.3935574229663,
+            "Y": 7709.6182539682586
+          }
+        }
+      ],
+      "Id": "817aa6ab-c0db-4c51-996f-9354a0330462",
+      "IsFolded": false,
+      "DisplayName": "Entry Recognizer",
+      "Position": {
+        "X": 4054.172735760968,
+        "Y": 7815.8376750700327
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryNode, Syn.Bot",
+      "EntryValue": "start",
+      "Synonyms": [
+        "run"
+      ],
+      "Id": "3c74248e-cbe0-4308-8585-30da073381c2",
+      "IsFolded": false,
+      "DisplayName": "Entry",
+      "Position": {
+        "X": 3771.3935574229663,
+        "Y": 7709.6182539682586
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryEntityCreatorNode, Syn.Bot",
+      "EntityType": "pizza-size",
+      "Entries": [
+        {
+          "EntryValue": "small",
+          "Synonyms": [],
+          "Id": "55f807d1-47cb-40cc-bc8b-f197640018a5",
+          "IsFolded": false,
+          "DisplayName": "Entry",
+          "Position": {
+            "X": 3525.6434137757674,
+            "Y": 7930.5757229698384
+          }
+        },
+        {
+          "EntryValue": "medium",
+          "Synonyms": [
+            "normal"
+          ],
+          "Id": "703b9cab-0164-4781-9531-baaeb0367447",
+          "IsFolded": false,
+          "DisplayName": "Entry",
+          "Position": {
+            "X": 3533.4067615391155,
+            "Y": 8126.3621587562811
+          }
+        },
+        {
+          "EntryValue": "large",
+          "Synonyms": [
+            "big"
+          ],
+          "Id": "4c19f45d-254f-4c8c-a0f0-509c016528bc",
+          "IsFolded": false,
+          "DisplayName": "Entry",
+          "Position": {
+            "X": 3538.6650587974123,
+            "Y": 8356.5035728976945
+          }
+        },
+        {
+          "EntryValue": "extra large",
+          "Synonyms": [],
+          "Id": "ae649713-aeb9-4d96-9f16-e837483f6e76",
+          "IsFolded": false,
+          "DisplayName": "Entry",
+          "Position": {
+            "X": 3542.4705082499217,
+            "Y": 8579.6963409139935
+          }
+        }
+      ],
+      "Id": "3d33a9a7-5a6e-440d-8a83-12c1a502586a",
+      "IsFolded": false,
+      "DisplayName": "Entry Recognizer",
+      "Position": {
+        "X": 4053.479633111986,
+        "Y": 7973.1103550044736
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryNode, Syn.Bot",
+      "EntryValue": "small",
+      "Synonyms": [],
+      "Id": "55f807d1-47cb-40cc-bc8b-f197640018a5",
+      "IsFolded": false,
+      "DisplayName": "Entry",
+      "Position": {
+        "X": 3525.6434137757674,
+        "Y": 7930.5757229698384
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryNode, Syn.Bot",
+      "EntryValue": "medium",
+      "Synonyms": [
+        "normal"
+      ],
+      "Id": "703b9cab-0164-4781-9531-baaeb0367447",
+      "IsFolded": false,
+      "DisplayName": "Entry",
+      "Position": {
+        "X": 3533.4067615391155,
+        "Y": 8126.3621587562811
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryNode, Syn.Bot",
+      "EntryValue": "large",
+      "Synonyms": [
+        "big"
+      ],
+      "Id": "4c19f45d-254f-4c8c-a0f0-509c016528bc",
+      "IsFolded": false,
+      "DisplayName": "Entry",
+      "Position": {
+        "X": 3538.6650587974123,
+        "Y": 8356.5035728976945
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryNode, Syn.Bot",
+      "EntryValue": "extra large",
+      "Synonyms": [],
+      "Id": "ae649713-aeb9-4d96-9f16-e837483f6e76",
+      "IsFolded": false,
+      "DisplayName": "Entry",
+      "Position": {
+        "X": 3542.4705082499217,
+        "Y": 8579.6963409139935
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ContextAddNode, Syn.Bot",
+      "ContextName": "con-wait-size",
+      "Lifespan": 2,
+      "Id": "7613df2f-f1e6-47b8-bd22-27cdbacab623",
+      "IsFolded": false,
+      "DisplayName": "Context Add",
+      "Position": {
+        "X": 3920.1499385099123,
+        "Y": 2036.4078736828274
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.DialogNode, Syn.Bot",
+      "DialogName": "size_dialog",
+      "IntentAlias": null,
+      "Domain": null,
+      "Intents": [
+        {
+          "IntentName": "size_intent",
+          "MinScore": 0.0,
+          "IntentContexts": [
+            {
+              "ContextName": "con-wait-size",
+              "Id": "9dd0ef99-550d-49c2-ba16-f65bf99b3a41",
+              "IsFolded": false,
+              "DisplayName": "Context",
+              "Position": {
+                "X": 3606.9223912482348,
+                "Y": 2707.34655345402
+              }
+            }
+          ],
+          "Prompts": [],
+          "AutoEntity": null,
+          "Fallback": null,
+          "Trait": null,
+          "Event": null,
+          "Action": null,
+          "Expressions": [
+            {
+              "Value": "@pizza-size",
+              "ExpressionName": null,
+              "Id": "ce311ba0-1095-4fa7-87b1-bfab13878986",
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 3606.2118068960826,
+                "Y": 2866.9515519687684
+              }
+            }
+          ],
+          "Response": {
+            "Priority": "Normal",
+            "Hint": "Olives|Garlic|Onions",
+            "Type": null,
+            "Format": null,
+            "Text": "So $sys.user.size it is. Now what would the toppings be? (Garlic | Onions | Olives)",
+            "ResponseMessages": [],
+            "Children": [],
+            "Id": "f5f53e38-e1f0-4aa5-b319-118e2fbaea52",
+            "IsFolded": false,
+            "DisplayName": "Response",
+            "Position": {
+              "X": 3778.572918007193,
+              "Y": 3054.0348853021014
+            }
+          },
+          "Id": "c41d8455-6589-4038-ba32-f035a8753362",
+          "IsFolded": false,
+          "DisplayName": "Intent (size_intent)",
+          "Position": {
+            "X": 4028.5729180071958,
+            "Y": 2748.7015519687684
+          }
+        }
+      ],
+      "Events": [],
+      "Actions": [],
+      "Id": "29c94b76-6eaa-46ed-a8fd-8424345c1801",
+      "IsFolded": false,
+      "DisplayName": "Dialog (size_dialog)",
+      "Position": {
+        "X": 4285.5925825531749,
+        "Y": 2681.2445119327795
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.IntentNode, Syn.Bot",
+      "IntentName": "size_intent",
+      "MinScore": 0.0,
+      "IntentContexts": [
+        {
+          "ContextName": "con-wait-size",
+          "Id": "9dd0ef99-550d-49c2-ba16-f65bf99b3a41",
+          "IsFolded": false,
+          "DisplayName": "Context",
+          "Position": {
+            "X": 3606.9223912482348,
+            "Y": 2707.34655345402
+          }
+        }
+      ],
+      "Prompts": [],
+      "AutoEntity": null,
+      "Fallback": null,
+      "Trait": null,
+      "Event": null,
+      "Action": null,
+      "Expressions": [
+        {
+          "Value": "@pizza-size",
+          "ExpressionName": null,
+          "Id": "ce311ba0-1095-4fa7-87b1-bfab13878986",
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 3606.2118068960826,
+            "Y": 2866.9515519687684
+          }
+        }
+      ],
+      "Response": {
+        "Priority": "Normal",
+        "Hint": "Olives|Garlic|Onions",
+        "Type": null,
+        "Format": null,
+        "Text": "So $sys.user.size it is. Now what would the toppings be? (Garlic | Onions | Olives)",
+        "ResponseMessages": [],
+        "Children": [],
+        "Id": "f5f53e38-e1f0-4aa5-b319-118e2fbaea52",
+        "IsFolded": false,
+        "DisplayName": "Response",
+        "Position": {
+          "X": 3778.572918007193,
+          "Y": 3054.0348853021014
+        }
+      },
+      "Id": "c41d8455-6589-4038-ba32-f035a8753362",
+      "IsFolded": false,
+      "DisplayName": "Intent (size_intent)",
+      "Position": {
+        "X": 4028.5729180071958,
+        "Y": 2748.7015519687684
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ExpressionNode, Syn.Bot",
+      "Value": "@pizza-size",
+      "ExpressionName": null,
+      "Id": "ce311ba0-1095-4fa7-87b1-bfab13878986",
+      "IsFolded": false,
+      "DisplayName": "Expression",
+      "Position": {
+        "X": 3606.2118068960826,
+        "Y": 2866.9515519687684
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ResponseNode, Syn.Bot",
+      "Priority": "Normal",
+      "Hint": "Olives|Garlic|Onions",
+      "Type": null,
+      "Format": null,
+      "Text": "So $sys.user.size it is. Now what would the toppings be? (Garlic | Onions | Olives)",
+      "ResponseMessages": [],
+      "Children": [],
+      "Id": "f5f53e38-e1f0-4aa5-b319-118e2fbaea52",
+      "IsFolded": false,
+      "DisplayName": "Response",
+      "Position": {
+        "X": 3778.572918007193,
+        "Y": 3054.0348853021014
+      }
+    },
+    {
+      "$type": "Syn.Workspace.Nodes.InputOutput.InputTextNode, Syn.Workspace",
+      "OutputValue": "So $sys.user.size it is. Now what would the toppings be? (Garlic | Onions | Olives)",
+      "Id": "c36f956f-bfcf-4e3b-a302-6454815e4999",
+      "IsFolded": false,
+      "DisplayName": "Input Text",
+      "Position": {
+        "X": 3214.0967275310036,
+        "Y": 3163.2978252606931
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryEntityCreatorNode, Syn.Bot",
+      "EntityType": "pizza-top",
+      "Entries": [
+        {
+          "EntryValue": "Garlic",
+          "Synonyms": [],
+          "Id": "c8a88935-f0ac-4888-9360-9c08240f31f5",
+          "IsFolded": false,
+          "DisplayName": "Entry",
+          "Position": {
+            "X": 3546.9923891897574,
+            "Y": 8805.13362748363
+          }
+        },
+        {
+          "EntryValue": "Olives",
+          "Synonyms": [
+            "olive"
+          ],
+          "Id": "1b42975a-a6cf-47c6-9ee5-cbdf3f7eacce",
+          "IsFolded": false,
+          "DisplayName": "Entry",
+          "Position": {
+            "X": 3549.111436808807,
+            "Y": 9009.9193417693477
+          }
+        },
+        {
+          "EntryValue": "Onions",
+          "Synonyms": [
+            "onion"
+          ],
+          "Id": "f5043747-f618-4aed-b64c-d5a792068c67",
+          "IsFolded": false,
+          "DisplayName": "Entry",
+          "Position": {
+            "X": 3552.3467309264529,
+            "Y": 9220.89973392621
+          }
+        }
+      ],
+      "Id": "ab41b78e-7b5e-4f4d-81ba-a550407ed28f",
+      "IsFolded": false,
+      "DisplayName": "Entry Recognizer",
+      "Position": {
+        "X": 4052.5597662571336,
+        "Y": 8179.73935508936
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryNode, Syn.Bot",
+      "EntryValue": "Garlic",
+      "Synonyms": [],
+      "Id": "c8a88935-f0ac-4888-9360-9c08240f31f5",
+      "IsFolded": false,
+      "DisplayName": "Entry",
+      "Position": {
+        "X": 3546.9923891897574,
+        "Y": 8805.13362748363
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryNode, Syn.Bot",
+      "EntryValue": "Olives",
+      "Synonyms": [
+        "olive"
+      ],
+      "Id": "1b42975a-a6cf-47c6-9ee5-cbdf3f7eacce",
+      "IsFolded": false,
+      "DisplayName": "Entry",
+      "Position": {
+        "X": 3549.111436808807,
+        "Y": 9009.9193417693477
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryNode, Syn.Bot",
+      "EntryValue": "Onions",
+      "Synonyms": [
+        "onion"
+      ],
+      "Id": "f5043747-f618-4aed-b64c-d5a792068c67",
+      "IsFolded": false,
+      "DisplayName": "Entry",
+      "Position": {
+        "X": 3552.3467309264529,
+        "Y": 9220.89973392621
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntityGetNode, Syn.Bot",
+      "EntityName": "pizza-size",
+      "EntityGetType": "Reference",
+      "EntityPropertyName": null,
+      "Id": "1cd1802a-9e8c-4f13-96f5-13cb2a1d543c",
+      "IsFolded": false,
+      "DisplayName": "Entity Get",
+      "Position": {
+        "X": 4186.5604843512028,
+        "Y": 3053.5767428141817
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.VariableSetNode, Syn.Bot",
+      "VariableName": "size",
+      "VariableOrigin": "User",
+      "VariableValue": "Large",
+      "Id": "62afaea0-ecb1-4025-b681-124f514a21a1",
+      "IsFolded": false,
+      "DisplayName": "Variable Set",
+      "Position": {
+        "X": 4478.063752325058,
+        "Y": 3122.9885075200632
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.DialogNode, Syn.Bot",
+      "DialogName": "toppings_dialog",
+      "IntentAlias": null,
+      "Domain": null,
+      "Intents": [
+        {
+          "IntentName": "toppings_intent",
+          "MinScore": 0.0,
+          "IntentContexts": [
+            {
+              "ContextName": "con-wait-top",
+              "Id": "39046a4d-4186-4f12-a5dc-c7515c31a787",
+              "IsFolded": false,
+              "DisplayName": "Context",
+              "Position": {
+                "X": 2587.2295481436277,
+                "Y": 3291.9047828063658
+              }
+            }
+          ],
+          "Prompts": [],
+          "AutoEntity": null,
+          "Fallback": null,
+          "Trait": null,
+          "Event": null,
+          "Action": null,
+          "Expressions": [
+            {
+              "Value": "@pizza-top",
+              "ExpressionName": null,
+              "Id": "374e0279-b1c8-452a-bad6-bf635aff8b96",
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 2587.7720442612012,
+                "Y": 3436.9415511561047
+              }
+            }
+          ],
+          "Response": {
+            "Priority": "Normal",
+            "Hint": "Yes|No",
+            "Type": null,
+            "Format": null,
+            "Text": "Aha $pizza-top is a good choice. Would you like to add another topping?  (Yes | No)",
+            "ResponseMessages": [],
+            "Children": [],
+            "Id": "7835e9ef-b9d8-4c48-9906-1ea009e8b3f4",
+            "IsFolded": false,
+            "DisplayName": "Response",
+            "Position": {
+              "X": 2383.2829794044887,
+              "Y": 3682.734537581443
+            }
+          },
+          "Id": "b96cf069-8e05-4b50-abe2-918f2773860f",
+          "IsFolded": false,
+          "DisplayName": "Intent (toppings_intent)",
+          "Position": {
+            "X": 3001.8254630646215,
+            "Y": 3380.7420790595725
+          }
+        },
+        {
+          "IntentName": "more_top_yes",
+          "MinScore": 0.0,
+          "IntentContexts": [
+            {
+              "ContextName": "con-more-top",
+              "Id": "fc29bd13-580f-413d-becf-265420035952",
+              "IsFolded": false,
+              "DisplayName": "Context",
+              "Position": {
+                "X": 3127.0678560345659,
+                "Y": 4152.9756648826651
+              }
+            }
+          ],
+          "Prompts": [],
+          "AutoEntity": null,
+          "Fallback": null,
+          "Trait": null,
+          "Event": null,
+          "Action": null,
+          "Expressions": [
+            {
+              "Value": "@sys.positive",
+              "ExpressionName": null,
+              "Id": "c6da4821-7f8a-4fed-a9e2-fd6d35389c66",
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 3133.879170383907,
+                "Y": 4279.4121464587161
+              }
+            }
+          ],
+          "Response": {
+            "Priority": "Normal",
+            "Hint": "Olives|Garlic|Onions",
+            "Type": null,
+            "Format": null,
+            "Text": "Please select your second topping.  (Garlic | Olives | Onions)",
+            "ResponseMessages": [],
+            "Children": [],
+            "Id": "673e41d7-a603-40f4-9bbd-ce06eb4d14e0",
+            "IsFolded": false,
+            "DisplayName": "Response",
+            "Position": {
+              "X": 3023.5545916258952,
+              "Y": 4478.3932585698612
+            }
+          },
+          "Id": "f445f6e0-02f9-4b92-ad90-473cd4fbb5c2",
+          "IsFolded": false,
+          "DisplayName": "Intent (more_top_yes)",
+          "Position": {
+            "X": 3429.2555490604964,
+            "Y": 4206.4976935076365
+          }
+        },
+        {
+          "IntentName": "plus_toppings",
+          "MinScore": 0.0,
+          "IntentContexts": [
+            {
+              "ContextName": "con-plus-top",
+              "Id": "3bb0215f-6653-4b6b-98a5-401c089308dc",
+              "IsFolded": false,
+              "DisplayName": "Context",
+              "Position": {
+                "X": 3009.3575917900048,
+                "Y": 4997.1844574929837
+              }
+            }
+          ],
+          "Prompts": [],
+          "AutoEntity": null,
+          "Fallback": null,
+          "Trait": null,
+          "Event": null,
+          "Action": null,
+          "Expressions": [
+            {
+              "Value": "@pizza-top",
+              "ExpressionName": null,
+              "Id": "1b915474-2d2f-427b-9646-d21a0de5078d",
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 2902.4689667917255,
+                "Y": 5129.3901949443843
+              }
+            }
+          ],
+          "Response": {
+            "Priority": "Normal",
+            "Hint": "Classic|Stuffed|Thin",
+            "Type": null,
+            "Format": null,
+            "Text": "Moving forward, what is your crust preference? (Classic | Stuffed | Thin)",
+            "ResponseMessages": [],
+            "Children": [],
+            "Id": "5e508225-1968-4e36-ad0b-833b1519829d",
+            "IsFolded": false,
+            "DisplayName": "Response",
+            "Position": {
+              "X": 2868.8870035547116,
+              "Y": 5344.1648496498456
+            }
+          },
+          "Id": "c5315c5d-91dc-4604-b78d-2950c48fb28f",
+          "IsFolded": false,
+          "DisplayName": "Intent (plus_toppings)",
+          "Position": {
+            "X": 3380.9852304911742,
+            "Y": 5101.7773482623461
+          }
+        },
+        {
+          "IntentName": "more_top_no",
+          "MinScore": 0.0,
+          "IntentContexts": [],
+          "Prompts": [],
+          "AutoEntity": null,
+          "Fallback": null,
+          "Trait": null,
+          "Event": null,
+          "Action": null,
+          "Expressions": [
+            {
+              "Value": "@sys.negative",
+              "ExpressionName": null,
+              "Id": "41a71ee3-979c-43e2-a17f-5926f5418334",
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 3275.9631462448842,
+                "Y": 6056.3740856666645
+              }
+            }
+          ],
+          "Response": {
+            "Priority": "Normal",
+            "Hint": "Classic|Stuffed|Thin",
+            "Type": null,
+            "Format": null,
+            "Text": "Moving forward, what is your crust preference? (Classic | Stuffed | Thin)",
+            "ResponseMessages": [],
+            "Children": [],
+            "Id": "61dff21c-e8ff-420f-9ab7-5da2ab11f0a1",
+            "IsFolded": false,
+            "DisplayName": "Response",
+            "Position": {
+              "X": 2699.6517682018302,
+              "Y": 6050.7722667425542
+            }
+          },
+          "Id": "848c4f47-5de9-4e4d-9f35-97b46067b6bf",
+          "IsFolded": false,
+          "DisplayName": "Intent (more_top_no)",
+          "Position": {
+            "X": 3565.1605687241267,
+            "Y": 6073.9846083105931
+          }
+        }
+      ],
+      "Events": [],
+      "Actions": [],
+      "Id": "05b000a2-e0e5-42f2-bba4-8913aacf4a48",
+      "IsFolded": false,
+      "DisplayName": "Dialog (toppings_dialog)",
+      "Position": {
+        "X": 4288.0918029339064,
+        "Y": 3542.9961240342082
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.IntentNode, Syn.Bot",
+      "IntentName": "toppings_intent",
+      "MinScore": 0.0,
+      "IntentContexts": [
+        {
+          "ContextName": "con-wait-top",
+          "Id": "39046a4d-4186-4f12-a5dc-c7515c31a787",
+          "IsFolded": false,
+          "DisplayName": "Context",
+          "Position": {
+            "X": 2587.2295481436277,
+            "Y": 3291.9047828063658
+          }
+        }
+      ],
+      "Prompts": [],
+      "AutoEntity": null,
+      "Fallback": null,
+      "Trait": null,
+      "Event": null,
+      "Action": null,
+      "Expressions": [
+        {
+          "Value": "@pizza-top",
+          "ExpressionName": null,
+          "Id": "374e0279-b1c8-452a-bad6-bf635aff8b96",
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 2587.7720442612012,
+            "Y": 3436.9415511561047
+          }
+        }
+      ],
+      "Response": {
+        "Priority": "Normal",
+        "Hint": "Yes|No",
+        "Type": null,
+        "Format": null,
+        "Text": "Aha $pizza-top is a good choice. Would you like to add another topping?  (Yes | No)",
+        "ResponseMessages": [],
+        "Children": [],
+        "Id": "7835e9ef-b9d8-4c48-9906-1ea009e8b3f4",
+        "IsFolded": false,
+        "DisplayName": "Response",
+        "Position": {
+          "X": 2383.2829794044887,
+          "Y": 3682.734537581443
+        }
+      },
+      "Id": "b96cf069-8e05-4b50-abe2-918f2773860f",
+      "IsFolded": false,
+      "DisplayName": "Intent (toppings_intent)",
+      "Position": {
+        "X": 3001.8254630646215,
+        "Y": 3380.7420790595725
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ExpressionNode, Syn.Bot",
+      "Value": "@pizza-top",
+      "ExpressionName": null,
+      "Id": "374e0279-b1c8-452a-bad6-bf635aff8b96",
+      "IsFolded": false,
+      "DisplayName": "Expression",
+      "Position": {
+        "X": 2587.7720442612012,
+        "Y": 3436.9415511561047
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ResponseNode, Syn.Bot",
+      "Priority": "Normal",
+      "Hint": "Yes|No",
+      "Type": null,
+      "Format": null,
+      "Text": "Aha $pizza-top is a good choice. Would you like to add another topping?  (Yes | No)",
+      "ResponseMessages": [],
+      "Children": [],
+      "Id": "7835e9ef-b9d8-4c48-9906-1ea009e8b3f4",
+      "IsFolded": false,
+      "DisplayName": "Response",
+      "Position": {
+        "X": 2383.2829794044887,
+        "Y": 3682.734537581443
+      }
+    },
+    {
+      "$type": "Syn.Workspace.Nodes.InputOutput.InputTextNode, Syn.Workspace",
+      "OutputValue": "Aha $pizza-top is a good choice. Would you like to add another topping?  (Yes | No)",
+      "Id": "b2f9a6c9-dc10-466b-9d62-a18812f30b95",
+      "IsFolded": false,
+      "DisplayName": "Input Text",
+      "Position": {
+        "X": 1832.1174798713428,
+        "Y": 3792.8150697943256
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.IntentNode, Syn.Bot",
+      "IntentName": "more_top_yes",
+      "MinScore": 0.0,
+      "IntentContexts": [
+        {
+          "ContextName": "con-more-top",
+          "Id": "fc29bd13-580f-413d-becf-265420035952",
+          "IsFolded": false,
+          "DisplayName": "Context",
+          "Position": {
+            "X": 3127.0678560345659,
+            "Y": 4152.9756648826651
+          }
+        }
+      ],
+      "Prompts": [],
+      "AutoEntity": null,
+      "Fallback": null,
+      "Trait": null,
+      "Event": null,
+      "Action": null,
+      "Expressions": [
+        {
+          "Value": "@sys.positive",
+          "ExpressionName": null,
+          "Id": "c6da4821-7f8a-4fed-a9e2-fd6d35389c66",
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 3133.879170383907,
+            "Y": 4279.4121464587161
+          }
+        }
+      ],
+      "Response": {
+        "Priority": "Normal",
+        "Hint": "Olives|Garlic|Onions",
+        "Type": null,
+        "Format": null,
+        "Text": "Please select your second topping.  (Garlic | Olives | Onions)",
+        "ResponseMessages": [],
+        "Children": [],
+        "Id": "673e41d7-a603-40f4-9bbd-ce06eb4d14e0",
+        "IsFolded": false,
+        "DisplayName": "Response",
+        "Position": {
+          "X": 3023.5545916258952,
+          "Y": 4478.3932585698612
+        }
+      },
+      "Id": "f445f6e0-02f9-4b92-ad90-473cd4fbb5c2",
+      "IsFolded": false,
+      "DisplayName": "Intent (more_top_yes)",
+      "Position": {
+        "X": 3429.2555490604964,
+        "Y": 4206.4976935076365
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ContextAddNode, Syn.Bot",
+      "ContextName": "con-more-top",
+      "Lifespan": 2,
+      "Id": "20d5b019-84be-46a2-87f1-a619a613dc73",
+      "IsFolded": false,
+      "DisplayName": "Context Add",
+      "Position": {
+        "X": 2633.8684696796063,
+        "Y": 4115.5130715764208
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ContextNode, Syn.Bot",
+      "ContextName": "con-wait-size",
+      "Id": "9dd0ef99-550d-49c2-ba16-f65bf99b3a41",
+      "IsFolded": false,
+      "DisplayName": "Context",
+      "Position": {
+        "X": 3606.9223912482348,
+        "Y": 2707.34655345402
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ContextNode, Syn.Bot",
+      "ContextName": "con-more-top",
+      "Id": "fc29bd13-580f-413d-becf-265420035952",
+      "IsFolded": false,
+      "DisplayName": "Context",
+      "Position": {
+        "X": 3127.0678560345659,
+        "Y": 4152.9756648826651
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ContextAddNode, Syn.Bot",
+      "ContextName": "con-wait-top",
+      "Lifespan": 2,
+      "Id": "f36c40e4-7130-4078-9b88-00a1718a8711",
+      "IsFolded": false,
+      "DisplayName": "Context Add",
+      "Position": {
+        "X": 4199.4133088273893,
+        "Y": 3281.1705170721
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ContextNode, Syn.Bot",
+      "ContextName": "con-wait-top",
+      "Id": "39046a4d-4186-4f12-a5dc-c7515c31a787",
+      "IsFolded": false,
+      "DisplayName": "Context",
+      "Position": {
+        "X": 2587.2295481436277,
+        "Y": 3291.9047828063658
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ContextRemoveNode, Syn.Bot",
+      "ContextName": "con-wait-top",
+      "Id": "9f0ec2e3-c9de-463c-8957-8811297b6a75",
+      "IsFolded": false,
+      "DisplayName": "Context Remove",
+      "Position": {
+        "X": 2622.743374186864,
+        "Y": 3958.3190613382922
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntityGetNode, Syn.Bot",
+      "EntityName": "pizza-top",
+      "EntityGetType": "Reference",
+      "EntityPropertyName": null,
+      "Id": "c8392adc-e557-473a-90ff-f513d580c514",
+      "IsFolded": false,
+      "DisplayName": "Entity Get",
+      "Position": {
+        "X": 2846.9081488686656,
+        "Y": 3817.9589799851778
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.VariableSetNode, Syn.Bot",
+      "VariableName": "top1",
+      "VariableOrigin": "User",
+      "VariableValue": "Olives",
+      "Id": "d2c20dca-5602-46d1-a1fc-af4a5b170c93",
+      "IsFolded": false,
+      "DisplayName": "Variable Set",
+      "Position": {
+        "X": 3101.76249060536,
+        "Y": 3849.2418931504426
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ResponseNode, Syn.Bot",
+      "Priority": "Normal",
+      "Hint": "Olives|Garlic|Onions",
+      "Type": null,
+      "Format": null,
+      "Text": "Please select your second topping.  (Garlic | Olives | Onions)",
+      "ResponseMessages": [],
+      "Children": [],
+      "Id": "673e41d7-a603-40f4-9bbd-ce06eb4d14e0",
+      "IsFolded": false,
+      "DisplayName": "Response",
+      "Position": {
+        "X": 3023.5545916258952,
+        "Y": 4478.3932585698612
+      }
+    },
+    {
+      "$type": "Syn.Workspace.Nodes.InputOutput.InputTextNode, Syn.Workspace",
+      "OutputValue": "Please select your second topping.  (Garlic | Olives | Onions)",
+      "Id": "d854399a-f86e-4325-9756-8e93657ce78b",
+      "IsFolded": false,
+      "DisplayName": "Input Text",
+      "Position": {
+        "X": 2522.04093508979,
+        "Y": 4565.8043033214635
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ExpressionNode, Syn.Bot",
+      "Value": "@sys.positive",
+      "ExpressionName": null,
+      "Id": "c6da4821-7f8a-4fed-a9e2-fd6d35389c66",
+      "IsFolded": false,
+      "DisplayName": "Expression",
+      "Position": {
+        "X": 3133.879170383907,
+        "Y": 4279.4121464587161
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.IntentNode, Syn.Bot",
+      "IntentName": "more_top_no",
+      "MinScore": 0.0,
+      "IntentContexts": [],
+      "Prompts": [],
+      "AutoEntity": null,
+      "Fallback": null,
+      "Trait": null,
+      "Event": null,
+      "Action": null,
+      "Expressions": [
+        {
+          "Value": "@sys.negative",
+          "ExpressionName": null,
+          "Id": "41a71ee3-979c-43e2-a17f-5926f5418334",
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 3275.9631462448842,
+            "Y": 6056.3740856666645
+          }
+        }
+      ],
+      "Response": {
+        "Priority": "Normal",
+        "Hint": "Classic|Stuffed|Thin",
+        "Type": null,
+        "Format": null,
+        "Text": "Moving forward, what is your crust preference? (Classic | Stuffed | Thin)",
+        "ResponseMessages": [],
+        "Children": [],
+        "Id": "61dff21c-e8ff-420f-9ab7-5da2ab11f0a1",
+        "IsFolded": false,
+        "DisplayName": "Response",
+        "Position": {
+          "X": 2699.6517682018302,
+          "Y": 6050.7722667425542
+        }
+      },
+      "Id": "848c4f47-5de9-4e4d-9f35-97b46067b6bf",
+      "IsFolded": false,
+      "DisplayName": "Intent (more_top_no)",
+      "Position": {
+        "X": 3565.1605687241267,
+        "Y": 6073.9846083105931
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ContextRemoveNode, Syn.Bot",
+      "ContextName": "con-more-top",
+      "Id": "afbeec86-5560-4ba8-a953-bcbdaf57fd79",
+      "IsFolded": false,
+      "DisplayName": "Context Remove",
+      "Position": {
+        "X": 3408.6601113099864,
+        "Y": 4778.36627821784
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ContextAddNode, Syn.Bot",
+      "ContextName": "con-plus-top",
+      "Lifespan": 3,
+      "Id": "b071d038-6206-4fa6-a916-2c7dec4e2d54",
+      "IsFolded": false,
+      "DisplayName": "Context Add",
+      "Position": {
+        "X": 3422.865082523198,
+        "Y": 4537.2616465727288
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.IntentNode, Syn.Bot",
+      "IntentName": "plus_toppings",
+      "MinScore": 0.0,
+      "IntentContexts": [
+        {
+          "ContextName": "con-plus-top",
+          "Id": "3bb0215f-6653-4b6b-98a5-401c089308dc",
+          "IsFolded": false,
+          "DisplayName": "Context",
+          "Position": {
+            "X": 3009.3575917900048,
+            "Y": 4997.1844574929837
+          }
+        }
+      ],
+      "Prompts": [],
+      "AutoEntity": null,
+      "Fallback": null,
+      "Trait": null,
+      "Event": null,
+      "Action": null,
+      "Expressions": [
+        {
+          "Value": "@pizza-top",
+          "ExpressionName": null,
+          "Id": "1b915474-2d2f-427b-9646-d21a0de5078d",
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 2902.4689667917255,
+            "Y": 5129.3901949443843
+          }
+        }
+      ],
+      "Response": {
+        "Priority": "Normal",
+        "Hint": "Classic|Stuffed|Thin",
+        "Type": null,
+        "Format": null,
+        "Text": "Moving forward, what is your crust preference? (Classic | Stuffed | Thin)",
+        "ResponseMessages": [],
+        "Children": [],
+        "Id": "5e508225-1968-4e36-ad0b-833b1519829d",
+        "IsFolded": false,
+        "DisplayName": "Response",
+        "Position": {
+          "X": 2868.8870035547116,
+          "Y": 5344.1648496498456
+        }
+      },
+      "Id": "c5315c5d-91dc-4604-b78d-2950c48fb28f",
+      "IsFolded": false,
+      "DisplayName": "Intent (plus_toppings)",
+      "Position": {
+        "X": 3380.9852304911742,
+        "Y": 5101.7773482623461
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ContextNode, Syn.Bot",
+      "ContextName": "con-plus-top",
+      "Id": "3bb0215f-6653-4b6b-98a5-401c089308dc",
+      "IsFolded": false,
+      "DisplayName": "Context",
+      "Position": {
+        "X": 3009.3575917900048,
+        "Y": 4997.1844574929837
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ResponseNode, Syn.Bot",
+      "Priority": "Normal",
+      "Hint": "Classic|Stuffed|Thin",
+      "Type": null,
+      "Format": null,
+      "Text": "Moving forward, what is your crust preference? (Classic | Stuffed | Thin)",
+      "ResponseMessages": [],
+      "Children": [],
+      "Id": "5e508225-1968-4e36-ad0b-833b1519829d",
+      "IsFolded": false,
+      "DisplayName": "Response",
+      "Position": {
+        "X": 2868.8870035547116,
+        "Y": 5344.1648496498456
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntityGetNode, Syn.Bot",
+      "EntityName": "pizza-top",
+      "EntityGetType": "Reference",
+      "EntityPropertyName": null,
+      "Id": "4408a737-5a57-449d-b791-7209bf5f3fe3",
+      "IsFolded": false,
+      "DisplayName": "Entity Get",
+      "Position": {
+        "X": 3115.5536702213776,
+        "Y": 5815.1648496498447
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.VariableSetNode, Syn.Bot",
+      "VariableName": "top2",
+      "VariableOrigin": "User",
+      "VariableValue": "Onions",
+      "Id": "ce6e2cfe-dafa-4780-8f27-108d66e12336",
+      "IsFolded": false,
+      "DisplayName": "Variable Set",
+      "Position": {
+        "X": 3356.1370035547111,
+        "Y": 5689.5815163165107
+      }
+    },
+    {
+      "$type": "Syn.Workspace.Nodes.InputOutput.InputTextNode, Syn.Workspace",
+      "OutputValue": "Moving forward, what is your crust preference? (Classic | Stuffed | Thin)",
+      "Id": "ba3dc2bc-eeae-489a-bc26-40ca8f6eeaf7",
+      "IsFolded": false,
+      "DisplayName": "Input Text",
+      "Position": {
+        "X": 2115.5179559356648,
+        "Y": 6062.8315163165116
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryEntityCreatorNode, Syn.Bot",
+      "EntityType": "pizza-crust",
+      "Entries": [
+        {
+          "EntryValue": "Stuffed",
+          "Synonyms": [
+            "stuff",
+            "thick"
+          ],
+          "Id": "e058fab7-046d-4eef-8936-80397e622603",
+          "IsFolded": false,
+          "DisplayName": "Entry",
+          "Position": {
+            "X": 3566.0070501747587,
+            "Y": 9454.5516295366269
+          }
+        },
+        {
+          "EntryValue": "Classic",
+          "Synonyms": [],
+          "Id": "9e4724c4-82c5-42af-b671-e5e41b8a368b",
+          "IsFolded": false,
+          "DisplayName": "Entry",
+          "Position": {
+            "X": 3565.7570501747587,
+            "Y": 9705.5516295366269
+          }
+        },
+        {
+          "EntryValue": "Thin",
+          "Synonyms": [
+            "small"
+          ],
+          "Id": "a6663fdd-66ce-4de2-826f-111c4b9e3f09",
+          "IsFolded": false,
+          "DisplayName": "Entry",
+          "Position": {
+            "X": 3572.4237168414252,
+            "Y": 9904.3849628699572
+          }
+        }
+      ],
+      "Id": "17c6b45c-8dac-417b-8058-f26d7e730308",
+      "IsFolded": false,
+      "DisplayName": "Entry Recognizer",
+      "Position": {
+        "X": 4053.4742218919318,
+        "Y": 8407.4177911527913
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryNode, Syn.Bot",
+      "EntryValue": "Stuffed",
+      "Synonyms": [
+        "stuff",
+        "thick"
+      ],
+      "Id": "e058fab7-046d-4eef-8936-80397e622603",
+      "IsFolded": false,
+      "DisplayName": "Entry",
+      "Position": {
+        "X": 3566.0070501747587,
+        "Y": 9454.5516295366269
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryNode, Syn.Bot",
+      "EntryValue": "Classic",
+      "Synonyms": [],
+      "Id": "9e4724c4-82c5-42af-b671-e5e41b8a368b",
+      "IsFolded": false,
+      "DisplayName": "Entry",
+      "Position": {
+        "X": 3565.7570501747587,
+        "Y": 9705.5516295366269
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntryNode, Syn.Bot",
+      "EntryValue": "Thin",
+      "Synonyms": [
+        "small"
+      ],
+      "Id": "a6663fdd-66ce-4de2-826f-111c4b9e3f09",
+      "IsFolded": false,
+      "DisplayName": "Entry",
+      "Position": {
+        "X": 3572.4237168414252,
+        "Y": 9904.3849628699572
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ResponseNode, Syn.Bot",
+      "Priority": "Normal",
+      "Hint": "Classic|Stuffed|Thin",
+      "Type": null,
+      "Format": null,
+      "Text": "Moving forward, what is your crust preference? (Classic | Stuffed | Thin)",
+      "ResponseMessages": [],
+      "Children": [],
+      "Id": "61dff21c-e8ff-420f-9ab7-5da2ab11f0a1",
+      "IsFolded": false,
+      "DisplayName": "Response",
+      "Position": {
+        "X": 2699.6517682018302,
+        "Y": 6050.7722667425542
+      }
+    },
+    {
+      "$type": "Syn.Workspace.Nodes.InputOutput.InputTextNode, Syn.Workspace",
+      "OutputValue": "Classic|Stuffed|Thin",
+      "Id": "56be6f90-7ca6-46ec-a79c-b73ece096144",
+      "IsFolded": false,
+      "DisplayName": "Input Text",
+      "Position": {
+        "X": 2209.2946253446867,
+        "Y": 5485.8436953139817
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ContextRemoveNode, Syn.Bot",
+      "ContextName": "con-plus-top",
+      "Id": "6301a2c5-cd2f-4770-8496-0d6bdf53ea6a",
+      "IsFolded": false,
+      "DisplayName": "Context Remove",
+      "Position": {
+        "X": 3127.5272260772863,
+        "Y": 5664.1083473286326
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ExpressionNode, Syn.Bot",
+      "Value": "@pizza-top",
+      "ExpressionName": null,
+      "Id": "1b915474-2d2f-427b-9646-d21a0de5078d",
+      "IsFolded": false,
+      "DisplayName": "Expression",
+      "Position": {
+        "X": 2902.4689667917255,
+        "Y": 5129.3901949443843
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ExpressionNode, Syn.Bot",
+      "Value": "@sys.negative",
+      "ExpressionName": null,
+      "Id": "41a71ee3-979c-43e2-a17f-5926f5418334",
+      "IsFolded": false,
+      "DisplayName": "Expression",
+      "Position": {
+        "X": 3275.9631462448842,
+        "Y": 6056.3740856666645
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ContextAddNode, Syn.Bot",
+      "ContextName": "con-wait-crust",
+      "Lifespan": 2,
+      "Id": "60c85975-80e1-4569-8eb6-1fde4bb01757",
+      "IsFolded": false,
+      "DisplayName": "Context Add",
+      "Position": {
+        "X": 3130.2315744111406,
+        "Y": 5434.4386337089109
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.DialogNode, Syn.Bot",
+      "DialogName": "crust_dialog",
+      "IntentAlias": null,
+      "Domain": null,
+      "Intents": [
+        {
+          "IntentName": "crust_intent",
+          "MinScore": 0.0,
+          "IntentContexts": [
+            {
+              "ContextName": "con-wait-crust",
+              "Id": "bb6d0609-dabc-4a62-9d0c-98944fd601a2",
+              "IsFolded": false,
+              "DisplayName": "Context",
+              "Position": {
+                "X": 2801.7825457361973,
+                "Y": 6364.81719530814
+              }
+            }
+          ],
+          "Prompts": [],
+          "AutoEntity": null,
+          "Fallback": null,
+          "Trait": null,
+          "Event": null,
+          "Action": null,
+          "Expressions": [
+            {
+              "Value": "@pizza-crust",
+              "ExpressionName": null,
+              "Id": "289f6ba6-0953-4376-8007-95847fbe50ac",
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 2791.5752464283873,
+                "Y": 6508.4767161152986
+              }
+            }
+          ],
+          "Response": {
+            "Priority": "Normal",
+            "Hint": null,
+            "Type": null,
+            "Format": null,
+            "Text": "Alright you're pizza will have $sys.user.crust crust. Please now specify your delivery address.",
+            "ResponseMessages": [],
+            "Children": [],
+            "Id": "218ce37f-b53e-49d0-93c4-7cb517001e2a",
+            "IsFolded": false,
+            "DisplayName": "Response",
+            "Position": {
+              "X": 2796.7782243593538,
+              "Y": 6676.838181526532
+            }
+          },
+          "Id": "fb94795e-a040-4416-a502-d7da99d26533",
+          "IsFolded": false,
+          "DisplayName": "Intent (crust_intent)",
+          "Position": {
+            "X": 3216.343231244155,
+            "Y": 6518.0322115620966
+          }
+        },
+        {
+          "IntentName": "end_intent",
+          "MinScore": 0.0,
+          "IntentContexts": [
+            {
+              "ContextName": "con-wait-address",
+              "Id": "d6bab686-37b0-4ad5-bde0-42ca8b6661b0",
+              "IsFolded": false,
+              "DisplayName": "Context",
+              "Position": {
+                "X": 3013.9073697698691,
+                "Y": 7436.9756474507194
+              }
+            }
+          ],
+          "Prompts": [],
+          "AutoEntity": null,
+          "Fallback": null,
+          "Trait": null,
+          "Event": null,
+          "Action": null,
+          "Expressions": [
+            {
+              "Value": "@sys.text",
+              "ExpressionName": null,
+              "Id": "f50882c9-9c5a-4bdb-a2ce-ee19100d3d80",
+              "IsFolded": false,
+              "DisplayName": "Expression",
+              "Position": {
+                "X": 3020.7995044171516,
+                "Y": 7596.4798221386482
+              }
+            }
+          ],
+          "Response": {
+            "Priority": "Normal",
+            "Hint": null,
+            "Type": null,
+            "Format": null,
+            "Text": "Thank you! Your Pizza:\r\n\r\nSize: $sys.user.size\r\nToppings Primary: $sys.user.top1\r\nToppings Secondary: $sys.user.top2\r\nCrust: $sys.user.crust\r\n\r\nWill be delivered to :\r\n\r\nAddress: $sys.text",
+            "ResponseMessages": [],
+            "Children": [],
+            "Id": "eece7cbe-3ee7-4972-94a6-28bdcc2612e8",
+            "IsFolded": false,
+            "DisplayName": "Response",
+            "Position": {
+              "X": 3023.1804567981044,
+              "Y": 7777.82181348064
+            }
+          },
+          "Id": "22c9b79c-0de3-479d-98fd-c415c2455ebb",
+          "IsFolded": false,
+          "DisplayName": "Intent (end_intent)",
+          "Position": {
+            "X": 3289.7435668906255,
+            "Y": 7540.2114238702516
+          }
+        }
+      ],
+      "Events": [],
+      "Actions": [],
+      "Id": "1ee676bf-46ba-4010-a79c-83cc5cd9c35e",
+      "IsFolded": false,
+      "DisplayName": "Dialog (crust_dialog)",
+      "Position": {
+        "X": 3972.4557240145409,
+        "Y": 6895.57242573389
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.IntentNode, Syn.Bot",
+      "IntentName": "crust_intent",
+      "MinScore": 0.0,
+      "IntentContexts": [
+        {
+          "ContextName": "con-wait-crust",
+          "Id": "bb6d0609-dabc-4a62-9d0c-98944fd601a2",
+          "IsFolded": false,
+          "DisplayName": "Context",
+          "Position": {
+            "X": 2801.7825457361973,
+            "Y": 6364.81719530814
+          }
+        }
+      ],
+      "Prompts": [],
+      "AutoEntity": null,
+      "Fallback": null,
+      "Trait": null,
+      "Event": null,
+      "Action": null,
+      "Expressions": [
+        {
+          "Value": "@pizza-crust",
+          "ExpressionName": null,
+          "Id": "289f6ba6-0953-4376-8007-95847fbe50ac",
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 2791.5752464283873,
+            "Y": 6508.4767161152986
+          }
+        }
+      ],
+      "Response": {
+        "Priority": "Normal",
+        "Hint": null,
+        "Type": null,
+        "Format": null,
+        "Text": "Alright you're pizza will have $sys.user.crust crust. Please now specify your delivery address.",
+        "ResponseMessages": [],
+        "Children": [],
+        "Id": "218ce37f-b53e-49d0-93c4-7cb517001e2a",
+        "IsFolded": false,
+        "DisplayName": "Response",
+        "Position": {
+          "X": 2796.7782243593538,
+          "Y": 6676.838181526532
+        }
+      },
+      "Id": "fb94795e-a040-4416-a502-d7da99d26533",
+      "IsFolded": false,
+      "DisplayName": "Intent (crust_intent)",
+      "Position": {
+        "X": 3216.343231244155,
+        "Y": 6518.0322115620966
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ResponseNode, Syn.Bot",
+      "Priority": "Normal",
+      "Hint": null,
+      "Type": null,
+      "Format": null,
+      "Text": "Alright you're pizza will have $sys.user.crust crust. Please now specify your delivery address.",
+      "ResponseMessages": [],
+      "Children": [],
+      "Id": "218ce37f-b53e-49d0-93c4-7cb517001e2a",
+      "IsFolded": false,
+      "DisplayName": "Response",
+      "Position": {
+        "X": 2796.7782243593538,
+        "Y": 6676.838181526532
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ContextRemoveNode, Syn.Bot",
+      "ContextName": "con-wait-crust",
+      "Id": "03dc38aa-e97a-46ca-a311-06596c627440",
+      "IsFolded": false,
+      "DisplayName": "Context Remove",
+      "Position": {
+        "X": 3035.2783459143639,
+        "Y": 7228.2470274756188
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ExpressionNode, Syn.Bot",
+      "Value": "@pizza-crust",
+      "ExpressionName": null,
+      "Id": "289f6ba6-0953-4376-8007-95847fbe50ac",
+      "IsFolded": false,
+      "DisplayName": "Expression",
+      "Position": {
+        "X": 2791.5752464283873,
+        "Y": 6508.4767161152986
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.EntityGetNode, Syn.Bot",
+      "EntityName": "pizza-crust",
+      "EntityGetType": "Reference",
+      "EntityPropertyName": null,
+      "Id": "db766d7d-e5ba-4c12-86a9-bc72fcc6d95b",
+      "IsFolded": false,
+      "DisplayName": "Entity Get",
+      "Position": {
+        "X": 3051.151004004143,
+        "Y": 7007.08277672136
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.VariableSetNode, Syn.Bot",
+      "VariableName": "crust",
+      "VariableOrigin": "User",
+      "VariableValue": "Stuffed",
+      "Id": "9ada37ef-581a-42e7-8697-dbca4d822b39",
+      "IsFolded": false,
+      "DisplayName": "Variable Set",
+      "Position": {
+        "X": 3348.4237312768705,
+        "Y": 7095.2645949031776
+      }
+    },
+    {
+      "$type": "Syn.Workspace.Nodes.InputOutput.InputTextNode, Syn.Workspace",
+      "OutputValue": "Alright you're pizza will have $sys.user.crust crust. Please now specify your delivery address.",
+      "Id": "37b66220-005d-4ac0-93cd-6c36f335e11a",
+      "IsFolded": false,
+      "DisplayName": "Input Text",
+      "Position": {
+        "X": 2217.62448656111,
+        "Y": 6771.6019796398341
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ContextNode, Syn.Bot",
+      "ContextName": "con-wait-crust",
+      "Id": "bb6d0609-dabc-4a62-9d0c-98944fd601a2",
+      "IsFolded": false,
+      "DisplayName": "Context",
+      "Position": {
+        "X": 2801.7825457361973,
+        "Y": 6364.81719530814
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ContextAddNode, Syn.Bot",
+      "ContextName": "con-wait-address",
+      "Lifespan": 1,
+      "Id": "add66ad4-52cb-499f-8b9b-fbaadd93864c",
+      "IsFolded": false,
+      "DisplayName": "Context Add",
+      "Position": {
+        "X": 3055.66064845563,
+        "Y": 6801.1331182053382
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.IntentNode, Syn.Bot",
+      "IntentName": "end_intent",
+      "MinScore": 0.0,
+      "IntentContexts": [
+        {
+          "ContextName": "con-wait-address",
+          "Id": "d6bab686-37b0-4ad5-bde0-42ca8b6661b0",
+          "IsFolded": false,
+          "DisplayName": "Context",
+          "Position": {
+            "X": 3013.9073697698691,
+            "Y": 7436.9756474507194
+          }
+        }
+      ],
+      "Prompts": [],
+      "AutoEntity": null,
+      "Fallback": null,
+      "Trait": null,
+      "Event": null,
+      "Action": null,
+      "Expressions": [
+        {
+          "Value": "@sys.text",
+          "ExpressionName": null,
+          "Id": "f50882c9-9c5a-4bdb-a2ce-ee19100d3d80",
+          "IsFolded": false,
+          "DisplayName": "Expression",
+          "Position": {
+            "X": 3020.7995044171516,
+            "Y": 7596.4798221386482
+          }
+        }
+      ],
+      "Response": {
+        "Priority": "Normal",
+        "Hint": null,
+        "Type": null,
+        "Format": null,
+        "Text": "Thank you! Your Pizza:\r\n\r\nSize: $sys.user.size\r\nToppings Primary: $sys.user.top1\r\nToppings Secondary: $sys.user.top2\r\nCrust: $sys.user.crust\r\n\r\nWill be delivered to :\r\n\r\nAddress: $sys.text",
+        "ResponseMessages": [],
+        "Children": [],
+        "Id": "eece7cbe-3ee7-4972-94a6-28bdcc2612e8",
+        "IsFolded": false,
+        "DisplayName": "Response",
+        "Position": {
+          "X": 3023.1804567981044,
+          "Y": 7777.82181348064
+        }
+      },
+      "Id": "22c9b79c-0de3-479d-98fd-c415c2455ebb",
+      "IsFolded": false,
+      "DisplayName": "Intent (end_intent)",
+      "Position": {
+        "X": 3289.7435668906255,
+        "Y": 7540.2114238702516
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ResponseNode, Syn.Bot",
+      "Priority": "Normal",
+      "Hint": null,
+      "Type": null,
+      "Format": null,
+      "Text": "Thank you! Your Pizza:\r\n\r\nSize: $sys.user.size\r\nToppings Primary: $sys.user.top1\r\nToppings Secondary: $sys.user.top2\r\nCrust: $sys.user.crust\r\n\r\nWill be delivered to :\r\n\r\nAddress: $sys.text",
+      "ResponseMessages": [],
+      "Children": [],
+      "Id": "eece7cbe-3ee7-4972-94a6-28bdcc2612e8",
+      "IsFolded": false,
+      "DisplayName": "Response",
+      "Position": {
+        "X": 3023.1804567981044,
+        "Y": 7777.82181348064
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ExpressionNode, Syn.Bot",
+      "Value": "@sys.text",
+      "ExpressionName": null,
+      "Id": "f50882c9-9c5a-4bdb-a2ce-ee19100d3d80",
+      "IsFolded": false,
+      "DisplayName": "Expression",
+      "Position": {
+        "X": 3020.7995044171516,
+        "Y": 7596.4798221386482
+      }
+    },
+    {
+      "$type": "Syn.Workspace.Nodes.InputOutput.InputTextNode, Syn.Workspace",
+      "OutputValue": "Thank you! Your Pizza:\r\n\r\nSize: $sys.user.size\r\nToppings Primary: $sys.user.top1\r\nToppings Secondary: $sys.user.top2\r\nCrust: $sys.user.crust\r\n\r\nWill be delivered to :\r\n\r\nAddress: $sys.text",
+      "Id": "adf56630-3a2e-413a-a810-456172e8fbe2",
+      "IsFolded": false,
+      "DisplayName": "Input Text",
+      "Position": {
+        "X": 2642.7661710838192,
+        "Y": 7995.832203091044
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ContextNode, Syn.Bot",
+      "ContextName": "con-wait-address",
+      "Id": "d6bab686-37b0-4ad5-bde0-42ca8b6661b0",
+      "IsFolded": false,
+      "DisplayName": "Context",
+      "Position": {
+        "X": 3013.9073697698691,
+        "Y": 7436.9756474507194
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.UserSettingsNode, Syn.Bot",
+      "Variables": [
+        {
+          "VariableName": "top2",
+          "VariableValue": "Not Specified",
+          "ValueCollection": [],
+          "Id": "230ec49c-9bfa-403c-8b7b-614816c15b69",
+          "IsFolded": false,
+          "DisplayName": "Settings Variable",
+          "Position": {
+            "X": 4555.4839942118178,
+            "Y": 3936.023139861989
+          }
+        }
+      ],
+      "Id": "cb20c2ee-ba4a-4cc1-b0b4-0368ea50c1b0",
+      "IsFolded": false,
+      "DisplayName": "User Settings",
+      "Position": {
+        "X": 4776.9720894499133,
+        "Y": 3852.4026916827174
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.SettingsVariableNode, Syn.Bot",
+      "VariableName": "top2",
+      "VariableValue": "Not Specified",
+      "ValueCollection": [],
+      "Id": "230ec49c-9bfa-403c-8b7b-614816c15b69",
+      "IsFolded": false,
+      "DisplayName": "Settings Variable",
+      "Position": {
+        "X": 4555.4839942118178,
+        "Y": 3936.023139861989
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.IntentNode, Syn.Bot",
+      "IntentName": "size_fallback",
+      "MinScore": 0.0,
+      "IntentContexts": [],
+      "Prompts": [],
+      "AutoEntity": null,
+      "Fallback": {
+        "ContextName": "con-wait-size",
+        "Id": "6e56bbe6-5ca5-4d3c-bceb-bd39c72d3531",
+        "IsFolded": false,
+        "DisplayName": "Fallback",
+        "Position": {
+          "X": 3597.5958607955527,
+          "Y": 2227.5759440421944
+        }
+      },
+      "Trait": null,
+      "Event": null,
+      "Action": null,
+      "Expressions": [],
+      "Response": {
+        "Priority": "Normal",
+        "Hint": "Small|Medium|Large|Extra Large",
+        "Type": null,
+        "Format": null,
+        "Text": "That doesn't seem like a valid pizza size. Please select an option.",
+        "ResponseMessages": [],
+        "Children": [],
+        "Id": "4b43a10a-d598-43b6-b0e0-1c442fa89322",
+        "IsFolded": false,
+        "DisplayName": "Response",
+        "Position": {
+          "X": 3543.8703705994735,
+          "Y": 2364.1118917546132
+        }
+      },
+      "Id": "02f642b8-f96d-4b96-8bb7-66a59f42800a",
+      "IsFolded": false,
+      "DisplayName": "Intent (size_fallback)",
+      "Position": {
+        "X": 3936.4847496844409,
+        "Y": 2292.0203884866387
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.FallbackNode, Syn.Bot",
+      "ContextName": "con-wait-size",
+      "Id": "6e56bbe6-5ca5-4d3c-bceb-bd39c72d3531",
+      "IsFolded": false,
+      "DisplayName": "Fallback",
+      "Position": {
+        "X": 3597.5958607955527,
+        "Y": 2227.5759440421944
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ResponseNode, Syn.Bot",
+      "Priority": "Normal",
+      "Hint": "Small|Medium|Large|Extra Large",
+      "Type": null,
+      "Format": null,
+      "Text": "That doesn't seem like a valid pizza size. Please select an option.",
+      "ResponseMessages": [],
+      "Children": [],
+      "Id": "4b43a10a-d598-43b6-b0e0-1c442fa89322",
+      "IsFolded": false,
+      "DisplayName": "Response",
+      "Position": {
+        "X": 3543.8703705994735,
+        "Y": 2364.1118917546132
+      }
+    },
+    {
+      "$type": "Syn.Workspace.Nodes.InputOutput.InputTextNode, Syn.Workspace",
+      "OutputValue": "That doesn't seem like a valid pizza size. Please select an option.",
+      "Id": "6aaf3288-9a98-45cc-a2cb-4e720f323b82",
+      "IsFolded": false,
+      "DisplayName": "Input Text",
+      "Position": {
+        "X": 3006.48474968444,
+        "Y": 2439.7981662644161
+      }
+    },
+    {
+      "$type": "Syn.Bot.Oscova.WorkspaceNodes.ExpressionListNode, Syn.Bot",
+      "ExpressionList": [
+        "@start",
+        "hi there",
+        "hello"
+      ],
+      "Id": "7a266984-6d4a-48bb-a26e-efcc8c65a211",
+      "IsFolded": false,
+      "DisplayName": "Expression List",
+      "Position": {
+        "X": 3594.3706371887492,
+        "Y": 1603.5809425524594
+      }
+    }
+  ],
+  "Connections": [
+    {
+      "FromNodeId": "20126592-396f-477b-b6d3-e195e320e875",
+      "FromPortName": "Output",
+      "ToNodeId": "d112bfee-fa18-44c3-9d60-61d9e359bbab",
+      "ToPortName": "OscovaBotNode"
+    },
+    {
+      "FromNodeId": "8a6cbf20-2e22-496d-9e7e-dfb48c5c0ead",
+      "FromPortName": "Output",
+      "ToNodeId": "20126592-396f-477b-b6d3-e195e320e875",
+      "ToPortName": "Dialogs"
+    },
+    {
+      "FromNodeId": "29c94b76-6eaa-46ed-a8fd-8424345c1801",
+      "FromPortName": "Output",
+      "ToNodeId": "20126592-396f-477b-b6d3-e195e320e875",
+      "ToPortName": "Dialogs"
+    },
+    {
+      "FromNodeId": "05b000a2-e0e5-42f2-bba4-8913aacf4a48",
+      "FromPortName": "Output",
+      "ToNodeId": "20126592-396f-477b-b6d3-e195e320e875",
+      "ToPortName": "Dialogs"
+    },
+    {
+      "FromNodeId": "1ee676bf-46ba-4010-a79c-83cc5cd9c35e",
+      "FromPortName": "Output",
+      "ToNodeId": "20126592-396f-477b-b6d3-e195e320e875",
+      "ToPortName": "Dialogs"
+    },
+    {
+      "FromNodeId": "817aa6ab-c0db-4c51-996f-9354a0330462",
+      "FromPortName": "Output",
+      "ToNodeId": "20126592-396f-477b-b6d3-e195e320e875",
+      "ToPortName": "Entities"
+    },
+    {
+      "FromNodeId": "3d33a9a7-5a6e-440d-8a83-12c1a502586a",
+      "FromPortName": "Output",
+      "ToNodeId": "20126592-396f-477b-b6d3-e195e320e875",
+      "ToPortName": "Entities"
+    },
+    {
+      "FromNodeId": "ab41b78e-7b5e-4f4d-81ba-a550407ed28f",
+      "FromPortName": "Output",
+      "ToNodeId": "20126592-396f-477b-b6d3-e195e320e875",
+      "ToPortName": "Entities"
+    },
+    {
+      "FromNodeId": "17c6b45c-8dac-417b-8058-f26d7e730308",
+      "FromPortName": "Output",
+      "ToNodeId": "20126592-396f-477b-b6d3-e195e320e875",
+      "ToPortName": "Entities"
+    },
+    {
+      "FromNodeId": "cb20c2ee-ba4a-4cc1-b0b4-0368ea50c1b0",
+      "FromPortName": "Output",
+      "ToNodeId": "20126592-396f-477b-b6d3-e195e320e875",
+      "ToPortName": "UserSettings"
+    },
+    {
+      "FromNodeId": "7a266984-6d4a-48bb-a26e-efcc8c65a211",
+      "FromPortName": "Expressions",
+      "ToNodeId": "0ffc59e9-3470-44cf-b7f9-c66ae7f35046",
+      "ToPortName": "Expressions"
+    },
+    {
+      "FromNodeId": "043283de-3b91-4516-8def-ce9958e721c9",
+      "FromPortName": "Output",
+      "ToNodeId": "0ffc59e9-3470-44cf-b7f9-c66ae7f35046",
+      "ToPortName": "Response"
+    },
+    {
+      "FromNodeId": "0ffc59e9-3470-44cf-b7f9-c66ae7f35046",
+      "FromPortName": "Output",
+      "ToNodeId": "8a6cbf20-2e22-496d-9e7e-dfb48c5c0ead",
+      "ToPortName": "Intents"
+    },
+    {
+      "FromNodeId": "02f642b8-f96d-4b96-8bb7-66a59f42800a",
+      "FromPortName": "Output",
+      "ToNodeId": "8a6cbf20-2e22-496d-9e7e-dfb48c5c0ead",
+      "ToPortName": "Intents"
+    },
+    {
+      "FromNodeId": "9f458cae-2fd7-4e15-a87c-ca22478dde43",
+      "FromPortName": "OutputValue",
+      "ToNodeId": "043283de-3b91-4516-8def-ce9958e721c9",
+      "ToPortName": "Text"
+    },
+    {
+      "FromNodeId": "3c74248e-cbe0-4308-8585-30da073381c2",
+      "FromPortName": "Output",
+      "ToNodeId": "817aa6ab-c0db-4c51-996f-9354a0330462",
+      "ToPortName": "Entries"
+    },
+    {
+      "FromNodeId": "55f807d1-47cb-40cc-bc8b-f197640018a5",
+      "FromPortName": "Output",
+      "ToNodeId": "3d33a9a7-5a6e-440d-8a83-12c1a502586a",
+      "ToPortName": "Entries"
+    },
+    {
+      "FromNodeId": "703b9cab-0164-4781-9531-baaeb0367447",
+      "FromPortName": "Output",
+      "ToNodeId": "3d33a9a7-5a6e-440d-8a83-12c1a502586a",
+      "ToPortName": "Entries"
+    },
+    {
+      "FromNodeId": "4c19f45d-254f-4c8c-a0f0-509c016528bc",
+      "FromPortName": "Output",
+      "ToNodeId": "3d33a9a7-5a6e-440d-8a83-12c1a502586a",
+      "ToPortName": "Entries"
+    },
+    {
+      "FromNodeId": "ae649713-aeb9-4d96-9f16-e837483f6e76",
+      "FromPortName": "Output",
+      "ToNodeId": "3d33a9a7-5a6e-440d-8a83-12c1a502586a",
+      "ToPortName": "Entries"
+    },
+    {
+      "FromNodeId": "043283de-3b91-4516-8def-ce9958e721c9",
+      "FromPortName": "TriggerFlow",
+      "ToNodeId": "7613df2f-f1e6-47b8-bd22-27cdbacab623",
+      "ToPortName": "OnNodeTriggered"
+    },
+    {
+      "FromNodeId": "c41d8455-6589-4038-ba32-f035a8753362",
+      "FromPortName": "Output",
+      "ToNodeId": "29c94b76-6eaa-46ed-a8fd-8424345c1801",
+      "ToPortName": "Intents"
+    },
+    {
+      "FromNodeId": "9dd0ef99-550d-49c2-ba16-f65bf99b3a41",
+      "FromPortName": "Output",
+      "ToNodeId": "c41d8455-6589-4038-ba32-f035a8753362",
+      "ToPortName": "IntentContexts"
+    },
+    {
+      "FromNodeId": "ce311ba0-1095-4fa7-87b1-bfab13878986",
+      "FromPortName": "Output",
+      "ToNodeId": "c41d8455-6589-4038-ba32-f035a8753362",
+      "ToPortName": "Expressions"
+    },
+    {
+      "FromNodeId": "f5f53e38-e1f0-4aa5-b319-118e2fbaea52",
+      "FromPortName": "Output",
+      "ToNodeId": "c41d8455-6589-4038-ba32-f035a8753362",
+      "ToPortName": "Response"
+    },
+    {
+      "FromNodeId": "c36f956f-bfcf-4e3b-a302-6454815e4999",
+      "FromPortName": "OutputValue",
+      "ToNodeId": "f5f53e38-e1f0-4aa5-b319-118e2fbaea52",
+      "ToPortName": "Text"
+    },
+    {
+      "FromNodeId": "c8a88935-f0ac-4888-9360-9c08240f31f5",
+      "FromPortName": "Output",
+      "ToNodeId": "ab41b78e-7b5e-4f4d-81ba-a550407ed28f",
+      "ToPortName": "Entries"
+    },
+    {
+      "FromNodeId": "1b42975a-a6cf-47c6-9ee5-cbdf3f7eacce",
+      "FromPortName": "Output",
+      "ToNodeId": "ab41b78e-7b5e-4f4d-81ba-a550407ed28f",
+      "ToPortName": "Entries"
+    },
+    {
+      "FromNodeId": "f5043747-f618-4aed-b64c-d5a792068c67",
+      "FromPortName": "Output",
+      "ToNodeId": "ab41b78e-7b5e-4f4d-81ba-a550407ed28f",
+      "ToPortName": "Entries"
+    },
+    {
+      "FromNodeId": "f5f53e38-e1f0-4aa5-b319-118e2fbaea52",
+      "FromPortName": "TriggerFlow",
+      "ToNodeId": "1cd1802a-9e8c-4f13-96f5-13cb2a1d543c",
+      "ToPortName": "OnNodeTriggered"
+    },
+    {
+      "FromNodeId": "1cd1802a-9e8c-4f13-96f5-13cb2a1d543c",
+      "FromPortName": "TriggerFlow",
+      "ToNodeId": "62afaea0-ecb1-4025-b681-124f514a21a1",
+      "ToPortName": "OnNodeTriggered"
+    },
+    {
+      "FromNodeId": "1cd1802a-9e8c-4f13-96f5-13cb2a1d543c",
+      "FromPortName": "Output",
+      "ToNodeId": "62afaea0-ecb1-4025-b681-124f514a21a1",
+      "ToPortName": "VariableValue"
+    },
+    {
+      "FromNodeId": "b96cf069-8e05-4b50-abe2-918f2773860f",
+      "FromPortName": "Output",
+      "ToNodeId": "05b000a2-e0e5-42f2-bba4-8913aacf4a48",
+      "ToPortName": "Intents"
+    },
+    {
+      "FromNodeId": "f445f6e0-02f9-4b92-ad90-473cd4fbb5c2",
+      "FromPortName": "Output",
+      "ToNodeId": "05b000a2-e0e5-42f2-bba4-8913aacf4a48",
+      "ToPortName": "Intents"
+    },
+    {
+      "FromNodeId": "c5315c5d-91dc-4604-b78d-2950c48fb28f",
+      "FromPortName": "Output",
+      "ToNodeId": "05b000a2-e0e5-42f2-bba4-8913aacf4a48",
+      "ToPortName": "Intents"
+    },
+    {
+      "FromNodeId": "848c4f47-5de9-4e4d-9f35-97b46067b6bf",
+      "FromPortName": "Output",
+      "ToNodeId": "05b000a2-e0e5-42f2-bba4-8913aacf4a48",
+      "ToPortName": "Intents"
+    },
+    {
+      "FromNodeId": "39046a4d-4186-4f12-a5dc-c7515c31a787",
+      "FromPortName": "Output",
+      "ToNodeId": "b96cf069-8e05-4b50-abe2-918f2773860f",
+      "ToPortName": "IntentContexts"
+    },
+    {
+      "FromNodeId": "374e0279-b1c8-452a-bad6-bf635aff8b96",
+      "FromPortName": "Output",
+      "ToNodeId": "b96cf069-8e05-4b50-abe2-918f2773860f",
+      "ToPortName": "Expressions"
+    },
+    {
+      "FromNodeId": "7835e9ef-b9d8-4c48-9906-1ea009e8b3f4",
+      "FromPortName": "Output",
+      "ToNodeId": "b96cf069-8e05-4b50-abe2-918f2773860f",
+      "ToPortName": "Response"
+    },
+    {
+      "FromNodeId": "b2f9a6c9-dc10-466b-9d62-a18812f30b95",
+      "FromPortName": "OutputValue",
+      "ToNodeId": "7835e9ef-b9d8-4c48-9906-1ea009e8b3f4",
+      "ToPortName": "Text"
+    },
+    {
+      "FromNodeId": "fc29bd13-580f-413d-becf-265420035952",
+      "FromPortName": "Output",
+      "ToNodeId": "f445f6e0-02f9-4b92-ad90-473cd4fbb5c2",
+      "ToPortName": "IntentContexts"
+    },
+    {
+      "FromNodeId": "c6da4821-7f8a-4fed-a9e2-fd6d35389c66",
+      "FromPortName": "Output",
+      "ToNodeId": "f445f6e0-02f9-4b92-ad90-473cd4fbb5c2",
+      "ToPortName": "Expressions"
+    },
+    {
+      "FromNodeId": "673e41d7-a603-40f4-9bbd-ce06eb4d14e0",
+      "FromPortName": "Output",
+      "ToNodeId": "f445f6e0-02f9-4b92-ad90-473cd4fbb5c2",
+      "ToPortName": "Response"
+    },
+    {
+      "FromNodeId": "7835e9ef-b9d8-4c48-9906-1ea009e8b3f4",
+      "FromPortName": "TriggerFlow",
+      "ToNodeId": "20d5b019-84be-46a2-87f1-a619a613dc73",
+      "ToPortName": "OnNodeTriggered"
+    },
+    {
+      "FromNodeId": "f5f53e38-e1f0-4aa5-b319-118e2fbaea52",
+      "FromPortName": "TriggerFlow",
+      "ToNodeId": "f36c40e4-7130-4078-9b88-00a1718a8711",
+      "ToPortName": "OnNodeTriggered"
+    },
+    {
+      "FromNodeId": "7835e9ef-b9d8-4c48-9906-1ea009e8b3f4",
+      "FromPortName": "TriggerFlow",
+      "ToNodeId": "9f0ec2e3-c9de-463c-8957-8811297b6a75",
+      "ToPortName": "OnNodeTriggered"
+    },
+    {
+      "FromNodeId": "7835e9ef-b9d8-4c48-9906-1ea009e8b3f4",
+      "FromPortName": "TriggerFlow",
+      "ToNodeId": "c8392adc-e557-473a-90ff-f513d580c514",
+      "ToPortName": "OnNodeTriggered"
+    },
+    {
+      "FromNodeId": "c8392adc-e557-473a-90ff-f513d580c514",
+      "FromPortName": "Output",
+      "ToNodeId": "d2c20dca-5602-46d1-a1fc-af4a5b170c93",
+      "ToPortName": "VariableValue"
+    },
+    {
+      "FromNodeId": "d854399a-f86e-4325-9756-8e93657ce78b",
+      "FromPortName": "OutputValue",
+      "ToNodeId": "673e41d7-a603-40f4-9bbd-ce06eb4d14e0",
+      "ToPortName": "Text"
+    },
+    {
+      "FromNodeId": "41a71ee3-979c-43e2-a17f-5926f5418334",
+      "FromPortName": "Output",
+      "ToNodeId": "848c4f47-5de9-4e4d-9f35-97b46067b6bf",
+      "ToPortName": "Expressions"
+    },
+    {
+      "FromNodeId": "61dff21c-e8ff-420f-9ab7-5da2ab11f0a1",
+      "FromPortName": "Output",
+      "ToNodeId": "848c4f47-5de9-4e4d-9f35-97b46067b6bf",
+      "ToPortName": "Response"
+    },
+    {
+      "FromNodeId": "673e41d7-a603-40f4-9bbd-ce06eb4d14e0",
+      "FromPortName": "TriggerFlow",
+      "ToNodeId": "afbeec86-5560-4ba8-a953-bcbdaf57fd79",
+      "ToPortName": "OnNodeTriggered"
+    },
+    {
+      "FromNodeId": "673e41d7-a603-40f4-9bbd-ce06eb4d14e0",
+      "FromPortName": "TriggerFlow",
+      "ToNodeId": "b071d038-6206-4fa6-a916-2c7dec4e2d54",
+      "ToPortName": "OnNodeTriggered"
+    },
+    {
+      "FromNodeId": "3bb0215f-6653-4b6b-98a5-401c089308dc",
+      "FromPortName": "Output",
+      "ToNodeId": "c5315c5d-91dc-4604-b78d-2950c48fb28f",
+      "ToPortName": "IntentContexts"
+    },
+    {
+      "FromNodeId": "1b915474-2d2f-427b-9646-d21a0de5078d",
+      "FromPortName": "Output",
+      "ToNodeId": "c5315c5d-91dc-4604-b78d-2950c48fb28f",
+      "ToPortName": "Expressions"
+    },
+    {
+      "FromNodeId": "5e508225-1968-4e36-ad0b-833b1519829d",
+      "FromPortName": "Output",
+      "ToNodeId": "c5315c5d-91dc-4604-b78d-2950c48fb28f",
+      "ToPortName": "Response"
+    },
+    {
+      "FromNodeId": "56be6f90-7ca6-46ec-a79c-b73ece096144",
+      "FromPortName": "OutputValue",
+      "ToNodeId": "5e508225-1968-4e36-ad0b-833b1519829d",
+      "ToPortName": "Hint"
+    },
+    {
+      "FromNodeId": "ba3dc2bc-eeae-489a-bc26-40ca8f6eeaf7",
+      "FromPortName": "OutputValue",
+      "ToNodeId": "5e508225-1968-4e36-ad0b-833b1519829d",
+      "ToPortName": "Text"
+    },
+    {
+      "FromNodeId": "5e508225-1968-4e36-ad0b-833b1519829d",
+      "FromPortName": "TriggerFlow",
+      "ToNodeId": "4408a737-5a57-449d-b791-7209bf5f3fe3",
+      "ToPortName": "OnNodeTriggered"
+    },
+    {
+      "FromNodeId": "4408a737-5a57-449d-b791-7209bf5f3fe3",
+      "FromPortName": "TriggerFlow",
+      "ToNodeId": "ce6e2cfe-dafa-4780-8f27-108d66e12336",
+      "ToPortName": "OnNodeTriggered"
+    },
+    {
+      "FromNodeId": "4408a737-5a57-449d-b791-7209bf5f3fe3",
+      "FromPortName": "Output",
+      "ToNodeId": "ce6e2cfe-dafa-4780-8f27-108d66e12336",
+      "ToPortName": "VariableValue"
+    },
+    {
+      "FromNodeId": "e058fab7-046d-4eef-8936-80397e622603",
+      "FromPortName": "Output",
+      "ToNodeId": "17c6b45c-8dac-417b-8058-f26d7e730308",
+      "ToPortName": "Entries"
+    },
+    {
+      "FromNodeId": "9e4724c4-82c5-42af-b671-e5e41b8a368b",
+      "FromPortName": "Output",
+      "ToNodeId": "17c6b45c-8dac-417b-8058-f26d7e730308",
+      "ToPortName": "Entries"
+    },
+    {
+      "FromNodeId": "a6663fdd-66ce-4de2-826f-111c4b9e3f09",
+      "FromPortName": "Output",
+      "ToNodeId": "17c6b45c-8dac-417b-8058-f26d7e730308",
+      "ToPortName": "Entries"
+    },
+    {
+      "FromNodeId": "56be6f90-7ca6-46ec-a79c-b73ece096144",
+      "FromPortName": "OutputValue",
+      "ToNodeId": "61dff21c-e8ff-420f-9ab7-5da2ab11f0a1",
+      "ToPortName": "Hint"
+    },
+    {
+      "FromNodeId": "ba3dc2bc-eeae-489a-bc26-40ca8f6eeaf7",
+      "FromPortName": "OutputValue",
+      "ToNodeId": "61dff21c-e8ff-420f-9ab7-5da2ab11f0a1",
+      "ToPortName": "Text"
+    },
+    {
+      "FromNodeId": "5e508225-1968-4e36-ad0b-833b1519829d",
+      "FromPortName": "TriggerFlow",
+      "ToNodeId": "6301a2c5-cd2f-4770-8496-0d6bdf53ea6a",
+      "ToPortName": "OnNodeTriggered"
+    },
+    {
+      "FromNodeId": "61dff21c-e8ff-420f-9ab7-5da2ab11f0a1",
+      "FromPortName": "TriggerFlow",
+      "ToNodeId": "6301a2c5-cd2f-4770-8496-0d6bdf53ea6a",
+      "ToPortName": "OnNodeTriggered"
+    },
+    {
+      "FromNodeId": "5e508225-1968-4e36-ad0b-833b1519829d",
+      "FromPortName": "TriggerFlow",
+      "ToNodeId": "60c85975-80e1-4569-8eb6-1fde4bb01757",
+      "ToPortName": "OnNodeTriggered"
+    },
+    {
+      "FromNodeId": "61dff21c-e8ff-420f-9ab7-5da2ab11f0a1",
+      "FromPortName": "TriggerFlow",
+      "ToNodeId": "60c85975-80e1-4569-8eb6-1fde4bb01757",
+      "ToPortName": "OnNodeTriggered"
+    },
+    {
+      "FromNodeId": "fb94795e-a040-4416-a502-d7da99d26533",
+      "FromPortName": "Output",
+      "ToNodeId": "1ee676bf-46ba-4010-a79c-83cc5cd9c35e",
+      "ToPortName": "Intents"
+    },
+    {
+      "FromNodeId": "22c9b79c-0de3-479d-98fd-c415c2455ebb",
+      "FromPortName": "Output",
+      "ToNodeId": "1ee676bf-46ba-4010-a79c-83cc5cd9c35e",
+      "ToPortName": "Intents"
+    },
+    {
+      "FromNodeId": "bb6d0609-dabc-4a62-9d0c-98944fd601a2",
+      "FromPortName": "Output",
+      "ToNodeId": "fb94795e-a040-4416-a502-d7da99d26533",
+      "ToPortName": "IntentContexts"
+    },
+    {
+      "FromNodeId": "289f6ba6-0953-4376-8007-95847fbe50ac",
+      "FromPortName": "Output",
+      "ToNodeId": "fb94795e-a040-4416-a502-d7da99d26533",
+      "ToPortName": "Expressions"
+    },
+    {
+      "FromNodeId": "218ce37f-b53e-49d0-93c4-7cb517001e2a",
+      "FromPortName": "Output",
+      "ToNodeId": "fb94795e-a040-4416-a502-d7da99d26533",
+      "ToPortName": "Response"
+    },
+    {
+      "FromNodeId": "37b66220-005d-4ac0-93cd-6c36f335e11a",
+      "FromPortName": "OutputValue",
+      "ToNodeId": "218ce37f-b53e-49d0-93c4-7cb517001e2a",
+      "ToPortName": "Text"
+    },
+    {
+      "FromNodeId": "218ce37f-b53e-49d0-93c4-7cb517001e2a",
+      "FromPortName": "TriggerFlow",
+      "ToNodeId": "03dc38aa-e97a-46ca-a311-06596c627440",
+      "ToPortName": "OnNodeTriggered"
+    },
+    {
+      "FromNodeId": "218ce37f-b53e-49d0-93c4-7cb517001e2a",
+      "FromPortName": "TriggerFlow",
+      "ToNodeId": "db766d7d-e5ba-4c12-86a9-bc72fcc6d95b",
+      "ToPortName": "OnNodeTriggered"
+    },
+    {
+      "FromNodeId": "db766d7d-e5ba-4c12-86a9-bc72fcc6d95b",
+      "FromPortName": "TriggerFlow",
+      "ToNodeId": "9ada37ef-581a-42e7-8697-dbca4d822b39",
+      "ToPortName": "OnNodeTriggered"
+    },
+    {
+      "FromNodeId": "db766d7d-e5ba-4c12-86a9-bc72fcc6d95b",
+      "FromPortName": "Output",
+      "ToNodeId": "9ada37ef-581a-42e7-8697-dbca4d822b39",
+      "ToPortName": "VariableValue"
+    },
+    {
+      "FromNodeId": "218ce37f-b53e-49d0-93c4-7cb517001e2a",
+      "FromPortName": "TriggerFlow",
+      "ToNodeId": "add66ad4-52cb-499f-8b9b-fbaadd93864c",
+      "ToPortName": "OnNodeTriggered"
+    },
+    {
+      "FromNodeId": "d6bab686-37b0-4ad5-bde0-42ca8b6661b0",
+      "FromPortName": "Output",
+      "ToNodeId": "22c9b79c-0de3-479d-98fd-c415c2455ebb",
+      "ToPortName": "IntentContexts"
+    },
+    {
+      "FromNodeId": "f50882c9-9c5a-4bdb-a2ce-ee19100d3d80",
+      "FromPortName": "Output",
+      "ToNodeId": "22c9b79c-0de3-479d-98fd-c415c2455ebb",
+      "ToPortName": "Expressions"
+    },
+    {
+      "FromNodeId": "eece7cbe-3ee7-4972-94a6-28bdcc2612e8",
+      "FromPortName": "Output",
+      "ToNodeId": "22c9b79c-0de3-479d-98fd-c415c2455ebb",
+      "ToPortName": "Response"
+    },
+    {
+      "FromNodeId": "adf56630-3a2e-413a-a810-456172e8fbe2",
+      "FromPortName": "OutputValue",
+      "ToNodeId": "eece7cbe-3ee7-4972-94a6-28bdcc2612e8",
+      "ToPortName": "Text"
+    },
+    {
+      "FromNodeId": "230ec49c-9bfa-403c-8b7b-614816c15b69",
+      "FromPortName": "Output",
+      "ToNodeId": "cb20c2ee-ba4a-4cc1-b0b4-0368ea50c1b0",
+      "ToPortName": "Variables"
+    },
+    {
+      "FromNodeId": "6e56bbe6-5ca5-4d3c-bceb-bd39c72d3531",
+      "FromPortName": "Output",
+      "ToNodeId": "02f642b8-f96d-4b96-8bb7-66a59f42800a",
+      "ToPortName": "Fallback"
+    },
+    {
+      "FromNodeId": "4b43a10a-d598-43b6-b0e0-1c442fa89322",
+      "FromPortName": "Output",
+      "ToNodeId": "02f642b8-f96d-4b96-8bb7-66a59f42800a",
+      "ToPortName": "Response"
+    },
+    {
+      "FromNodeId": "6aaf3288-9a98-45cc-a2cb-4e720f323b82",
+      "FromPortName": "OutputValue",
+      "ToNodeId": "4b43a10a-d598-43b6-b0e0-1c442fa89322",
+      "ToPortName": "Text"
+    }
+  ]
+}
