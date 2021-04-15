@@ -7,41 +7,19 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     int phaseInitiated;
+    string year;
+    string date;
+
 
     //Once we get the broadcast date from Triangletales, please adjust the date here to load the scene properly
     //There are Phase 1, 2, 3, 4, 5 and 5 + AR mode
     void Start()
     {
-        string year = DateTime.Now.Year.ToString();
-        string date = DateTime.Now.ToString("MM/dd");
+        year = DateTime.Now.Year.ToString();
+        date = DateTime.Now.ToString("MM/dd");
 
-        /*
-        if (year == "2020")
-        {
-            if (date == "12/8")
-            {
-                Debug.Log("Hello Prema");
-                phaseInitiated = 1;
-                StartCoroutine(LoadLevel(5f, phaseInitiated));
-                PlayerPrefs.SetInt("Phase Initiated", phaseInitiated);
-            }
-            else if(date == "12/9")
-            {
-                Debug.Log("Hello Prema");
-                phaseInitiated = 3;
-                StartCoroutine(LoadLevel(5f, phaseInitiated));
-                PlayerPrefs.SetInt("Phase Initiated", phaseInitiated);
-            }
-            else
-            {
-                Debug.Log("Phase Unknown");
-            }
-        }
-        else
-        {
-            Debug.Log("Try for 2021");
-        }
-        */
+
+        
 
 
         Debug.Log(year);
@@ -53,7 +31,7 @@ public class LevelManager : MonoBehaviour
     //May be deleted once we have the actual date of broadcast and finished testing the app
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+/*        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             //Process user message on enter press.
             phaseInitiated = 1;
@@ -87,7 +65,7 @@ public class LevelManager : MonoBehaviour
             phaseInitiated = 5;
             StartCoroutine(LoadLevel(5f, phaseInitiated));
             PlayerPrefs.SetInt("Phase Initiated", phaseInitiated);
-        }
+        }*/
     }
 
     //This is used for the button test
@@ -114,5 +92,36 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         print("WaitAndPrint " + Time.time);
         SceneManager.LoadScene(sceneIndex);
+    }
+
+
+    public void OnClickLogin()
+    {
+
+        if (year == "2021")
+        {
+            if (date == "04/15")
+            {
+                Debug.Log("04/15 phrase 1");
+                phaseInitiated = 1;
+                StartCoroutine(LoadLevel(3f, phaseInitiated));
+                PlayerPrefs.SetInt("Phase Initiated", phaseInitiated);
+            }
+            else if (date == "04/16")
+            {
+                Debug.Log("04/16 phrase 2");
+                phaseInitiated = 3;
+                StartCoroutine(LoadLevel(3f, phaseInitiated));
+                PlayerPrefs.SetInt("Phase Initiated", phaseInitiated);
+            }
+            else
+            {
+                Debug.Log("Phase Unknown");
+            }
+        }
+        else
+        {
+            Debug.Log("Try for 2021");
+        }
     }
 }

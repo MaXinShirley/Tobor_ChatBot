@@ -5,57 +5,83 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.Experimental.XR;
 using System;
 using UnityEngine.XR.ARSubsystems;
+using UnityEngine.UI;
 
 public class ARTapToPlaceObject : MonoBehaviour
 {
     public GameObject objectToPlace;
     public GameObject placementIndicator;
+    public Image BGimage;
+    public Camera mainCam;
+    public GameObject arSession;
+    public GameObject tobor;
+    public Canvas canvas;
+
+    public bool objectPlaced;
 
     private ARSessionOrigin arOrigin;
     private Pose placementPose;
-    private bool objectPlaced;
     private bool placementPoseIsValid = false;
+    private SwitchToggle switchToggle;
 
     public ARRaycastManager raycastManager { get; private set; }
 
     void Start()
     {
         arOrigin = FindObjectOfType<ARSessionOrigin>();
+        switchToggle = FindObjectOfType<SwitchToggle>();
     }
 
     void Update()
     {
-        if(objectPlaced == false)
+        if (!switchToggle.toggle.isOn)
         {
-            UpdatePlacementPose();
-            UpdatePlacementIndicator();
+            //Turn On BG Image
+            BGimage.GetComponent<Image>().enabled = false;
+            //Turn off AR Cam
+            arSession.SetActive(true);
+            //Turn on Main Cam
+            mainCam.gameObject.SetActive(false);
+            //Turn On Model
+            tobor.SetActive(false);
+            //Turn Off AR Model
+            objectToPlace.SetActive(true);
+            //Set canvas render camera to MainCam
+            canvas.worldCamera = null;
 
-            if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+
+
+
+            if (objectPlaced == false)
             {
-                PlaceObject();
+                UpdatePlacementPose();
+                UpdatePlacementIndicator();
+
+                if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+                {
+                    PlaceObject();
+                }
             }
 
-            /*
-                    if(Input.touchCount==2)
-                    {
-                        var touchZero = Input.GetTouch(0);
-                        var touchOne = Input.GetTouch(1);
-
-                        if(touchZero.phase == TouchPhase.Ended || touchZero.phase == TouchPhase.Canceled ||
-                            touchOne.phase == TouchPhase.Ended || touchOne.phase == TouchPhase.Canceled)
-                        {
-                            return;
-                        }
-
-                    }*/
         }
-
-        if(objectPlaced == true)
+        if(switchToggle.toggle.isOn)
         {
-            objectToPlace.transform.SetPositionAndRotation(objectToPlace.transform.position, objectToPlace.transform.rotation);
+            //Turn On BG Image
+            BGimage.GetComponent<Image>().enabled = true;
+            //Turn off AR Cam
+            arSession.SetActive(false);
+            //Turn on Main Cam
+            mainCam.gameObject.SetActive(true);
+            //Turn On Model
+            tobor.SetActive(true);
+            //Turn Off AR Model
+            objectToPlace.SetActive(false);
+            //Set canvas render camera to MainCam
+            canvas.worldCamera = mainCam;
+
         }
 
-
+        Debug.Log(switchToggle.toggle.isOn);
 
     }
 
@@ -100,4 +126,5 @@ public class ARTapToPlaceObject : MonoBehaviour
             placementPose.rotation = Quaternion.LookRotation(cameraBearing);
         }
     }
+
 }
