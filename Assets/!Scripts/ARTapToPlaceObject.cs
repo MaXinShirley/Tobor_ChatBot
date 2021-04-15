@@ -11,11 +11,6 @@ public class ARTapToPlaceObject : MonoBehaviour
 {
     public GameObject objectToPlace;
     public GameObject placementIndicator;
-    public Image BGimage;
-    public Camera mainCam;
-    public GameObject arSession;
-    public GameObject tobor;
-    public Canvas canvas;
 
     public bool objectPlaced;
 
@@ -36,22 +31,6 @@ public class ARTapToPlaceObject : MonoBehaviour
     {
         if (!switchToggle.toggle.isOn)
         {
-            //Turn On BG Image
-            BGimage.GetComponent<Image>().enabled = false;
-            //Turn off AR Cam
-            arSession.SetActive(true);
-            //Turn on Main Cam
-            mainCam.gameObject.SetActive(false);
-            //Turn On Model
-            tobor.SetActive(false);
-            //Turn Off AR Model
-            objectToPlace.SetActive(true);
-            //Set canvas render camera to MainCam
-            canvas.worldCamera = null;
-
-
-
-
             if (objectPlaced == false)
             {
                 UpdatePlacementPose();
@@ -64,24 +43,6 @@ public class ARTapToPlaceObject : MonoBehaviour
             }
 
         }
-        if(switchToggle.toggle.isOn)
-        {
-            //Turn On BG Image
-            BGimage.GetComponent<Image>().enabled = true;
-            //Turn off AR Cam
-            arSession.SetActive(false);
-            //Turn on Main Cam
-            mainCam.gameObject.SetActive(true);
-            //Turn On Model
-            tobor.SetActive(true);
-            //Turn Off AR Model
-            objectToPlace.SetActive(false);
-            //Set canvas render camera to MainCam
-            canvas.worldCamera = mainCam;
-
-        }
-
-        Debug.Log(switchToggle.toggle.isOn);
 
     }
 
@@ -114,7 +75,7 @@ public class ARTapToPlaceObject : MonoBehaviour
         var hits = new List<ARRaycastHit>();
         raycastManager = FindObjectOfType<ARRaycastManager>();
         raycastManager.Raycast(screenCenter, hits, TrackableType.Planes);
-       //  arOrigin.Raycast(screenCenter, hits, TrackableType.Planes);
+        //  arOrigin.Raycast(screenCenter, hits, TrackableType.Planes);
 
         placementPoseIsValid = hits.Count > 0;
         if (placementPoseIsValid)

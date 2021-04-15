@@ -245,12 +245,7 @@ public class ChatManager : MonoBehaviour
 
 
             // if intentname contain "sad", show sad, contain "happy" show happy(check dialogs name) eg: happy_dialog_ep1.happy
-/*
-            if (ARTapToPlaceObject.objectPlaced == true)
-            {*/
-/*
-                ExpressionAnim = FindObjectOfType<ExpressionControl>();
-                toborBodyAnimator = GameObject.FindGameObjectWithTag("BodyAnimator").GetComponent<Anima>();*/
+
                 switch (phaseInitiated)
                 {
                     case 1:
@@ -367,7 +362,6 @@ public class ChatManager : MonoBehaviour
             //Process user message on enter press.
             SendMessageToBot(chatBox.text);
         }
-
 
         ExpressionAnim = FindObjectOfType<ExpressionControl>();
         //toborBodyAnimator = FindObjectOfType<Animator>();
