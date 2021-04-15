@@ -62,6 +62,7 @@ Eon Reality - Unity project for Chatbot application
 	- Add framework:
 		- speech.framework
 		- AVFoundation.framework
+		- AVKit.framework
 	- Add permission
 		- Privacy – Microphone Usage Description      
 		- Privacy – Speech Recognition Usage Description
