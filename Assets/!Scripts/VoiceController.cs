@@ -70,7 +70,7 @@ public class VoiceController : MonoBehaviour
         SpeechToText.instance.StopRecording();
 #endif
 #if UNITY_IOS
-        loading.SetActive(true);
+        loading.SetActive(false);
 #endif
     }
 
