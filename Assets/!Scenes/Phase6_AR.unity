@@ -1196,6 +1196,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 619967664083830656, guid: c736bc80d21bf604f929ca27104a0d5a, type: 3}
+      propertyPath: m_TagString
+      value: BodyAnimator
+      objectReference: {fileID: 0}
     - target: {fileID: 6274949484161429167, guid: c736bc80d21bf604f929ca27104a0d5a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2100,11 +2104,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToPlace: {fileID: 218741407}
   placementIndicator: {fileID: 1301788800}
-  BGimage: {fileID: 478389631}
-  mainCam: {fileID: 1773459819}
-  arSession: {fileID: 1401081385}
-  tobor: {fileID: 1166704392}
-  canvas: {fileID: 1977260034}
   objectPlaced: 0
 --- !u!1001 &1415377238
 PrefabInstance:
@@ -2274,6 +2273,11 @@ MonoBehaviour:
   backgroundImage: {fileID: 2127222026}
   handleImage: {fileID: 855509004}
   toggle: {fileID: 1611864327}
+  BGimage: {fileID: 478389631}
+  mainCam: {fileID: 1773459819}
+  arSession: {fileID: 1401081385}
+  tobor: {fileID: 1166704392}
+  canvas: {fileID: 1977260034}
 --- !u!114 &1611864327
 MonoBehaviour:
   m_ObjectHideFlags: 0
