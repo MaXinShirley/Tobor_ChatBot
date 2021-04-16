@@ -245,8 +245,16 @@ public class ChatManager : MonoBehaviour
 
 
             // if intentname contain "sad", show sad, contain "happy" show happy(check dialogs name) eg: happy_dialog_ep1.happy
+            if (phaseInitiated >= 3)
+            {
+                ExpressionAnim = FindObjectOfType<ExpressionControl>();
+                //toborBodyAnimator = FindObjectOfType<Animator>();
+                toborBodyAnimator = GameObject.FindGameObjectWithTag("BodyAnimator").GetComponent<Animator>();
+            }
 
-                switch (phaseInitiated)
+            
+
+            switch (phaseInitiated)
                 {
                     case 1:
                         if (intentName == "BotDialog.DefaultFallback") toborAnimator.SetBool("Confuse", true);
@@ -363,9 +371,6 @@ public class ChatManager : MonoBehaviour
             SendMessageToBot(chatBox.text);
         }
 
-        ExpressionAnim = FindObjectOfType<ExpressionControl>();
-        //toborBodyAnimator = FindObjectOfType<Animator>();
-        toborBodyAnimator = GameObject.FindGameObjectWithTag("BodyAnimator").GetComponent<Animator>();
     }
 
     IEnumerator BackToBodyNormal(int seconds, int BodyStateIndex, int ExpressionStateIndex)
