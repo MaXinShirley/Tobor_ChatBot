@@ -218,6 +218,7 @@ public class GameManager : MonoBehaviour
     
     }
 
+
     private void Recognizers_EntitiesExtracted(object sender, Syn.Bot.Oscova.Events.EntitiesExtractedEventArgs e)
     {
         Debug.Log("Recognizers_EntitiesExtracted");
