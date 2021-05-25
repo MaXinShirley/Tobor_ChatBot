@@ -18,54 +18,9 @@ public class LevelManager : MonoBehaviour
         year = DateTime.Now.Year.ToString();
         date = DateTime.Now.ToString("MM/dd");
 
-
-        
-
-
         Debug.Log(year);
         Debug.Log(date);
 
-    }
-
-    //For testing purposes only
-    //May be deleted once we have the actual date of broadcast and finished testing the app
-    void Update()
-    {
-/*        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            //Process user message on enter press.
-            phaseInitiated = 1;
-            StartCoroutine(LoadLevel(5f, phaseInitiated));
-            PlayerPrefs.SetInt("Phase Initiated", phaseInitiated);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            //Process user message on enter press.
-            phaseInitiated = 2;
-            StartCoroutine(LoadLevel(5f, phaseInitiated));
-            PlayerPrefs.SetInt("Phase Initiated", phaseInitiated);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            //Process user message on enter press.
-            phaseInitiated = 3;
-            StartCoroutine(LoadLevel(5f, phaseInitiated));
-            PlayerPrefs.SetInt("Phase Initiated", phaseInitiated);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            //Process user message on enter press.
-            phaseInitiated = 4;
-            StartCoroutine(LoadLevel(5f, phaseInitiated));
-            PlayerPrefs.SetInt("Phase Initiated", phaseInitiated);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            //Process user message on enter press.
-            phaseInitiated = 5;
-            StartCoroutine(LoadLevel(5f, phaseInitiated));
-            PlayerPrefs.SetInt("Phase Initiated", phaseInitiated);
-        }*/
     }
 
     //This is used for the button test
