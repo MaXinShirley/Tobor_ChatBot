@@ -15,15 +15,8 @@ public class Message
     public MessageType MessageType;
 }
 
-public class ToborAnimator
-{
-    public Animator toborAnimator;
-}
-
-
 public class BotDialog : Dialog
 {
-
     private List<string> defaultAnswers = new List<string>() { "Would you please rephrase that for me?", "Sorry, I don`t understand", "Huh?",
         "What does it mean?", "I can't find it in my database", "I beg your pardon",
         "I didn't catch what you're trying to say"};
@@ -58,8 +51,15 @@ public class ChatManager : MonoBehaviour
     private Animator toborBodyAnimator;
     private ARTapToPlaceObject ARTapToPlaceObject;
 
-    private string[] chatbotData = new string[] { "tobor_phase1", "tobor_phase2", "tobor_phase3", "tobor_phase4", "tobor_phase5", "tobor_phase6" };
+    //Import JSON link from cloud
+    private string[] chatbotURL = new string[] { "https://s3.ap-southeast-1.amazonaws.com/eon.project.sg/Tobor/tobor_phase1.json",
+                                                "https://s3.ap-southeast-1.amazonaws.com/eon.project.sg/Tobor/tobor_phase2.json",
+                                                "https://s3.ap-southeast-1.amazonaws.com/eon.project.sg/Tobor/tobor_phase3.json",
+                                                "https://s3.ap-southeast-1.amazonaws.com/eon.project.sg/Tobor/tobor_phase4.json",
+                                                "https://s3.ap-southeast-1.amazonaws.com/eon.project.sg/Tobor/tobor_phase5.json",
+                                                "https://s3.ap-southeast-1.amazonaws.com/eon.project.sg/Tobor/tobor_phase5.json"};
 
+    //Animation State Constant 
     private const int NORMAL_STATE_INDEX = 0;
     private const int HAPPY_STATE_INDEX = 1;
     private const int SAD_STATE_INDEX = 2;
@@ -69,16 +69,36 @@ public class ChatManager : MonoBehaviour
 
 
     List<Message> Messages = new List<Message>();
+  
+    private SwitchToggle switchToggle;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
+    {
+        switchToggle = FindObjectOfType<SwitchToggle>();
+    }
+
+    IEnumerator Start()
     {
         phaseInitiated = PlayerPrefs.GetInt("Phase Initiated");
         voiceController = this.gameObject.GetComponent<VoiceController>();
         ARTapToPlaceObject = FindObjectOfType<ARTapToPlaceObject>();
 
         Debug.Log("phase initiated: " + phaseInitiated);
-        Debug.Log("chatbot initiated: " + chatbotData[phaseInitiated-1]);
+
+
+        //Download JSON from URL according to phraseInitiated number
+        WWW www = new WWW(chatbotURL[phaseInitiated - 1]);
+        yield return www;
+        if (www.error == null)
+        {
+            Debug.Log("chatbot initiated: " + chatbotURL[phaseInitiated-1]);
+            Debug.Log("Get JSON: " + www.text);
+                    
+        }
+        else
+        {
+            Debug.Log("ERROR: " + www.error);
+        }
 
         try
         {
@@ -96,9 +116,9 @@ public class ChatManager : MonoBehaviour
             //First read the knowledge.json file and create a workspace.
             /*Note: Oryzer usually saves file in .West file extensions so the file was intentionally
             renamed to knowledge.json so Unity stores it as a resource. */
-            var txtAsset = (TextAsset)Resources.Load(chatbotData[phaseInitiated-1], typeof(TextAsset));
-            var tileFile = txtAsset.text;
 
+            //Get downloaded JSON text
+            var tileFile = www.text;
             var workspace = new WorkspaceGraph();
             workspace.LoadFromString(tileFile);
 
@@ -106,13 +126,11 @@ public class ChatManager : MonoBehaviour
             MainBot.ImportWorkspace(workspace);
             MainBot.Dialogs.Add(new BotDialog());
             MainBot.Trainer.StartTraining();
-            
+
             Debug.Log("Load rescource JSON: " + tileFile);
-            
 
-
-            //When the bot generates a response simply display it.
-            MainBot.MainUser.ResponseReceived += (sender, evt) =>
+             //When the bot generates a response simply display it.
+             MainBot.MainUser.ResponseReceived += (sender, evt) =>
             {
                 if (evt.Response.Messages.Count == 0)
                 {
@@ -144,19 +162,11 @@ public class ChatManager : MonoBehaviour
         {
             Debug.LogError(ex);
         }
+
     }
 
     public void AddMessage(string messageText, MessageType messageType)
     {
-        /*
-        if (Messages.Count >= 2)
-        {
-            //Remove when too much.
-            Destroy(Messages[0].TextObject.gameObject);
-            Messages.Remove(Messages[0]);
-        }
-        */
-
         var newMessage = new Message { Text = messageText };
 
         var text = messageType == MessageType.User ? userChatBox.GetComponent<Text>() : toborChatBox.GetComponent<Text>(); 
@@ -164,38 +174,6 @@ public class ChatManager : MonoBehaviour
         text.color = messageType == MessageType.User ? UserColor : BotColor;
         
         Messages.Add(newMessage);
-
-        //var newText = Instantiate(textObject, chatPanel.transform);
-
-        /*
-        if (messageType == MessageType.User)
-        {
-            var text = userChatBox.GetComponent<Text>();
-            text.text = messageText;
-            text.color =  UserColor;
-            
-
-            Messages.Add(newMessage);
-        }
-        else
-        {
-            var text = toborChatBox.GetComponent<Text>();
-            text.text = messageText;
-            text.color = BotColor;
-
-
-            Messages.Add(newMessage);
-        }
-        */
-
-        /*
-        newMessage.TextObject = newText.GetComponent<Text>();
-        newMessage.TextObject.text = messageText;
-        newMessage.TextObject.color = messageType == MessageType.User ? UserColor : BotColor;
-        */
-        
-
-        //Messages.Add(newMessage);
     }
 
     //Function to send the message to the OSCOVA bot
@@ -361,7 +339,7 @@ public class ChatManager : MonoBehaviour
     {
         SendMessageToBot(chatBox.text);
     }
-    
+
     //Just for the input test, may delete later
     void Update()
     {
@@ -371,6 +349,16 @@ public class ChatManager : MonoBehaviour
             SendMessageToBot(chatBox.text);
         }
 
+
+        //When AR Toggle button is on, turn on the AR scene
+        if (!switchToggle.toggle.isOn)
+        {
+            EnableARTapToPlaceObj(true);
+        }
+        else
+        {
+            EnableARTapToPlaceObj(false);
+        }
     }
 
     IEnumerator BackToBodyNormal(int seconds, int BodyStateIndex, int ExpressionStateIndex)
@@ -380,4 +368,6 @@ public class ChatManager : MonoBehaviour
         ExpressionAnim.SetExpression(ExpressionStateIndex);
 
     }
+
+    public void EnableARTapToPlaceObj(bool isEnabled) => ARTapToPlaceObject.enabled = isEnabled;
 }
