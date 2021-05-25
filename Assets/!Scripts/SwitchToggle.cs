@@ -7,16 +7,16 @@ public class SwitchToggle : MonoBehaviour
     [SerializeField] RectTransform uiHandleRectTransform;
     [SerializeField] Color backgroundActiveColor;
 
+    //UI for toggle button
     public Image backgroundImage, handleImage;
     public Toggle toggle;
-
+    
     public Image BGimage;
     public Camera mainCam;
     public GameObject arSession;
     public GameObject tobor;
     public Canvas canvas;
 
-    private bool status;
     private ARTapToPlaceObject ARTapToPlaceObject;
     Color backgroundDefaultColor;
     Vector2 handlePosition;
@@ -28,10 +28,7 @@ public class SwitchToggle : MonoBehaviour
 
         toggle.onValueChanged.AddListener(OnSwitch);
         backgroundDefaultColor = backgroundImage.color;
-        /*
 
-                if (toggle.isOn)
-                    OnSwitch(true);*/
     }
 
     private void Start()
@@ -39,53 +36,19 @@ public class SwitchToggle : MonoBehaviour
         ARTapToPlaceObject = FindObjectOfType<ARTapToPlaceObject>();
     }
 
-    void Update()
-    {
-
-
-        if (toggle.isOn == false)
-        {
-            //Turn On BG Image
-            BGimage.GetComponent<Image>().enabled = false;
-            //Turn off AR Cam
-            arSession.SetActive(true);
-            //Turn on Main Cam
-            mainCam.gameObject.SetActive(false);
-            //Turn On Model
-            tobor.SetActive(false);
-            //Turn Off AR Model
-            ARTapToPlaceObject.objectToPlace.SetActive(true);
-            //Set canvas render camera to MainCam
-            canvas.worldCamera = null;
-
-        }
-
-        if (toggle.isOn == true)
-        {
-            //Turn On BG Image
-            BGimage.GetComponent<Image>().enabled = true;
-            //Turn off AR Cam
-            arSession.SetActive(false);
-            //Turn on Main Cam
-            mainCam.gameObject.SetActive(true);
-            //Turn On Model
-            tobor.SetActive(true);
-            //Turn Off AR Model
-            ARTapToPlaceObject.objectToPlace.SetActive(false);
-            //Set canvas render camera to MainCam
-            canvas.worldCamera = mainCam;
-        }
-
-        Debug.Log(toggle.isOn);
-    }
-
     void OnSwitch(bool on)
     {
         uiHandleRectTransform.anchoredPosition = on ? handlePosition * -1 : handlePosition;
-
         backgroundImage.color = on ? backgroundActiveColor : backgroundDefaultColor;
+        
+        //Enable AR Scene when its on
+        BGimage.GetComponent<Image>().enabled = on;
+        arSession.SetActive(!on);
+        mainCam.gameObject.SetActive(on);
+        tobor.SetActive(on);
+        ARTapToPlaceObject.objectToPlace.SetActive(!on);
+        canvas.worldCamera = on ? mainCam : null;
 
-        status = on;
     }
 
     void OnDestroy()
