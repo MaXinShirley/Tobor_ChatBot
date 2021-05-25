@@ -238,7 +238,6 @@ MonoBehaviour:
   toborChatBox: {fileID: 272534790}
   chatBox: {fileID: 611059079}
   toborAnimator: {fileID: 535987892}
-  toborBodyAnimator: {fileID: 1966127942}
   UserColor: {r: 1, g: 1, b: 1, a: 1}
   BotColor: {r: 0.2206746, g: 0.8207547, b: 0.29968587, a: 1}
   phaseInitiated: 0
@@ -2102,6 +2101,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 619967664083830656, guid: c736bc80d21bf604f929ca27104a0d5a, type: 3}
+      propertyPath: m_TagString
+      value: BodyAnimator
+      objectReference: {fileID: 0}
     - target: {fileID: 6274949484161429167, guid: c736bc80d21bf604f929ca27104a0d5a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2164,11 +2167,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c736bc80d21bf604f929ca27104a0d5a, type: 3}
---- !u!95 &1966127942 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9157865106002898221, guid: c736bc80d21bf604f929ca27104a0d5a, type: 3}
-  m_PrefabInstance: {fileID: 1966127941}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1977260030
 GameObject:
   m_ObjectHideFlags: 0
