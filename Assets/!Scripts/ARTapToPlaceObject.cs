@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
-using UnityEngine.Experimental.XR;
-using System;
 using UnityEngine.XR.ARSubsystems;
-using UnityEngine.UI;
 
+/// <summary>
+/// Script for plane detection, tap to place the model.
+/// </summary>
 public class ARTapToPlaceObject : MonoBehaviour
 {
     public GameObject objectToPlace;
@@ -14,41 +13,28 @@ public class ARTapToPlaceObject : MonoBehaviour
 
     public bool objectPlaced;
 
-    private ARSessionOrigin arOrigin;
     private Pose placementPose;
     private bool placementPoseIsValid = false;
-    private SwitchToggle switchToggle;
 
     public ARRaycastManager raycastManager { get; private set; }
 
-    void Start()
-    {
-        arOrigin = FindObjectOfType<ARSessionOrigin>();
-        switchToggle = FindObjectOfType<SwitchToggle>();
-    }
-
     void Update()
     {
-        if (!switchToggle.toggle.isOn)
+        if (objectPlaced == false)
         {
-            if (objectPlaced == false)
+            UpdatePlacementPose();
+            UpdatePlacementIndicator();
+
+            if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                UpdatePlacementPose();
-                UpdatePlacementIndicator();
-
-                if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-                {
-                    PlaceObject();
-                }
+                PlaceObject();
             }
-
         }
-
     }
 
     private void PlaceObject()
     {
-        Quaternion objRotation = Quaternion.Euler(placementPose.rotation.x, placementPose.rotation.y + 180, placementPose.rotation.z);
+        Quaternion objRotation = Quaternion.Euler(placementPose.rotation.x, placementPose.rotation.y, placementPose.rotation.z);
         objectToPlace.SetActive(true);
         objectToPlace.transform.SetPositionAndRotation(placementPose.position, objRotation);
         objectPlaced = true;
@@ -75,7 +61,6 @@ public class ARTapToPlaceObject : MonoBehaviour
         var hits = new List<ARRaycastHit>();
         raycastManager = FindObjectOfType<ARRaycastManager>();
         raycastManager.Raycast(screenCenter, hits, TrackableType.Planes);
-        //  arOrigin.Raycast(screenCenter, hits, TrackableType.Planes);
 
         placementPoseIsValid = hits.Count > 0;
         if (placementPoseIsValid)
