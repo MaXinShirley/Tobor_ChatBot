@@ -39,7 +39,7 @@ public class ARTapToPlaceObject : MonoBehaviour
         objectToPlace.transform.SetPositionAndRotation(placementPose.position, objRotation);
         objectPlaced = true;
         placementIndicator.SetActive(false);
-
+        Events.OnToborSpawned();
     }
 
     private void UpdatePlacementIndicator()

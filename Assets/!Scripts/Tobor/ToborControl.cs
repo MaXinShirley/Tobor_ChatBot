@@ -87,6 +87,5 @@ public class ToborControl : MonoBehaviour
             BodyAnim.SetInteger(BODY_ANIM_STATE, NORMAL_EXP_INDEX);
         }
     }
-
 }
                                                                                                                                                                                                                                                                                                                                                                      

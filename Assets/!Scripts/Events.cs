@@ -7,4 +7,7 @@ public static class Events
 
     public static Action<int> ExpressionSelected;
     public static void OnSelectExpression(int index) => ExpressionSelected?.Invoke(index);
+
+    public static Action toborSpawned;
+    public static void OnToborSpawned() => toborSpawned?.Invoke();
 }

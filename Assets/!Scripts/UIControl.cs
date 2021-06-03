@@ -8,6 +8,7 @@ public class UIControl : MonoBehaviour
     public Image[] bodyAndFacialTitle;
     public Sprite[] bodyAndFacialTitleSelect;
     public GameObject[] animationList;
+    public GameObject toborControlUI;
 
     public Button[] ExpButtons;
     public Button[] BodyButtons;
@@ -19,6 +20,31 @@ public class UIControl : MonoBehaviour
     private GameObject BodyCurUI;
 
     public int status;
+
+
+    private void Start()
+    {
+        EnableToborControlUI(false);
+    }
+
+    private void OnEnable()
+    {
+        Events.toborSpawned += EnableControls;
+    }
+
+    private void OnDisable()
+    {
+        Events.toborSpawned -= EnableControls;
+    }
+
+    public void EnableControls()
+    {
+        EnableToborControlUI(true);
+    }
+    private void EnableToborControlUI(bool isEnabled)
+    {
+        toborControlUI.SetActive(isEnabled);
+    }
 
     public void OnExpAnimSelected(int ExpIndex)
     {
