@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
+/// <summary>
+/// This script to check on current date and decide on which phrase to load
+/// </summary>
 public class LevelManager : MonoBehaviour
 {
     int phaseInitiated;
@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour
 
 
     //Once we get the broadcast date from Triangletales, please adjust the date here to load the scene properly
-    //There are Phase 1, 2, 3, 4, 5 and 5 + AR mode
+    //There are Phase 1, 2, 3, 4, 5, 6
     void Start()
     {
         year = DateTime.Now.Year.ToString();
@@ -21,52 +21,18 @@ public class LevelManager : MonoBehaviour
         Debug.Log(year);
         Debug.Log(date);
 
-    }
-
-    //This is used for the button test
-    //May be deleted once we have the actual date of broadcast and finished testing the app
-    public void GoToLevel(int level)
-    {
-        StartCoroutine(LoadLevel(5f, level));
-        PlayerPrefs.SetInt("Phase Initiated", level);
-    }
-
-    //This is used for go back to intro scene
-    //May be deleted once we have the actual date of broadcast and finished testing the app
-
-    public void GoBackIntro()
-    {
-        SceneManager.LoadScene(0);
-    }
-
-    //Extra Scene control loading scenes dependes on different date
-    //Can put 5 buttons for 5 scenes to test loading
-    //Suspend execution for waitTime seconds
-    IEnumerator LoadLevel(float waitTime, int sceneIndex)
-    {
-        yield return new WaitForSeconds(waitTime);
-        print("WaitAndPrint " + Time.time);
-        SceneManager.LoadScene(sceneIndex);
-    }
-
-
-    public void OnClickLogin()
-    {
-
         if (year == "2021")
         {
             if (date == "04/15")
             {
                 Debug.Log("04/15 phrase 1");
                 phaseInitiated = 1;
-                StartCoroutine(LoadLevel(3f, phaseInitiated));
                 PlayerPrefs.SetInt("Phase Initiated", phaseInitiated);
             }
             else if (date == "04/16")
             {
                 Debug.Log("04/16 phrase 2");
                 phaseInitiated = 3;
-                StartCoroutine(LoadLevel(3f, phaseInitiated));
                 PlayerPrefs.SetInt("Phase Initiated", phaseInitiated);
             }
             else
@@ -78,5 +44,6 @@ public class LevelManager : MonoBehaviour
         {
             Debug.Log("Try for 2021");
         }
+
     }
 }
