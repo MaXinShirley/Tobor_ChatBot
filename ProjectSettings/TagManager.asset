@@ -6,6 +6,8 @@ TagManager:
   tags:
   - BodyAnimator
   - BodyAnimator_Mono
+  - JoystickMove
+  - JoystickHeight
   layers:
   - Default
   - TransparentFX
