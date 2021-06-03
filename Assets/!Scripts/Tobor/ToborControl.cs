@@ -24,6 +24,25 @@ public class ToborControl : MonoBehaviour
     private const int DANCE_ANIM_STATE_INDEX = 7;
 
 
+    private void Awake()
+    {
+        _animationEvent = FindObjectOfType<AnimationEventListener>();
+    }
+    private void OnEnable()
+    {
+        Events.AnimationSelected += PlayBodyAnim;
+        Events.ExpressionSelected += PlayExpressionAnim;
+        _animationEvent.AnimationFinished += OnAnimationFinished;
+    }
+
+    private void OnDisable()
+    {
+        Events.AnimationSelected -= PlayBodyAnim;
+        Events.ExpressionSelected -= PlayExpressionAnim;
+        _animationEvent.AnimationFinished -= OnAnimationFinished;
+    }
+
+
     public void PlayExpressionAnim(int ExpBtnIndex)
     {
         ExpInt = ExpBtnIndex; //store the Exp index and use in AnimationEventListener to check special cases
