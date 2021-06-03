@@ -255,6 +255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 157399307224430166}
   - component: {fileID: 9157865106002898221}
+  - component: {fileID: 6626636970266081132}
   m_Layer: 0
   m_Name: Body
   m_TagString: BodyAnimator
@@ -287,7 +288,7 @@ Animator:
   m_GameObject: {fileID: 619967664083830656}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: be6e5d06a45cc0b4eb7095fb87c322bf, type: 2}
+  m_Controller: {fileID: 9100000, guid: 71e260921f77ba34baa38afdc592a131, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -296,6 +297,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6626636970266081132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619967664083830656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056b0e1c6b95deb4f907983b071b7e19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &948348520235429692
 GameObject:
   m_ObjectHideFlags: 0
@@ -2110,20 +2123,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 5365474889110561663}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7047c1c35bc89444da3c8196331f6b2a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5479107b07ca8444eb5bb92c344b8509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   expressions:
   - type: 0
     LeftEye: {fileID: 1893125083200591974}
     RightEye: {fileID: 8760824565249839455}
-  - type: 4
-    LeftEye: {fileID: 3825831245211089725}
-    RightEye: {fileID: 3917460484588749002}
+  - type: 1
+    LeftEye: {fileID: 5345344593661997238}
+    RightEye: {fileID: 5444201765519612152}
   - type: 2
     LeftEye: {fileID: 3353979534308335806}
     RightEye: {fileID: 2987436789004671821}
-  loadingBars: []
+  - type: 3
+    LeftEye: {fileID: 1568719184765744197}
+    RightEye: {fileID: 4365628739682584432}
+  - type: 4
+    LeftEye: {fileID: 3825831245211089725}
+    RightEye: {fileID: 3917460484588749002}
+  - type: 5
+    LeftEye: {fileID: 6155290366919539599}
+    RightEye: {fileID: 5638780199783144876}
+  loadingBarsExpression:
+  - {fileID: 5369828436507492276}
 --- !u!1 &5369828436507492276
 GameObject:
   m_ObjectHideFlags: 0
@@ -2610,8 +2633,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6274949484161429167}
+  - component: {fileID: 6597561342074013563}
+  - component: {fileID: 1941249980792318585}
   m_Layer: 0
-  m_Name: Tobor_Animation_v2_WithBody
+  m_Name: Tobor_WithBody_NoBodyAnim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2633,6 +2658,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &6597561342074013563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6655979279589192725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f784c645b8712b84ea7d86da29765578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExpressionAnim: {fileID: 6129016265527443241}
+  ExpInt: 0
+  BodyAnim: {fileID: 9157865106002898221}
+  BodyInt: 0
+--- !u!114 &1941249980792318585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6655979279589192725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf0284e2b014ad489484b00d463b288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveJoystick: {fileID: 0}
+  heightJoystick: {fileID: 0}
+  xMove: 0
+  yMove: 0
+  zMove: 0
+  speed: 2
+  anim: {fileID: 9157865106002898221}
 --- !u!1 &6667996612201563771
 GameObject:
   m_ObjectHideFlags: 0
