@@ -39,7 +39,6 @@ public class BotDialog : Dialog
 public class ChatManager : MonoBehaviour
 {
     OscovaBot MainBot;
-    VoiceController voiceController;
     public GameObject chatPanel, textObject;
     public GameObject userChatBox, toborChatBox;
     public InputField chatBox;
@@ -61,10 +60,10 @@ public class ChatManager : MonoBehaviour
 
     //Animation State Constant 
     private const int NORMAL_STATE_INDEX = 0;
-    private const int HAPPY_STATE_INDEX = 1;
+    private const int HAPPY_STATE_INDEX = 4;
     private const int SAD_STATE_INDEX = 2;
-    private const int HAPPY_BACKNORMAL_STATE_INDEX = 3;
-    private const int SAD_BACKNORMAL_STATE_INDEX = 4;
+    private const int HAPPY_BACKNORMAL_STATE_INDEX = 0;
+    private const int SAD_BACKNORMAL_STATE_INDEX = 0;
     private const string BODY_ANIM_STATE = "BodyState";
 
 
@@ -80,7 +79,6 @@ public class ChatManager : MonoBehaviour
     IEnumerator Start()
     {
         phaseInitiated = PlayerPrefs.GetInt("Phase Initiated");
-        voiceController = this.gameObject.GetComponent<VoiceController>();
         ARTapToPlaceObject = FindObjectOfType<ARTapToPlaceObject>();
 
         Debug.Log("phase initiated: " + phaseInitiated);
@@ -136,10 +134,6 @@ public class ChatManager : MonoBehaviour
                 {
                     Debug.Log(evt.Response.Text);
                     AddMessage($"Bot: {evt.Response.Text}", MessageType.Bot);
-                    /*if(phaseInitiated >= 3)
-                    {
-                        voiceController.StartSpeaking(evt.Response.Text);
-                    }*/
                 }
                 else
                 {
@@ -149,10 +143,6 @@ public class ChatManager : MonoBehaviour
                         {
                             var textValue = textMessage.GetRandomText();
                             AddMessage($"Bot: {textValue}", MessageType.Bot);
-                           /* if (phaseInitiated >= 3)
-                            {
-                                voiceController.StartSpeaking(textValue);
-                            }*/
                         }
                     }
                 }
@@ -203,132 +193,49 @@ public class ChatManager : MonoBehaviour
             Debug.Log("Intent Name: " + intentName);
 
 
-            //Phrase1: Image Blink animation
-
-            //Phrase2: Image Blink animation
-
-            //Phrase3: Head with expression animation 
-            // - Hide image blink
-            // - Active Head and use SetExpression in Expression Control
-            // - "Happy", "Normal", "Sad"
-
-            //Phrase4: Full Body with expression animation
-            // - Active Body
-            // - Still using SetExpression in Expression Control
-            // - "Happy", "Normal", "Sad" ...
-
-            //Phrase5: Full Body with expression animation + body animation
-            // - Use body animator for body animation
-
-
+            //Phrase will be loading according to the current date
+            //Different phrases loads different JSON
 
             // if intentname contain "sad", show sad, contain "happy" show happy(check dialogs name) eg: happy_dialog_ep1.happy
-            if (phaseInitiated >= 3)
+            //Currently Tobor only have "Greeting" and "Feeling" dialogs -> loads "Happy" expression and "Happy" body movement
+            ExpressionAnim = FindObjectOfType<ExpressionControl>();
+            toborBodyAnimator = GameObject.FindGameObjectWithTag("BodyAnimator").GetComponent<Animator>();
+
+            if (phaseInitiated < 3)
             {
-                ExpressionAnim = FindObjectOfType<ExpressionControl>();
-                //toborBodyAnimator = FindObjectOfType<Animator>();
-                toborBodyAnimator = GameObject.FindGameObjectWithTag("BodyAnimator").GetComponent<Animator>();
+                if (intentName == "BotDialog.DefaultFallback")
+                { 
+                    ExpressionAnim.SetExpression(SAD_STATE_INDEX);
+                    StartCoroutine(BackToBodyNormal(3, NORMAL_STATE_INDEX, NORMAL_STATE_INDEX));
+                }
+                else
+                {
+                    ExpressionAnim.SetExpression(NORMAL_STATE_INDEX);
+                }
+            }
+            else
+            {
+                if (intentName == "BotDialog.DefaultFallback")
+                {
+                    ExpressionAnim.SetExpression(SAD_STATE_INDEX);
+                    toborBodyAnimator.SetInteger(BODY_ANIM_STATE, SAD_STATE_INDEX);
+
+                    StartCoroutine(BackToBodyNormal(3, SAD_BACKNORMAL_STATE_INDEX, NORMAL_STATE_INDEX));
+                }
+                else if (intentName.Contains("feeling"))
+                {
+                    ExpressionAnim.SetExpression(HAPPY_STATE_INDEX);
+                    toborBodyAnimator.SetInteger(BODY_ANIM_STATE, HAPPY_STATE_INDEX);
+
+                    StartCoroutine(BackToBodyNormal(3, HAPPY_BACKNORMAL_STATE_INDEX, NORMAL_STATE_INDEX));
+                }
+                else
+                {
+                    ExpressionAnim.SetExpression(NORMAL_STATE_INDEX);
+                    toborBodyAnimator.SetInteger(BODY_ANIM_STATE, NORMAL_STATE_INDEX);
+                }
             }
 
-            
-
-            switch (phaseInitiated)
-                {
-                    case 1:
-                        if (intentName == "BotDialog.DefaultFallback") toborAnimator.SetBool("Confuse", true);
-                        else toborAnimator.SetBool("Happy", true);
-                        break;
-                    case 2:
-                        if (intentName == "BotDialog.DefaultFallback") toborAnimator.SetBool("Confuse", true);
-                        else toborAnimator.SetBool("Happy", true);
-                        break;
-                    case 3:
-
-                        if (intentName == "BotDialog.DefaultFallback")
-                        {
-                            ExpressionAnim.SetExpression(SAD_STATE_INDEX);
-
-                            StartCoroutine(BackToBodyNormal(3, NORMAL_STATE_INDEX, NORMAL_STATE_INDEX));
-                        }
-                        else if (intentName.Contains("happy"))
-                        {
-                            ExpressionAnim.SetExpression(HAPPY_STATE_INDEX);
-
-                            StartCoroutine(BackToBodyNormal(3, NORMAL_STATE_INDEX, NORMAL_STATE_INDEX));
-                        }
-                        else
-                        {
-                            ExpressionAnim.SetExpression(NORMAL_STATE_INDEX);
-                        }
-                        break;
-
-                    case 4:
-                        if (intentName == "BotDialog.DefaultFallback")
-                        {
-                            ExpressionAnim.SetExpression(SAD_STATE_INDEX);
-
-                            StartCoroutine(BackToBodyNormal(3, NORMAL_STATE_INDEX, NORMAL_STATE_INDEX));
-                        }
-                        else if (intentName.Contains("happy"))
-                        {
-                            ExpressionAnim.SetExpression(HAPPY_STATE_INDEX);
-
-                            StartCoroutine(BackToBodyNormal(3, NORMAL_STATE_INDEX, NORMAL_STATE_INDEX));
-                        }
-                        else
-                        {
-                            ExpressionAnim.SetExpression(NORMAL_STATE_INDEX);
-                        }
-                        break;
-                    case 5:
-                        if (intentName == "BotDialog.DefaultFallback")
-                        {
-                            ExpressionAnim.SetExpression(SAD_STATE_INDEX);
-                            toborBodyAnimator.SetInteger(BODY_ANIM_STATE, SAD_STATE_INDEX);
-
-                            StartCoroutine(BackToBodyNormal(3, SAD_BACKNORMAL_STATE_INDEX, NORMAL_STATE_INDEX));
-                        }
-                        else if (intentName.Contains("happy"))
-                        {
-                            ExpressionAnim.SetExpression(HAPPY_STATE_INDEX);
-                            toborBodyAnimator.SetInteger(BODY_ANIM_STATE, HAPPY_STATE_INDEX);
-
-                            StartCoroutine(BackToBodyNormal(3, HAPPY_BACKNORMAL_STATE_INDEX, NORMAL_STATE_INDEX));
-                        }
-                        else
-                        {
-                            ExpressionAnim.SetExpression(NORMAL_STATE_INDEX);
-                            toborBodyAnimator.SetInteger(BODY_ANIM_STATE, NORMAL_STATE_INDEX);
-                        }
-                        break;
-
-                    case 6:
-                        if (intentName == "BotDialog.DefaultFallback")
-                        {
-                            ExpressionAnim.SetExpression(SAD_STATE_INDEX);
-                            toborBodyAnimator.SetInteger(BODY_ANIM_STATE, SAD_STATE_INDEX);
-
-                            StartCoroutine(BackToBodyNormal(3, SAD_BACKNORMAL_STATE_INDEX, NORMAL_STATE_INDEX));
-                        }
-                        else if (intentName.Contains("happy"))
-                        {
-                            ExpressionAnim.SetExpression(HAPPY_STATE_INDEX);
-                            toborBodyAnimator.SetInteger(BODY_ANIM_STATE, HAPPY_STATE_INDEX);
-
-                            StartCoroutine(BackToBodyNormal(3, HAPPY_BACKNORMAL_STATE_INDEX, NORMAL_STATE_INDEX));
-                        }
-                        else
-                        {
-                            ExpressionAnim.SetExpression(NORMAL_STATE_INDEX);
-                            toborBodyAnimator.SetInteger(BODY_ANIM_STATE, NORMAL_STATE_INDEX);
-                        }
-                        break;
-
-                }
-
-
-
-                //chatBox.Select();
                 chatBox.text = "";
           //  }
         }
