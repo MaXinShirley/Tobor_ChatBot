@@ -16,9 +16,9 @@ public class RotateAndScale : MonoBehaviour
     private Vector3 initialScale;
 
     private const float MIN_X = 0;
-    private const float MAX_X = 1900;
-    private const float MIN_Y = 600;
-    private const float MAX_Y = 1280;
+    private const float MAX_X = 900;
+    private const float MIN_Y = 100;
+    private const float MAX_Y = 2000;
 
     void Update()
     {
