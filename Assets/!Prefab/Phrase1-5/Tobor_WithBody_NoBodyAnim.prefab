@@ -2635,6 +2635,7 @@ GameObject:
   - component: {fileID: 6274949484161429167}
   - component: {fileID: 6597561342074013563}
   - component: {fileID: 1941249980792318585}
+  - component: {fileID: 1546033818310391623}
   m_Layer: 0
   m_Name: Tobor_WithBody_NoBodyAnim
   m_TagString: Untagged
@@ -2693,6 +2694,19 @@ MonoBehaviour:
   zMove: 0
   speed: 2
   anim: {fileID: 9157865106002898221}
+--- !u!114 &1546033818310391623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6655979279589192725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba5ae3d4a9e006e4ba68bcd3c1d16860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeedModifier: 3.5
 --- !u!1 &6667996612201563771
 GameObject:
   m_ObjectHideFlags: 0

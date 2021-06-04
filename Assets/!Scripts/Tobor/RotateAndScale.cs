@@ -9,7 +9,7 @@ public class RotateAndScale : MonoBehaviour
     private Quaternion rotationY;
     private Touch touch;
 
-    public float rotateSpeedModifier = 2;
+    public float rotateSpeedModifier = 0.3f;
     private float previousTouchPos;
     private float currentTouchPos;
     private float initialDistance;
@@ -40,7 +40,7 @@ public class RotateAndScale : MonoBehaviour
                         -Input.GetTouch(0).position.x * rotateSpeedModifier * Time.deltaTime,
                         0f);
 
-                    transform.rotation = Quaternion.Lerp(transform.rotation, rotationY * transform.rotation, Time.deltaTime);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, rotationY * transform.rotation, rotateSpeedModifier * Time.deltaTime);
                 }
                 else
                 {
@@ -49,7 +49,7 @@ public class RotateAndScale : MonoBehaviour
                         Input.GetTouch(0).position.x * rotateSpeedModifier * Time.deltaTime,
                         0f);
 
-                    transform.rotation = Quaternion.Lerp(transform.rotation, rotationY * transform.rotation, Time.deltaTime);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, rotationY * transform.rotation, rotateSpeedModifier * Time.deltaTime);
                 }
             }
         }
