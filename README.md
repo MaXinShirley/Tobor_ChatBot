@@ -81,17 +81,22 @@ None at the moment
 | ARKit XR Plugin         | 3.1.8	            | Native Apple ARKit |
 | 2D Sprite               | 1.0.0	            | Create and edit Sprite assets |
 | XR Plugin Management    | 3.2.16              | Management for XR plug-ins |
+| TextMeshPro             | 3.0.6               | Text Solution for unity |
 
 ## Plugins
 - SpeechToTextPlugin for both iOS and Android
 - Refer here [https://github.com/PingAK9/Speech-And-Text-Unity-iOS-Android]
 
+- Native Gallery for take screenshots and save to device photo gallery for both iOS and Android
+- Refer here [https://github.com/yasirkula/UnityNativeGallery#example-code]
+
 
 ## 3rd party libraries
 - Chatbot is loading JSON files for all 6 phrases to get the dialogs.
-- JSON and WEST files are stored under Syn.bot Resources.
+- WEST files are stored under Syn.bot Resources.
 - Unity only read .json, it’s unable to read the .west file. 
 - To create the .json file, simply replace the extension .west to .json
+- JSON files are stored in cloud and downloaded to the project
 - If edit is required, open the .west files using Syn Oryzer Studio.
 
 
